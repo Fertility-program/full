@@ -1,0 +1,76 @@
+{
+  "id": "/",
+  "name": "Veronica Bloom — Fertility Wellness",
+  "short_name": "Veronica Bloom",
+  "description": "Cycle-synced exercises, fertility nutrition under €7/day & supplement guide for women trying to conceive. Evidence-based program for ovulation, hormone balance, PCOS and reproductive health.",
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#e0eeeb",
+  "theme_color": "#5ba89d",
+  "orientation": "portrait",
+  "categories": ["health", "fitness", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Start Session",
+      "short_name": "Session",
+      "url": "/session",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Daily Check-In",
+      "short_name": "Check-In",
+      "url": "/checkin",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Meal Plan",
+      "short_name": "Meals",
+      "url": "/nutrition",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ],
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Veronica Bloom Dashboard"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Veronica Bloom Program"
+    }
+  ],
+  "serviceworker": {
+    "src": "./sw.js",
+    "scope": "/"
+  }
+}
