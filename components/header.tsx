@@ -45,25 +45,27 @@ export default function Header() {
 
   const desktopLinks = [
     [t("Dashboard"), "/dashboard"],
+    ["Cycle", "/cycle"],
     [t("Assessment"), "/quiz"],
     ["Blog", "/blog"],
     [t("Plans"), "/pricing"],
-    ["Free Guide", "/free-guide"],
+    ["Partner", "/partner"],
     ["Get App", "/download"],
-    ["Affiliate", "/affiliate"],
   ];
 
   const mobileLinks = [
     [t("Dashboard"), "/dashboard"],
+    ["Cycle Tracker", "/cycle"],
     [t("Assessment"), "/quiz"],
     [t("Progress"), "/progress"],
     ["Supplements", "/supplements"],
     [t("Journal"), "/journal"],
     [t("Shopping List"), "/shopping"],
+    ["Partner", "/partner"],
+    ["Doctor Prep", "/doctor-prep"],
     [t("Plans"), "/pricing"],
     ["Free Guide", "/free-guide"],
     ["Get App", "/download"],
-    ["Affiliate", "/affiliate"],
     [t("Account"), "/account"],
   ];
 
