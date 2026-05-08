@@ -280,8 +280,184 @@ export default function SupplementsPage() {
         <section className="soft-card p-5 text-center">
           <p className="text-xs text-[#b98fa1] italic">
             ⚕️ Always consult your doctor before starting any supplement, especially if you take medication.
-            Doses are general guidelines based on current research for women 40+.
+            Doses are general guidelines based on current research.
           </p>
+        </section>
+
+        {/* MEN'S FERTILITY SUPPLEMENTS */}
+        <section className="mt-10 mb-6">
+          <div className="soft-card p-8 mb-4 border-l-4 border-l-[#5ba89d]">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-3xl">👨</span>
+              <div>
+                <h2 className="text-3xl text-[#2d5a52]">For Him: Sperm Quality</h2>
+                <p className="text-sm text-[#5a7570]">Supplements & minerals that improve sperm count, motility and morphology. Results typically visible after 2-3 months (one full spermatogenesis cycle).</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                name: "Zinc",
+                icon: "🛡️",
+                dose: "25–50mg daily",
+                timing: "With food (dinner)",
+                why: "The most critical mineral for male fertility. Zinc is essential for testosterone production, sperm formation and DNA integrity. Deficiency directly reduces sperm count and motility. Studies show 25mg/day increases sperm count by 74% in subfertile men.",
+                food_sources: ["Oysters (highest source)", "Beef", "Pumpkin seeds", "Chickpeas"],
+                priority: "essential" as const,
+              },
+              {
+                name: "CoQ10 (Ubiquinol)",
+                icon: "⚡",
+                dose: "200–400mg daily",
+                timing: "With breakfast (fat-containing meal)",
+                why: "Powers mitochondria in sperm cells — directly improves motility (swimming speed). Meta-analysis shows significant improvement in sperm concentration and motility after 3 months. Ubiquinol form is 3x better absorbed than ubiquinone.",
+                food_sources: ["Organ meats", "Sardines", "Beef", "Peanuts"],
+                priority: "essential" as const,
+              },
+              {
+                name: "Selenium",
+                icon: "🥜",
+                dose: "55–200mcg daily",
+                timing: "With any meal",
+                why: "Protects sperm DNA from oxidative damage and is essential for sperm tail formation (morphology). Just 2 Brazil nuts daily provide ~100mcg. Combined with Vitamin E, shown to improve motility by 52%.",
+                food_sources: ["Brazil nuts (2/day)", "Tuna", "Eggs", "Sunflower seeds"],
+                priority: "essential" as const,
+              },
+              {
+                name: "Folate (5-MTHF)",
+                icon: "🌿",
+                dose: "400–800mcg daily",
+                timing: "With breakfast",
+                why: "Essential for DNA synthesis during sperm production. Low folate is linked to higher rates of chromosomal abnormalities in sperm. Combined with zinc, increases sperm count by 74% in studies.",
+                food_sources: ["Dark leafy greens", "Lentils", "Asparagus", "Avocado"],
+                priority: "essential" as const,
+              },
+              {
+                name: "Vitamin D3",
+                icon: "☀️",
+                dose: "2,000–4,000 IU daily",
+                timing: "With breakfast",
+                why: "Vitamin D receptors exist on sperm cells. Deficiency is linked to lower motility and testosterone. Studies show supplementation improves total motile sperm count. Most men in northern climates are deficient.",
+                food_sources: ["Sunlight (15 min)", "Fatty fish", "Egg yolks", "Fortified milk"],
+                priority: "essential" as const,
+              },
+              {
+                name: "Omega-3 (DHA)",
+                icon: "🐟",
+                dose: "1,000–2,000mg daily (high DHA)",
+                timing: "With any meal",
+                why: "DHA is a structural component of sperm cell membranes. Higher DHA levels correlate with better morphology and motility. Also reduces inflammation in the reproductive tract.",
+                food_sources: ["Wild salmon", "Sardines", "Mackerel", "Algae oil"],
+                priority: "essential" as const,
+              },
+              {
+                name: "L-Carnitine",
+                icon: "🔥",
+                dose: "1,000–2,000mg daily",
+                timing: "Split into 2 doses (morning and evening)",
+                why: "Fuels sperm energy metabolism — directly powers the tail for swimming. Multiple RCTs show improved concentration, motility and morphology. One of the most evidence-backed male fertility supplements.",
+                food_sources: ["Red meat", "Chicken", "Milk", "Avocado"],
+                priority: "recommended" as const,
+              },
+              {
+                name: "Vitamin C",
+                icon: "🍊",
+                dose: "500–1,000mg daily",
+                timing: "With breakfast (split if >500mg)",
+                why: "Powerful antioxidant that protects sperm DNA from oxidative stress. Studies show 1,000mg/day reduces sperm DNA fragmentation by 20% and prevents sperm agglutination (clumping).",
+                food_sources: ["Kiwi", "Bell peppers", "Oranges", "Strawberries"],
+                priority: "recommended" as const,
+              },
+              {
+                name: "Vitamin E",
+                icon: "🌻",
+                dose: "200–400 IU daily",
+                timing: "With fat-containing meal",
+                why: "Works synergistically with Selenium to protect sperm membranes from lipid peroxidation. Combined supplementation improves pregnancy rates by 29% in one study.",
+                food_sources: ["Sunflower seeds", "Almonds", "Hazelnuts", "Olive oil"],
+                priority: "recommended" as const,
+              },
+              {
+                name: "Ashwagandha (KSM-66)",
+                icon: "🌿",
+                dose: "300–600mg daily",
+                timing: "Morning or evening (consistent timing)",
+                why: "Adaptogen that reduces cortisol by 27% and increases testosterone by 17% in studies. Improves sperm count (+167%), motility (+57%) and semen volume in infertile men. Also reduces stress and improves sleep.",
+                food_sources: [],
+                priority: "recommended" as const,
+              },
+              {
+                name: "Magnesium",
+                icon: "🌙",
+                dose: "300–400mg daily",
+                timing: "Before bed",
+                why: "Supports testosterone production, improves sleep quality (critical for sperm production which peaks during sleep), and reduces oxidative stress. Most men are deficient.",
+                food_sources: ["Dark chocolate", "Almonds", "Spinach", "Pumpkin seeds"],
+                priority: "recommended" as const,
+              },
+              {
+                name: "D-Aspartic Acid (DAA)",
+                icon: "💊",
+                dose: "2,000–3,000mg daily",
+                timing: "Morning, on empty stomach",
+                why: "Amino acid that stimulates LH release, which triggers testosterone production. Studies show 42% increase in testosterone and 60% increase in sperm count after 90 days. Cycle 2-3 months on, 1 month off.",
+                food_sources: [],
+                priority: "optional" as const,
+              },
+            ].map((supp) => {
+              const config = PRIORITY_LABELS[supp.priority];
+              return (
+                <div key={supp.name} className="soft-card p-5">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl shrink-0">{supp.icon}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="text-base font-medium text-[#2d5a52]">{supp.name}</h3>
+                        <span className={`text-[9px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest border ${config.cls}`}>
+                          {config.label}
+                        </span>
+                      </div>
+                      <div className="flex flex-wrap gap-3 text-xs mb-2">
+                        <span className="text-[#5ba89d] font-bold">{supp.dose}</span>
+                        <span className="text-[#5a7570]">⏰ {supp.timing}</span>
+                      </div>
+                      <p className="text-xs text-[#3a5550] leading-relaxed mb-2">{supp.why}</p>
+                      {supp.food_sources.length > 0 && (
+                        <div className="flex flex-wrap gap-1">
+                          <span className="text-[9px] text-[#6aab9f] font-bold mr-1">Food sources:</span>
+                          {supp.food_sources.map((f) => (
+                            <span key={f} className="text-[9px] px-2 py-0.5 rounded-full bg-green-50 text-green-600 border border-green-100">
+                              {f}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="soft-card p-5 mt-4">
+            <h3 className="text-sm font-medium text-[#2d5a52] mb-2">⚠️ What to Avoid</h3>
+            <div className="grid md:grid-cols-2 gap-2 text-xs text-[#3a5550]">
+              <div className="p-3 rounded-xl bg-red-50/50 border border-red-100">🚫 Excessive heat (hot tubs, saunas, laptop on lap)</div>
+              <div className="p-3 rounded-xl bg-red-50/50 border border-red-100">🚫 Alcohol (more than 5 drinks/week reduces quality)</div>
+              <div className="p-3 rounded-xl bg-red-50/50 border border-red-100">🚫 Smoking & cannabis (directly damages sperm DNA)</div>
+              <div className="p-3 rounded-xl bg-red-50/50 border border-red-100">🚫 Processed soy in excess (phytoestrogens)</div>
+              <div className="p-3 rounded-xl bg-red-50/50 border border-red-100">🚫 Tight underwear (raises scrotal temperature)</div>
+              <div className="p-3 rounded-xl bg-red-50/50 border border-red-100">🚫 Anabolic steroids (shuts down natural production)</div>
+            </div>
+          </div>
+
+          <div className="soft-card p-5 mt-4 text-center">
+            <p className="text-xs text-[#6aab9f] italic">
+              ⚕️ Sperm takes ~74 days to develop. Start supplements at least 2-3 months before trying to conceive for best results. Always consult a doctor, especially if on medication.
+            </p>
+          </div>
         </section>
       </div>
 
