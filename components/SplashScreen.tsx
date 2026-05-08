@@ -36,8 +36,8 @@ export default function SplashScreen() {
         <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#f8d8df] via-[#e7bcc8] to-[#d5a6b1] flex items-center justify-center mx-auto mb-4 shadow-lg">
           <span className="text-white text-3xl">✦</span>
         </div>
-        <div className="text-3xl font-semibold text-[#7f5665] tracking-tight">Veronica Method</div>
-        <div className="text-[9px] uppercase tracking-[0.3em] text-[#b38d98] mt-1">The Complete Menopause Program</div>
+        <div className="text-3xl font-semibold text-[#7f5665] tracking-tight">Veronica Bloom</div>
+        <div className="text-[9px] uppercase tracking-[0.3em] text-[#b38d98] mt-1">Fertility Wellness Program</div>
       </div>
     </div>
   );

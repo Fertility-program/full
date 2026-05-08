@@ -66,7 +66,7 @@ export default function InstallPrompt() {
           <div className="fixed bottom-4 left-3 right-3 z-50 md:left-auto md:right-4 md:max-w-sm">
             <div className="soft-card p-3 shadow-xl border border-[#d8a7b5]/20">
               <div className="flex items-center gap-2">
-                <img src="/logo.png" alt="Veronica Method" className="w-9 h-9 rounded-lg shadow-sm object-contain shrink-0" />
+                <img src="/logo.png" alt="Veronica Bloom" className="w-9 h-9 rounded-lg shadow-sm object-contain shrink-0" />
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-[#4a3f44] font-medium truncate">Add to Home Screen</p>
                   <p className="text-[10px] text-[#7b6870] truncate">Use it like a real app</p>
@@ -83,7 +83,7 @@ export default function InstallPrompt() {
         {showIOSGuide && (
           <div className="fixed inset-0 z-50 bg-black/40 flex items-end justify-center p-4">
             <div className="soft-card p-6 max-w-sm w-full shadow-2xl">
-              <h3 className="text-lg text-[#4a3f44] font-medium mb-4">Install Veronica Method on iPhone</h3>
+              <h3 className="text-lg text-[#4a3f44] font-medium mb-4">Install Veronica Bloom on iPhone</h3>
               <ol className="space-y-3 text-sm text-[#6f5a62]">
                 <li className="flex gap-3">
                   <span className="text-[#d8a7b5] font-bold shrink-0">1.</span>
@@ -99,7 +99,7 @@ export default function InstallPrompt() {
                 </li>
               </ol>
               <p className="text-xs text-[#b98fa1] mt-4 italic">
-                Veronica Method will appear on your home screen like a regular app.
+                Veronica Bloom will appear on your home screen like a regular app.
               </p>
               <button onClick={() => { setShowIOSGuide(false); dismiss(); }} className="btn-primary w-full mt-4 py-3">
                 Got it!
@@ -116,9 +116,9 @@ export default function InstallPrompt() {
     <div className="fixed bottom-4 left-3 right-3 z-50 md:left-auto md:right-4 md:max-w-sm">
       <div className="soft-card p-3 shadow-xl border border-[#d8a7b5]/20">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Veronica Method" className="w-9 h-9 rounded-lg shadow-sm object-contain shrink-0" />
+          <img src="/logo.png" alt="Veronica Bloom" className="w-9 h-9 rounded-lg shadow-sm object-contain shrink-0" />
           <div className="flex-1 min-w-0">
-            <p className="text-xs text-[#4a3f44] font-medium truncate">Install Veronica Method</p>
+            <p className="text-xs text-[#4a3f44] font-medium truncate">Install Veronica Bloom</p>
             <p className="text-[10px] text-[#7b6870] truncate">Add to home screen for quick access</p>
           </div>
           <button onClick={handleInstall} className="btn-primary px-3 py-1.5 text-[10px] shrink-0">

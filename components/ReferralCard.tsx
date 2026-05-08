@@ -65,7 +65,7 @@ export default function ReferralCard() {
 
       <div className="mt-4 flex gap-3">
         <a
-          href={`https://wa.me/?text=I%27m%20using%20Veronica Method%20for%20menopause%20wellness%20and%20it%27s%20amazing!%20Try%20it%20free:%20${encodeURIComponent(link)}`}
+          href={`https://wa.me/?text=I%27m%20using%20Veronica Bloom%20for%20fertility%20wellness%20and%20it%27s%20amazing!%20Try%20it%20free:%20${encodeURIComponent(link)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-outline text-sm px-4 py-2"
@@ -73,7 +73,7 @@ export default function ReferralCard() {
           Share on WhatsApp
         </a>
         <a
-          href={`mailto:?subject=Try%20Veronica Method%20Wellness&body=I%27ve%20been%20using%20Veronica Method%20for%20menopause%20wellness%20and%20love%20it.%20Try%20it%20free:%20${encodeURIComponent(link)}`}
+          href={`mailto:?subject=Try%20Veronica Bloom%20Wellness&body=I%27ve%20been%20using%20Veronica Bloom%20for%20fertility%20wellness%20and%20love%20it.%20Try%20it%20free:%20${encodeURIComponent(link)}`}
           className="btn-outline text-sm px-4 py-2"
         >
           Share via Email

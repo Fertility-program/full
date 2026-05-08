@@ -41,7 +41,7 @@ export default function WaterReminder() {
       const msg = messages[Math.floor(Math.random() * messages.length)];
       const remaining = target - glasses;
 
-      new Notification("Veronica Method 💧", {
+      new Notification("Veronica Bloom 💧", {
         body: `${msg}\n${remaining} glasses remaining today.`,
         icon: "/icon-192.png",
         tag: "water-reminder", // Zamenjuje prethodnu notifikaciju
