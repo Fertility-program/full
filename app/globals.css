@@ -45,7 +45,7 @@ html.dark {
 @layer base {
   body {
     background-color: var(--bg-base) !important;
-    background-image: url("/VM-bg-pattern.png") !important;
+    background-image: url("/velora-bg-pattern.png") !important;
     background-repeat: repeat !important;
     background-size: 450px !important;
     color: var(--text-main);
