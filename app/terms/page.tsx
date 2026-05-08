@@ -13,15 +13,15 @@ export default function TermsPage() {
         <div className="space-y-8 text-[#5a4550] text-sm leading-relaxed">
           <div>
             <p>
-              By using Veronica Method, you agree to these terms. Please read them carefully.
+              By using Veronica Bloom, you agree to these terms. Please read them carefully.
             </p>
           </div>
 
           <div>
             <h2 className="text-xl text-[#4a3f44] mb-3">1. Service Description</h2>
             <p>
-              Veronica Method is a digital wellness platform providing personalized exercise programs,
-              meal plans, supplement guidance, and progress tracking for women experiencing menopause.
+              Veronica Bloom is a digital wellness platform providing personalized exercise programs,
+              meal plans, supplement guidance, and progress tracking for women on their fertility journey.
               The service is delivered via web application and mobile app.
             </p>
           </div>
@@ -29,7 +29,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl text-[#4a3f44] mb-3">2. Medical Disclaimer</h2>
             <p className="mb-3">
-              <strong>Veronica Method is not a medical service.</strong> Our content is for informational
+              <strong>Veronica Bloom is not a medical service.</strong> Our content is for informational
               and educational purposes only. It does not constitute medical advice, diagnosis, or treatment.
             </p>
             <ul className="space-y-2 ml-4">
@@ -74,7 +74,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl text-[#4a3f44] mb-3">6. Intellectual Property</h2>
             <p>
-              All content (exercises, meal plans, recipes, text, images, code) is owned by Veronica Method.
+              All content (exercises, meal plans, recipes, text, images, code) is owned by Veronica Bloom.
               You may not copy, redistribute, or resell any content without written permission.
               Personal use within the app is permitted.
             </p>
@@ -93,7 +93,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-xl text-[#4a3f44] mb-3">8. Limitation of Liability</h2>
             <p>
-              Veronica Method is provided &ldquo;as is&rdquo; without warranties. We are not liable for any
+              Veronica Bloom is provided &ldquo;as is&rdquo; without warranties. We are not liable for any
               injuries, health issues, or damages arising from use of our exercises, meal plans, or
               supplement recommendations. Use at your own risk and always consult healthcare professionals.
             </p>

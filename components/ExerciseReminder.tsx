@@ -33,7 +33,7 @@ export default function ExerciseReminder() {
       } catch { /* ignore */ }
 
       // Šalji podsetnik
-      new Notification("Veronica Method 🧘‍♀️", {
+      new Notification("Veronica Bloom 🌸", {
         body: "You haven't done your session today. Just 15 minutes can make a difference!",
         icon: "/icon-192.png",
         tag: "exercise-reminder",

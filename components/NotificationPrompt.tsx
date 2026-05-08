@@ -19,7 +19,7 @@ export default function NotificationPrompt() {
     const result = await Notification.requestPermission();
     if (result === "granted") {
       // Prikaži potvrdu
-      new Notification("Veronica Method 🌸", {
+      new Notification("Veronica Bloom 🌸", {
         body: "You'll get gentle reminders for your daily sessions.",
         icon: "/icon-192.png",
       });

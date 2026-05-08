@@ -41,7 +41,7 @@ test.describe("Homepage", () => {
 
     await expect(page.locator("h1")).toBeVisible();
     await expect(page.locator("text=Start Free Plan")).toBeVisible();
-    await expect(page.locator("text=Menopause")).toBeVisible();
+    await expect(page.locator("text=Fertility")).toBeVisible();
   });
 });
 

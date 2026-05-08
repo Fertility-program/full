@@ -1,5 +1,5 @@
 // ============================================================
-// VERONICA METHOD — Service Worker v5
+// VERONICA BLOOM — Service Worker v5
 // ============================================================
 // Strategies:
 //   - Precache: critical shell assets
@@ -299,7 +299,7 @@ self.addEventListener("push", (event) => {
     };
 
     event.waitUntil(
-      self.registration.showNotification(data.title || "Veronica Method", options)
+      self.registration.showNotification(data.title || "Veronica Bloom", options)
     );
   } catch {
     // Invalid push data

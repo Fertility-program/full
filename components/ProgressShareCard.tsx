@@ -54,12 +54,12 @@ export default function ProgressShareCard({
     ctx.fillStyle = "#6b3a4d";
     ctx.font = "bold 24px -apple-system, sans-serif";
     ctx.textAlign = "center";
-    ctx.fillText("VERONICA METHOD", 540, 150);
+    ctx.fillText("VERONICA BLOOM", 540, 150);
 
     // Subtitle
     ctx.fillStyle = "#7d5565";
     ctx.font = "16px -apple-system, sans-serif";
-    ctx.fillText("Menopause Wellness Program", 540, 180);
+    ctx.fillText("Fertility Wellness Program", 540, 180);
 
     // Name
     if (name) {
@@ -121,11 +121,11 @@ export default function ProgressShareCard({
     ctx.textAlign = "center";
     ctx.fillStyle = "#b98fa1";
     ctx.font = "14px -apple-system, sans-serif";
-    ctx.fillText("veronica-method.vercel.app", 540, 950);
+    ctx.fillText("veronica-bloom.vercel.app", 540, 950);
 
     // Download
     const link = document.createElement("a");
-    link.download = `veronica-method-day-${day}.png`;
+    link.download = `veronica-bloom-day-${day}.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
 
