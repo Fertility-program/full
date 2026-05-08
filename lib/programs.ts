@@ -1,7 +1,7 @@
 // ============================================================
-// Veronica Method PERSONALIZED PROGRAM ENGINE
-// Builds unique daily plans based on quiz data, symptoms,
-// goals, fitness level, and program phase.
+// Veronica Bloom PERSONALIZED PROGRAM ENGINE
+// Builds unique daily plans based on quiz data, cycle phase,
+// fertility goals, fitness level, and program phase.
 // ============================================================
 
 export type Exercise = {
@@ -852,24 +852,27 @@ const EXERCISES: Exercise[] = [
 // ============================================================
 
 const SYMPTOM_FOCUS: Record<string, ExerciseCategory[]> = {
-  "Hot flashes":    ["breathing", "mobility", "cooldown"],
-  "Poor sleep":     ["breathing", "mobility", "cooldown", "balance"],
-  "Weight gain":    ["lower", "core", "upper", "balance"],
-  "Low energy":     ["lower", "core", "upper", "warmup", "breathing"],
-  "Joint pain":     ["mobility", "warmup", "balance", "cooldown"],
-  "Bloating":       ["mobility", "breathing", "core"],
-  "Back pain":      ["core", "mobility", "pelvic", "posture"],
-  "Mood swings":    ["breathing", "balance", "posture", "mobility", "lower"],
-  "Low confidence": ["posture", "upper", "core", "balance"],
-  "Incontinence":   ["pelvic", "core", "breathing", "lower"],
-  "Pelvic prolapse": ["pelvic", "core", "breathing", "posture"],
+  "Irregular cycles":  ["breathing", "mobility", "pelvic", "core"],
+  "PCOS symptoms":     ["lower", "core", "breathing", "mobility"],
+  "Stress & anxiety":  ["breathing", "mobility", "balance", "cooldown"],
+  "Low energy":        ["lower", "core", "upper", "warmup", "breathing"],
+  "Poor sleep":        ["breathing", "mobility", "cooldown", "balance"],
+  "Inflammation":      ["mobility", "breathing", "cooldown", "balance"],
+  "Weight concerns":   ["lower", "core", "upper", "balance"],
+  "Hormonal acne":     ["breathing", "mobility", "core", "balance"],
+  "Endometriosis":     ["breathing", "mobility", "pelvic", "cooldown"],
+  "Thyroid issues":    ["breathing", "mobility", "lower", "balance"],
 };
 
 const GOAL_FOCUS: Record<string, ExerciseCategory[]> = {
-  fat_loss:  ["lower", "core", "upper", "balance"],
-  tone:      ["lower", "core", "upper", "pelvic"],
-  energy:    ["lower", "mobility", "balance", "upper"],
-  maintain:  ["mobility", "breathing", "balance", "core"],
+  conception:         ["pelvic", "breathing", "mobility", "core"],
+  cycle_regulation:   ["breathing", "mobility", "balance", "pelvic"],
+  hormone_balance:    ["breathing", "lower", "core", "mobility"],
+  overall_wellness:   ["lower", "core", "upper", "balance"],
+  fat_loss:           ["lower", "core", "upper", "balance"],
+  tone:               ["lower", "core", "upper", "pelvic"],
+  energy:             ["lower", "mobility", "balance", "upper"],
+  maintain:           ["mobility", "breathing", "balance", "core"],
 };
 
 // ============================================================
@@ -910,13 +913,13 @@ type DayTheme = {
 };
 
 const WEEK_THEMES: DayTheme[] = [
-  { name: "Full Body Flow",       primary: ["lower", "upper", "core"],       secondary: ["mobility"] },
-  { name: "Core & Pelvic Health", primary: ["core", "pelvic", "breathing"],  secondary: ["mobility"] },
-  { name: "Lower Body Strength",  primary: ["lower", "balance"],             secondary: ["core"] },
-  { name: "Mobility & Recovery",  primary: ["mobility", "breathing"],        secondary: ["posture", "balance"] },
-  { name: "Upper Body & Posture", primary: ["upper", "posture"],             secondary: ["core"] },
-  { name: "Balance & Stability",  primary: ["balance", "core", "lower"],     secondary: ["mobility"] },
-  { name: "Restore & Breathe",    primary: ["breathing", "mobility", "cooldown"], secondary: ["pelvic"] },
+  { name: "Full Body Flow",         primary: ["lower", "upper", "core"],       secondary: ["mobility"] },
+  { name: "Pelvic & Reproductive",  primary: ["pelvic", "core", "breathing"],  secondary: ["mobility"] },
+  { name: "Lower Body & Circulation", primary: ["lower", "balance"],           secondary: ["core"] },
+  { name: "Stress Relief & Recovery", primary: ["mobility", "breathing"],      secondary: ["posture", "balance"] },
+  { name: "Strength & Hormone Support", primary: ["upper", "lower", "core"],   secondary: ["posture"] },
+  { name: "Balance & Stability",    primary: ["balance", "core", "lower"],     secondary: ["mobility"] },
+  { name: "Restore & Breathe",      primary: ["breathing", "mobility", "cooldown"], secondary: ["pelvic"] },
 ];
 
 // ============================================================
@@ -977,31 +980,29 @@ function buildTitle(
   const primarySymptom = symptoms[0];
 
   const symptomTitles: Record<string, string> = {
-    "Hot flashes":    "Cooling & Calm",
-    "Poor sleep":     "Sleep Recovery",
-    "Weight gain":    "Metabolism Boost",
-    "Low energy":     "Energy Activation",
-    "Joint pain":     "Joint Ease",
-    "Bloating":       "Digestive Flow",
-    "Back pain":      "Back Relief",
-    "Mood swings":    "Mood Balance",
-    "Low confidence": "Confidence Builder",
-    "Incontinence":   "Bladder Control",
-    "Pelvic prolapse": "Pelvic Support",
+    "Irregular cycles":  "Cycle Balance",
+    "PCOS symptoms":     "PCOS Support",
+    "Stress & anxiety":  "Stress Relief",
+    "Low energy":        "Energy Activation",
+    "Poor sleep":        "Sleep Recovery",
+    "Inflammation":      "Anti-Inflammatory Flow",
+    "Weight concerns":   "Healthy Weight",
+    "Hormonal acne":     "Hormone Harmony",
+    "Endometriosis":     "Endo Relief",
+    "Thyroid issues":    "Thyroid Support",
   };
 
   const symptomDescs: Record<string, string> = {
-    "Hot flashes":    "Breathing techniques and gentle movement to regulate body temperature and calm the nervous system.",
-    "Poor sleep":     "Evening-friendly exercises that prepare your body for deep, restorative sleep.",
-    "Weight gain":    "Metabolism-boosting strength work combined with movement that targets stubborn areas.",
-    "Low energy":     "Energizing movements that wake up your body without exhausting it.",
-    "Joint pain":     "Gentle mobility work that lubricates joints and reduces stiffness safely.",
-    "Bloating":       "Twists and breathing that support digestion and reduce abdominal discomfort.",
-    "Back pain":      "Core stabilization and mobility to relieve and prevent back pain.",
-    "Mood swings":    "Mindful movement and breathing to stabilize mood and reduce stress hormones.",
-    "Low confidence": "Posture-building and strength exercises that help you stand taller and feel powerful.",
-    "Incontinence":   "Evidence-based pelvic floor training with Knack technique and endurance holds to restore bladder control and prevent leakage.",
-    "Pelvic prolapse": "Hypopressive breathing, pelvic floor strengthening and gravity-assisted positions to support pelvic organs and reduce prolapse symptoms.",
+    "Irregular cycles":  "Gentle movement and breathwork to support cycle regularity and reproductive blood flow.",
+    "PCOS symptoms":     "Insulin-balancing movement with stress reduction to support ovarian function.",
+    "Stress & anxiety":  "Cortisol-lowering breathwork and gentle movement to protect fertility hormones.",
+    "Low energy":        "Energizing movements that wake up your body without exhausting it.",
+    "Poor sleep":        "Evening-friendly exercises that prepare your body for deep, restorative sleep.",
+    "Inflammation":      "Anti-inflammatory mobility and breathing to reduce systemic inflammation.",
+    "Weight concerns":   "Balanced strength work to support optimal BMI for conception.",
+    "Hormonal acne":     "Hormone-balancing movement and stress reduction for clearer skin.",
+    "Endometriosis":     "Pain-reducing gentle movement and anti-inflammatory breathwork.",
+    "Thyroid issues":    "Gentle movement and breathing to support thyroid and metabolic function.",
   };
 
   const base = primarySymptom && symptomTitles[primarySymptom]
@@ -1025,9 +1026,9 @@ export function buildPlan(
   const {
     symptoms = [],
     severity = {},
-    goal = "tone",
+    goal = "conception",
     activity = "light",
-    age = 48,
+    age = 31,
     time = "20 min",
     sleep = 5,
   } = profile;
@@ -1076,10 +1077,10 @@ export function buildPlan(
   const warmups = pickExercises(["warmup"], [1], 1, daySeed, used);
   for (const e of warmups) { exercises.push(e); used.add(e.name); }
 
-  // 2. If poor sleep or hot flashes are severe, add breathing early
+  // 2. If stress or poor sleep are severe, add breathing early
   if (
     (symptoms.includes("Poor sleep") && sleep <= 4) ||
-    (symptoms.includes("Hot flashes") && (severity["Hot flashes"] || 3) >= 4)
+    (symptoms.includes("Stress & anxiety") && (severity["Stress & anxiety"] || 3) >= 4)
   ) {
     const breathe = pickExercises(["breathing"], [1], 1, daySeed + 1, used);
     for (const e of breathe) { exercises.push(e); used.add(e.name); }
@@ -1133,9 +1134,9 @@ function loadProfile(): Partial<UserProfile> {
     return {
       symptoms: data.symptoms || [],
       severity: data.severity || {},
-      goal: data.goal || "tone",
+      goal: data.goal || "conception",
       activity: data.activity || "light",
-      age: Number(data.age) || 48,
+      age: Number(data.age) || 31,
       time: data.time || "20 min",
       sleep: Number(data.sleep) || 5,
       confidence: Number(data.confidence) || 5,
