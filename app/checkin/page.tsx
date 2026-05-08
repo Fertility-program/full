@@ -14,14 +14,14 @@ export default function CheckinPage() {
   const [symptoms, setSymptoms] = useState<string[]>([]);
 
   const options = [
-    "Hot flashes",
+    "Irregular cycles",
+    "PCOS symptoms",
+    "Stress & anxiety",
     "Poor sleep",
-    "Joint pain",
-    "Bloating",
-    "Low mood",
     "Low energy",
-    "Incontinence",
-    "Pelvic pressure",
+    "Inflammation",
+    "Hormonal acne",
+    "Bloating",
   ];
 
   function toggle(item: string) {

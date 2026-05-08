@@ -58,17 +58,17 @@ type DailySupp = {
 };
 
 const DAILY_SUPPLEMENTS: DailySupp[] = [
+  { name: "Folate (Methylfolate)", icon: "🌿", dose: "400–800mcg", timing: "With breakfast", priority: "essential", symptoms: [] },
+  { name: "CoQ10 (Ubiquinol)", icon: "🥚", dose: "200–600mg", timing: "With breakfast", priority: "essential", symptoms: ["Irregular cycles", "PCOS symptoms"] },
   { name: "Vitamin D3", icon: "☀️", dose: "2,000–4,000 IU", timing: "With breakfast", priority: "essential", symptoms: [] },
-  { name: "Magnesium Glycinate", icon: "🌙", dose: "300–400mg", timing: "Before bed", priority: "essential", symptoms: ["Poor sleep", "Joint pain", "Mood swings", "Incontinence"] },
-  { name: "Omega-3 (EPA/DHA)", icon: "🐟", dose: "1,000–2,000mg", timing: "With meal", priority: "essential", symptoms: ["Joint pain", "Hot flashes", "Mood swings"] },
-  { name: "Calcium", icon: "🦴", dose: "500–600mg", timing: "2× with meals", priority: "essential", symptoms: ["Joint pain", "Back pain"] },
-  { name: "Vitamin B Complex", icon: "⚡", dose: "1 capsule", timing: "With breakfast", priority: "recommended", symptoms: ["Low energy", "Mood swings", "Low confidence"] },
-  { name: "Ashwagandha", icon: "🌿", dose: "300–600mg", timing: "Morning or evening", priority: "recommended", symptoms: ["Poor sleep", "Mood swings", "Hot flashes", "Low confidence"] },
-  { name: "Vitamin K2 (MK-7)", icon: "🥬", dose: "100–200mcg", timing: "With Vitamin D3", priority: "recommended", symptoms: [] },
-  { name: "Probiotics", icon: "🦠", dose: "10–30B CFU", timing: "Empty stomach", priority: "recommended", symptoms: ["Bloating", "Mood swings", "Weight gain"] },
-  { name: "Vitamin C", icon: "🍊", dose: "500–1,000mg", timing: "With breakfast", priority: "recommended", symptoms: ["Pelvic prolapse", "Incontinence", "Joint pain"] },
-  { name: "Collagen Peptides", icon: "✨", dose: "10–15g", timing: "Morning, in water or smoothie", priority: "recommended", symptoms: ["Pelvic prolapse", "Incontinence", "Joint pain"] },
-  { name: "Zinc", icon: "🔩", dose: "15–30mg", timing: "With dinner", priority: "recommended", symptoms: ["Pelvic prolapse", "Low energy", "Incontinence"] },
+  { name: "Omega-3 (DHA/EPA)", icon: "🐟", dose: "1,000–2,000mg", timing: "With meal", priority: "essential", symptoms: ["Inflammation", "Endometriosis", "Stress & anxiety"] },
+  { name: "Iron + Vitamin C", icon: "💪", dose: "18–27mg iron", timing: "Empty stomach or with Vit C", priority: "essential", symptoms: ["Low energy", "Irregular cycles"] },
+  { name: "Myo-Inositol", icon: "🌸", dose: "2,000–4,000mg", timing: "Split AM/PM", priority: "essential", symptoms: ["PCOS symptoms", "Irregular cycles"] },
+  { name: "Magnesium Glycinate", icon: "🌙", dose: "300–400mg", timing: "Before bed", priority: "recommended", symptoms: ["Poor sleep", "Stress & anxiety", "PCOS symptoms"] },
+  { name: "Vitamin B Complex", icon: "⚡", dose: "1 capsule", timing: "With breakfast", priority: "recommended", symptoms: ["Low energy", "Irregular cycles", "Stress & anxiety"] },
+  { name: "Zinc", icon: "🛡️", dose: "15–30mg", timing: "With food", priority: "recommended", symptoms: ["Irregular cycles", "Hormonal acne", "Thyroid issues"] },
+  { name: "Vitamin E", icon: "🌻", dose: "200–400 IU", timing: "With fat-containing meal", priority: "recommended", symptoms: ["Endometriosis", "Inflammation"] },
+  { name: "Probiotics", icon: "🦠", dose: "10–30B CFU", timing: "Empty stomach", priority: "recommended", symptoms: ["Inflammation", "PCOS symptoms", "Hormonal acne"] },
 ];
 
 // Evidence-based herbal teas matched to symptoms
@@ -83,16 +83,16 @@ type DailyTea = {
 };
 
 const DAILY_TEAS: DailyTea[] = [
-  { name: "Sage Tea", icon: "🌿", dose: "1–2 cups", timing: "Morning & afternoon", priority: "essential", symptoms: ["Hot flashes"], evidence: "RCT: reduced hot flash intensity after 1 week (Salvia officinalis)" },
-  { name: "Chamomile Tea", icon: "🌼", dose: "1–2 cups", timing: "Evening, 30 min before bed", priority: "essential", symptoms: ["Poor sleep", "Mood swings"], evidence: "RCT: improved sleep quality and reduced anxiety in menopausal women" },
-  { name: "Green Tea", icon: "🍵", dose: "2–3 cups", timing: "Morning & early afternoon", priority: "essential", symptoms: ["Weight gain", "Low energy"], evidence: "Meta-analysis: -1.2kg weight loss vs placebo over 12 weeks in postmenopausal women" },
-  { name: "Valerian Root Tea", icon: "🌱", dose: "1 cup", timing: "30–60 min before bed", priority: "recommended", symptoms: ["Poor sleep"], evidence: "Systematic review: improves sleep quality without morning drowsiness" },
-  { name: "Red Clover Tea", icon: "🌺", dose: "1–2 cups", timing: "Any time", priority: "recommended", symptoms: ["Hot flashes", "Mood swings"], evidence: "Contains isoflavones (phytoestrogens). Meta-analysis: reduces hot flash frequency" },
-  { name: "Nettle Tea", icon: "🌿", dose: "1–2 cups", timing: "With meals", priority: "recommended", symptoms: ["Low energy", "Joint pain"], evidence: "Rich in iron, calcium, magnesium. Supports bone density and reduces fatigue" },
-  { name: "Peppermint Tea", icon: "🍃", dose: "1–2 cups", timing: "After meals", priority: "recommended", symptoms: ["Bloating", "Hot flashes"], evidence: "Reduces bloating and digestive discomfort. Cooling effect helps hot flashes" },
-  { name: "Ginger Tea", icon: "🫚", dose: "1–2 cups", timing: "Morning or with meals", priority: "recommended", symptoms: ["Joint pain", "Bloating"], evidence: "Anti-inflammatory. RCT: reduces joint pain and stiffness comparable to ibuprofen" },
-  { name: "Hibiscus Tea", icon: "🌺", dose: "1–2 cups", timing: "Any time (cold or hot)", priority: "recommended", symptoms: ["Weight gain", "Hot flashes"], evidence: "Lowers blood pressure, rich in antioxidants. Cooling effect. Supports metabolism" },
-  { name: "Lemon Balm Tea", icon: "🍋", dose: "1–2 cups", timing: "Afternoon or evening", priority: "recommended", symptoms: ["Mood swings", "Poor sleep", "Low confidence"], evidence: "Reduces anxiety and improves mood. Mild sedative effect without drowsiness" },
+  { name: "Red Raspberry Leaf Tea", icon: "🌿", dose: "1–2 cups", timing: "Morning & afternoon", priority: "essential", symptoms: ["Irregular cycles"], evidence: "Traditional uterine tonic. Supports uterine muscle tone and cycle regularity" },
+  { name: "Chamomile Tea", icon: "🌼", dose: "1–2 cups", timing: "Evening, 30 min before bed", priority: "essential", symptoms: ["Poor sleep", "Stress & anxiety"], evidence: "RCT: improved sleep quality and reduced anxiety. Calms nervous system" },
+  { name: "Green Tea", icon: "🍵", dose: "2–3 cups", timing: "Morning & early afternoon", priority: "essential", symptoms: ["Weight concerns", "Low energy", "PCOS symptoms"], evidence: "Antioxidants support egg quality. May improve insulin sensitivity in PCOS" },
+  { name: "Spearmint Tea", icon: "🌱", dose: "2 cups", timing: "Morning & evening", priority: "essential", symptoms: ["PCOS symptoms", "Hormonal acne"], evidence: "RCT: reduces androgens in PCOS. Improves hormonal acne and hirsutism" },
+  { name: "Nettle Tea", icon: "🌿", dose: "1–2 cups", timing: "With meals", priority: "recommended", symptoms: ["Low energy", "Irregular cycles"], evidence: "Rich in iron, calcium, magnesium. Supports blood building and mineral balance" },
+  { name: "Ginger Tea", icon: "🫚", dose: "1–2 cups", timing: "Morning or with meals", priority: "recommended", symptoms: ["Inflammation", "Endometriosis"], evidence: "Anti-inflammatory. Reduces prostaglandins and menstrual pain" },
+  { name: "Rooibos Tea", icon: "🍃", dose: "1–3 cups", timing: "Any time (caffeine-free)", priority: "recommended", symptoms: ["Stress & anxiety", "Inflammation"], evidence: "Rich in antioxidants, caffeine-free. Supports relaxation without affecting sleep" },
+  { name: "Vitex (Chaste Tree) Tea", icon: "🌺", dose: "1 cup", timing: "Morning", priority: "recommended", symptoms: ["Irregular cycles", "PCOS symptoms"], evidence: "Supports LH/FSH balance and progesterone production. Traditional fertility herb" },
+  { name: "Maca Root Tea", icon: "🌱", dose: "1 cup", timing: "Morning (energizing)", priority: "recommended", symptoms: ["Low energy", "Stress & anxiety"], evidence: "Adaptogen that supports hormone balance and energy without stimulating" },
+  { name: "Lemon Balm Tea", icon: "🍋", dose: "1–2 cups", timing: "Afternoon or evening", priority: "recommended", symptoms: ["Stress & anxiety", "Poor sleep"], evidence: "Reduces anxiety and improves mood. Mild sedative effect without drowsiness" },
 ];
 
 function WeeklyMiniProgress({ currentDay }: { currentDay: number }) {
@@ -243,7 +243,7 @@ function WaterTracker({ target }: { target: number }) {
       </div>
 
       <p className="text-[9px] text-[#b98fa1] mt-3 italic">
-        💡 Proper hydration reduces hot flashes, supports joint lubrication, and improves skin elasticity.
+        💡 Proper hydration supports cervical mucus production, hormone transport, and overall reproductive health.
       </p>
     </section>
   );
@@ -272,15 +272,15 @@ function SmartInsights({ day, plan, symptoms }: { day: number; plan: string; sym
     } catch {}
 
     // Symptom based
-    if (symptoms.includes("Hot flashes")) insights.push("🌡️ For hot flashes: sage tea + cooling breath technique. Most women see improvement by week 2.");
-    if (symptoms.includes("Pelvic prolapse")) insights.push("🩺 Pelvic support tip: do your Kegels before getting out of bed, and try legs-up-the-wall for 3 min daily.");
-    if (symptoms.includes("Weight gain")) insights.push("⚖️ Metabolism tip: strength exercises before breakfast can boost fat burning for 24 hours.");
+    if (symptoms.includes("Irregular cycles")) insights.push("📅 For cycle regularity: consistent sleep schedule + myo-inositol + stress reduction. Most women see improvement by cycle 2-3.");
+    if (symptoms.includes("PCOS symptoms")) insights.push("🌿 PCOS tip: spearmint tea twice daily + low-GI meals can help reduce androgens naturally.");
+    if (symptoms.includes("Stress & anxiety")) insights.push("🧘 Cortisol directly impacts fertility. Try 5 min of box breathing before bed tonight.");
 
     // Day-based milestones
     if (day === 7) insights.push("🎉 One week complete! Your body is already adapting. Foundation phase is building your base.");
-    if (day === 14) insights.push("🎉 Two weeks! Most women report better sleep and less stiffness by now.");
+    if (day === 14) insights.push("🎉 Two weeks! Most women report better sleep and more energy by now.");
     if (day === 21) insights.push("🎉 Three weeks — habits are forming! You're in the Strengthen phase now.");
-    if (day === 30) insights.push("👑 30 days! You've completed a full transformation cycle. Incredible dedication.");
+    if (day === 30) insights.push("👑 30 days! You've completed a full cycle of the program. Incredible dedication.");
 
     // Plan countdown
     if (plan === "glow" && day > 23) insights.push(`⏰ ${30 - day} days left in your Glow plan. Make every session count!`);
@@ -509,11 +509,11 @@ export default function DashboardPage() {
 
   const nutrition = useMemo(() => {
     return calculateNutrition({
-      age: Number(data.age) || 48,
+      age: Number(data.age) || 31,
       height: Number(data.height) || 168,
-      weight: Number(data.weight) || 72,
+      weight: Number(data.weight) || 65,
       activity: (data.activity as "sedentary" | "light" | "moderate" | "active") || "light",
-      goal: (data.goal as "fat_loss" | "maintain" | "tone" | "energy") || "tone",
+      goal: (data.goal as "fat_loss" | "maintain" | "tone" | "energy") || "conception",
       symptoms: data.symptoms || [],
     });
   }, [data]);
@@ -534,19 +534,19 @@ export default function DashboardPage() {
 
   const dailyQuote = useMemo(() => {
     const quotes = [
-      "Your body is not broken. It's adapting. And so are you.",
-      "Every small step today builds the woman you'll be tomorrow.",
-      "Strength isn't loud. It's showing up, day after day.",
-      "You're not starting over. You're starting stronger.",
+      "Your body is capable of incredible things. Trust the process.",
+      "Every small step today builds the foundation for new life.",
+      "Nourish your body, calm your mind, trust your journey.",
+      "You're not just waiting. You're actively preparing.",
       "Rest is not giving up. It's powering up.",
-      "The woman who moves her body daily changes her whole life.",
+      "The woman who cares for herself creates space for miracles.",
       "Progress isn't always visible. Trust the process.",
-      "You deserve to feel good in your own skin.",
+      "You deserve to feel good in your own body.",
       "Consistency beats perfection. Always.",
       "Your future self is thanking you right now.",
-      "Menopause is not an ending. It's a powerful new chapter.",
+      "Your fertility journey is a marathon, not a sprint.",
       "You are more resilient than you know.",
-      "Small daily improvements lead to stunning results.",
+      "Small daily improvements lead to beautiful results.",
       "Listen to your body. It knows what it needs.",
       "You showed up today. That's already a win.",
       "Breathe deeply. Move gently. Trust completely.",
@@ -555,11 +555,11 @@ export default function DashboardPage() {
       "Strong women lift each other up. You're one of them.",
       "Today's effort is tomorrow's strength.",
       "Grace over perfection. Always.",
-      "You are writing a comeback story.",
+      "You are writing your own story.",
       "Healing is not linear, but you're moving forward.",
       "One day at a time. One breath at a time.",
       "The strongest thing you can do is take care of yourself.",
-      "You're not too old. You're just getting started.",
+      "Your body is preparing for something beautiful.",
       "Movement is medicine. And you're taking yours daily.",
       "Be proud of how far you've come.",
       "Your body hears everything your mind says. Speak kindly.",
