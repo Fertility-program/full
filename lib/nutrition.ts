@@ -1,12 +1,12 @@
 // ============================================================
-// Veronica Method PERSONALIZED NUTRITION ENGINE
-// Budget-optimized meal plans based on quiz data, symptoms,
-// goals, and calorie needs. Different meals every day.
+// Veronica Bloom PERSONALIZED NUTRITION ENGINE
+// Budget-optimized meal plans based on quiz data, fertility
+// concerns, goals, and calorie needs. Different meals every day.
 // All meals under €7/day total.
 // ============================================================
 
 export type Activity = "sedentary" | "light" | "moderate" | "active";
-export type Goal = "fat_loss" | "maintain" | "tone" | "energy";
+export type Goal = "fat_loss" | "maintain" | "tone" | "energy" | "conception" | "cycle_regulation" | "hormone_balance" | "overall_wellness";
 
 export type UserData = {
   age: number;
@@ -113,24 +113,27 @@ export function calculateNutrition(data: UserData): NutritionResult {
 // ============================================================
 
 const SYMPTOM_TAGS: Record<string, MealTag[]> = {
-  "Hot flashes":    ["cooling", "hormone-balance", "anti-inflammatory"],
-  "Poor sleep":     ["sleep-support", "mood-lift", "anti-inflammatory"],
-  "Weight gain":    ["metabolism", "high-protein", "low-cal"],
-  "Low energy":     ["energy-boost", "high-protein", "iron-rich"],
-  "Joint pain":     ["anti-inflammatory", "joint-support", "bone-strength", "collagen-support"],
-  "Bloating":       ["gut-health", "anti-inflammatory", "low-cal"],
-  "Back pain":      ["anti-inflammatory", "bone-strength", "joint-support"],
-  "Mood swings":    ["mood-lift", "hormone-balance", "gut-health"],
-  "Low confidence": ["energy-boost", "high-protein", "mood-lift"],
-  "Incontinence":   ["pelvic-health", "collagen-support", "anti-inflammatory", "gut-health"],
-  "Pelvic prolapse": ["pelvic-health", "collagen-support", "bone-strength", "high-protein"],
+  "Irregular cycles":  ["hormone-balance", "anti-inflammatory", "iron-rich"],
+  "PCOS symptoms":     ["anti-inflammatory", "hormone-balance", "high-protein", "metabolism"],
+  "Stress & anxiety":  ["mood-lift", "sleep-support", "anti-inflammatory"],
+  "Low energy":        ["energy-boost", "high-protein", "iron-rich"],
+  "Poor sleep":        ["sleep-support", "mood-lift", "anti-inflammatory"],
+  "Inflammation":      ["anti-inflammatory", "gut-health", "hormone-balance"],
+  "Weight concerns":   ["metabolism", "high-protein", "low-cal"],
+  "Hormonal acne":     ["anti-inflammatory", "gut-health", "hormone-balance"],
+  "Endometriosis":     ["anti-inflammatory", "hormone-balance", "iron-rich", "gut-health"],
+  "Thyroid issues":    ["energy-boost", "anti-inflammatory", "iron-rich", "hormone-balance"],
 };
 
 const GOAL_TAGS: Record<string, MealTag[]> = {
-  fat_loss:  ["low-cal", "high-protein", "metabolism"],
-  tone:      ["high-protein", "metabolism", "energy-boost"],
-  energy:    ["energy-boost", "high-protein", "anti-inflammatory"],
-  maintain:  ["hormone-balance", "gut-health", "anti-inflammatory"],
+  conception:         ["hormone-balance", "iron-rich", "anti-inflammatory", "high-protein"],
+  cycle_regulation:   ["hormone-balance", "anti-inflammatory", "gut-health"],
+  hormone_balance:    ["hormone-balance", "anti-inflammatory", "gut-health", "mood-lift"],
+  overall_wellness:   ["anti-inflammatory", "energy-boost", "high-protein"],
+  fat_loss:           ["low-cal", "high-protein", "metabolism"],
+  tone:               ["high-protein", "metabolism", "energy-boost"],
+  energy:             ["energy-boost", "high-protein", "anti-inflammatory"],
+  maintain:           ["hormone-balance", "gut-health", "anti-inflammatory"],
 };
 
 // ============================================================
