@@ -318,27 +318,27 @@ html.dark .soft-card:hover {
   border-color: rgba(201, 160, 240, 0.4);
 }
 
-/* Buttons — ljubičasta sa zlatnim hover */
+/* Buttons — teal sa zlatnim hover */
 html.dark .btn-primary {
-  background: linear-gradient(135deg, #9b6fd4, #7c4fbf);
+  background: linear-gradient(135deg, #3d9e90, #2d7a6e);
   color: #fff !important;
-  box-shadow: 0 6px 20px rgba(124, 79, 191, 0.35);
+  box-shadow: 0 6px 20px rgba(61, 158, 144, 0.35);
 }
 
 html.dark .btn-primary:hover {
-  background: linear-gradient(135deg, #b080e8, #9060d0);
-  box-shadow: 0 8px 24px rgba(140, 100, 200, 0.4);
+  background: linear-gradient(135deg, #4db8a8, #3d9e90);
+  box-shadow: 0 8px 24px rgba(77, 184, 168, 0.4);
 }
 
 html.dark .btn-outline {
-  border-color: rgba(201, 160, 240, 0.3);
-  background: rgba(22, 20, 35, 0.6);
+  border-color: rgba(109, 212, 197, 0.3);
+  background: rgba(18, 35, 30, 0.6);
   color: var(--text-main);
 }
 
 html.dark .btn-outline:hover {
-  background: rgba(201, 160, 240, 0.1);
-  border-color: rgba(201, 160, 240, 0.5);
+  background: rgba(109, 212, 197, 0.1);
+  border-color: rgba(109, 212, 197, 0.5);
 }
 
 /* Typography */
@@ -347,35 +347,35 @@ html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark 
 }
 
 /* Remap hardcoded light colors to dark equivalents — pojačan kontrast */
-html.dark .text-\[\#4a3f44\] { color: #edeaf5 !important; }
-html.dark .text-\[\#6f5a62\] { color: #c0bdd0 !important; }
-html.dark .text-\[\#7b6870\] { color: #b0adc0 !important; }
-html.dark .text-\[\#3d2b32\] { color: #e8e5f2 !important; }
-html.dark .text-\[\#8f5d6f\] { color: #d0b0f0 !important; }
-html.dark .text-\[\#7f5665\] { color: #d0b0f0 !important; }
-html.dark .text-\[\#2e1f26\] { color: #edeaf5 !important; }
-html.dark .text-\[\#5a4550\] { color: #b0adc0 !important; }
+html.dark .text-\[\#4a3f44\] { color: #eaf5f2 !important; }
+html.dark .text-\[\#6f5a62\] { color: #b5c8c4 !important; }
+html.dark .text-\[\#7b6870\] { color: #a8c0bc !important; }
+html.dark .text-\[\#3d2b32\] { color: #e5f2ef !important; }
+html.dark .text-\[\#8f5d6f\] { color: #7dd4c5 !important; }
+html.dark .text-\[\#7f5665\] { color: #7dd4c5 !important; }
+html.dark .text-\[\#2e1f26\] { color: #eaf5f2 !important; }
+html.dark .text-\[\#5a4550\] { color: #a8c0bc !important; }
 
-/* Accent colors → ljubičasta umesto roza */
-html.dark .text-\[\#d8a7b5\] { color: #c9a0f0 !important; }
-html.dark .text-\[\#b98fa1\] { color: #b8a0d8 !important; }
-html.dark .text-\[\#d6a7b1\] { color: #c9a0f0 !important; }
-html.dark .text-\[\#b38d98\] { color: #b8a0d8 !important; }
-html.dark .text-\[\#b87d8e\] { color: #c9a0f0 !important; }
-html.dark .text-\[\#c4909e\] { color: #c9a0f0 !important; }
+/* Accent colors → teal umesto roza */
+html.dark .text-\[\#d8a7b5\] { color: #6dd4c5 !important; }
+html.dark .text-\[\#b98fa1\] { color: #5cc4b5 !important; }
+html.dark .text-\[\#d6a7b1\] { color: #6dd4c5 !important; }
+html.dark .text-\[\#b38d98\] { color: #5cc4b5 !important; }
+html.dark .text-\[\#b87d8e\] { color: #6dd4c5 !important; }
+html.dark .text-\[\#c4909e\] { color: #6dd4c5 !important; }
 
-/* Accent backgrounds → tamna ljubičasta */
-html.dark .bg-\[\#d8a7b5\] { background-color: #7c4fbf !important; }
-html.dark .bg-\[\#d9a8b8\] { background-color: #7c4fbf !important; }
-html.dark .bg-\[\#d6a7b1\] { background-color: #7c4fbf !important; }
+/* Accent backgrounds → tamna teal */
+html.dark .bg-\[\#d8a7b5\] { background-color: #2d7a6e !important; }
+html.dark .bg-\[\#d9a8b8\] { background-color: #2d7a6e !important; }
+html.dark .bg-\[\#d6a7b1\] { background-color: #2d7a6e !important; }
 
-/* Soft backgrounds → tamna ljubičasta tint */
+/* Soft backgrounds → tamna teal tint */
 html.dark .bg-\[\#fdf2f5\], html.dark .bg-\[\#fdf2f5\]\/80, html.dark .bg-\[\#fdf2f5\]\/60, html.dark .bg-\[\#fdf2f5\]\/50 {
-  background-color: rgba(30, 25, 50, 0.6) !important;
+  background-color: rgba(20, 40, 35, 0.6) !important;
 }
 
-html.dark .bg-\[\#fff4f7\] { background-color: rgba(30, 25, 50, 0.5) !important; }
-html.dark .bg-\[\#fff1f5\] { background-color: rgba(30, 25, 50, 0.5) !important; }
+html.dark .bg-\[\#fff4f7\] { background-color: rgba(20, 40, 35, 0.5) !important; }
+html.dark .bg-\[\#fff1f5\] { background-color: rgba(20, 40, 35, 0.5) !important; }
 
 /* White backgrounds → tamna */
 html.dark .bg-white, html.dark .bg-white\/40, html.dark .bg-white\/50, html.dark .bg-white\/60, html.dark .bg-white\/75, html.dark .bg-white\/90 {

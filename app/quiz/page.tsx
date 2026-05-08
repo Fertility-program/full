@@ -5,26 +5,22 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 type QuizData = {
-  // Personal
   name: string;
-  // Nutrition-critical fields
   age: string;
   height: string;
   weight: string;
   activity: string;
   goal: string;
-  
-  // Program-critical fields
   time: string;
   symptoms: string[];
   severity: Record<string, number>;
-  confidence: number;
-  sleep: number;
+  cycleRegularity: string;
+  ttcDuration: string;
 };
 
 export default function QuizPage() {
   return (
-    <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center"><div className="animate-pulse text-[#b98fa1]">Loading...</div></div>}>
+    <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center"><div className="animate-pulse text-[#6aab9f]">Loading...</div></div>}>
       <QuizContent />
     </Suspense>
   );
@@ -34,7 +30,6 @@ function QuizContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // Track affiliate and referral codes
   useEffect(() => {
     const aff = searchParams.get("aff");
     const ref = searchParams.get("ref");
@@ -46,19 +41,19 @@ function QuizContent() {
 
   const [form, setForm] = useState<QuizData>({
     name: "",
-    age: "48",
+    age: "31",
     height: "168",
-    weight: "72",
+    weight: "65",
     activity: "light",
-    goal: "tone",
+    goal: "conception",
     time: "20 min",
     symptoms: [],
     severity: {},
-    confidence: 5,
-    sleep: 5,
+    cycleRegularity: "somewhat",
+    ttcDuration: "less_6",
   });
 
-  const totalSteps = 7; // Povećali smo broj koraka za biometriju
+  const totalSteps = 7;
 
   const activityOptions = [
     { id: "sedentary", label: "Sedentary", desc: "Office job, little exercise" },
@@ -68,35 +63,27 @@ function QuizContent() {
   ];
 
   const goals = [
-    { id: "fat_loss", label: "Lose belly fat" },
-    { id: "tone", label: "Tone & Sculpt" },
-    { id: "energy", label: "Boost Energy" },
-    { id: "maintain", label: "Hormone Balance" },
+    { id: "conception", label: "Prepare for conception" },
+    { id: "cycle_regulation", label: "Regulate my cycle" },
+    { id: "hormone_balance", label: "Balance hormones (PCOS/endo)" },
+    { id: "overall_wellness", label: "Overall reproductive wellness" },
   ];
 
   const symptomOptions = [
-    "Hot flashes", "Poor sleep", "Weight gain", "Low energy", 
-    "Joint pain", "Bloating", "Back pain", "Mood swings",
-    "Incontinence", "Pelvic prolapse"
+    "Irregular cycles", "PCOS symptoms", "Stress & anxiety", "Low energy",
+    "Poor sleep", "Inflammation", "Weight concerns", "Hormonal acne",
+    "Endometriosis", "Thyroid issues"
   ];
 
   function next() {
-    // Validacija (opciono, ali dobro za UX)
     if (step === 1 && (!form.age || !form.height || !form.weight)) return;
-    
-    if (step < totalSteps) {
-      setStep(step + 1);
-      return;
-    }
-
+    if (step < totalSteps) { setStep(step + 1); return; }
     localStorage.setItem("quizData", JSON.stringify(form));
     localStorage.setItem("day", "1");
     router.push("/onboarding");
   }
 
-  function back() {
-    if (step > 1) setStep(step - 1);
-  }
+  function back() { if (step > 1) setStep(step - 1); }
 
   function toggleSymptom(item: string) {
     if (form.symptoms.includes(item)) {
@@ -105,11 +92,7 @@ function QuizContent() {
       delete sev[item];
       setForm({ ...form, symptoms: nextSymptoms, severity: sev });
     } else {
-      setForm({
-        ...form,
-        symptoms: [...form.symptoms, item],
-        severity: { ...form.severity, [item]: 3 },
-      });
+      setForm({ ...form, symptoms: [...form.symptoms, item], severity: { ...form.severity, [item]: 3 } });
     }
   }
 
@@ -117,66 +100,40 @@ function QuizContent() {
 
   return (
     <main className="max-w-4xl mx-auto px-6 py-14">
-      {/* HEADER */}
-      <section className="soft-card p-8 mb-8 border border-[#f0e3e8]">
-        <p className="uppercase tracking-[0.25em] text-xs text-[#b98fa1] mb-4 font-bold">
+      <section className="soft-card p-8 mb-8 border border-[#c2ddd8]">
+        <p className="uppercase tracking-[0.25em] text-xs text-[#6aab9f] mb-4 font-bold">
           Step {step} of {totalSteps}
         </p>
-
-        <div className="h-2 bg-white rounded-full overflow-hidden border border-[#f0e3e8]">
-          <div
-            className="h-full bg-[#d6a7b1] transition-all duration-500"
-            style={{ width: `${progress}%` }}
-          />
+        <div className="h-2 bg-white rounded-full overflow-hidden border border-[#c2ddd8]">
+          <div className="h-full bg-[#5ba89d] transition-all duration-500" style={{ width: `${progress}%` }} />
         </div>
       </section>
 
       {/* STEP 1: NAME + BIOMETRICS */}
       {step === 1 && (
         <section className="soft-card p-8 animate-in fade-in slide-in-from-bottom-4">
-          <h2 className="text-3xl text-[#4a3f44] mb-8">Tell us about yourself</h2>
+          <h2 className="text-3xl text-[#2d5a52] mb-8">Tell us about yourself</h2>
           <div className="grid gap-6">
             <div>
-              <label className="block text-sm text-[#b98fa1] mb-2 font-bold uppercase tracking-widest">Your First Name</label>
-              <input 
-                type="text" 
-                value={form.name}
-                onChange={(e) => setForm({...form, name: e.target.value})}
-                className="w-full p-4 rounded-2xl border border-[#f0e3e8] outline-none focus:border-[#d6a7b1]"
-                placeholder="e.g. Maria"
-                autoFocus
-              />
+              <label className="block text-sm text-[#6aab9f] mb-2 font-bold uppercase tracking-widest">Your First Name</label>
+              <input type="text" value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}
+                className="w-full p-4 rounded-2xl border border-[#c2ddd8] outline-none focus:border-[#5ba89d]" placeholder="e.g. Ana" autoFocus />
             </div>
             <div>
-              <label className="block text-sm text-[#b98fa1] mb-2 font-bold uppercase tracking-widest">Age</label>
-              <input 
-                type="number" 
-                value={form.age}
-                onChange={(e) => setForm({...form, age: e.target.value})}
-                className="w-full p-4 rounded-2xl border border-[#f0e3e8] outline-none focus:border-[#d6a7b1]"
-                placeholder="e.g. 48"
-              />
+              <label className="block text-sm text-[#6aab9f] mb-2 font-bold uppercase tracking-widest">Age</label>
+              <input type="number" value={form.age} onChange={(e) => setForm({...form, age: e.target.value})}
+                className="w-full p-4 rounded-2xl border border-[#c2ddd8] outline-none focus:border-[#5ba89d]" placeholder="e.g. 31" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm text-[#b98fa1] mb-2 font-bold uppercase tracking-widest">Height (cm)</label>
-                <input 
-                  type="number" 
-                  value={form.height}
-                  onChange={(e) => setForm({...form, height: e.target.value})}
-                  className="w-full p-4 rounded-2xl border border-[#f0e3e8] outline-none focus:border-[#d6a7b1]"
-                  placeholder="168"
-                />
+                <label className="block text-sm text-[#6aab9f] mb-2 font-bold uppercase tracking-widest">Height (cm)</label>
+                <input type="number" value={form.height} onChange={(e) => setForm({...form, height: e.target.value})}
+                  className="w-full p-4 rounded-2xl border border-[#c2ddd8] outline-none focus:border-[#5ba89d]" placeholder="168" />
               </div>
               <div>
-                <label className="block text-sm text-[#b98fa1] mb-2 font-bold uppercase tracking-widest">Weight (kg)</label>
-                <input 
-                  type="number" 
-                  value={form.weight}
-                  onChange={(e) => setForm({...form, weight: e.target.value})}
-                  className="w-full p-4 rounded-2xl border border-[#f0e3e8] outline-none focus:border-[#d6a7b1]"
-                  placeholder="72"
-                />
+                <label className="block text-sm text-[#6aab9f] mb-2 font-bold uppercase tracking-widest">Weight (kg)</label>
+                <input type="number" value={form.weight} onChange={(e) => setForm({...form, weight: e.target.value})}
+                  className="w-full p-4 rounded-2xl border border-[#c2ddd8] outline-none focus:border-[#5ba89d]" placeholder="65" />
               </div>
             </div>
           </div>
@@ -186,18 +143,13 @@ function QuizContent() {
       {/* STEP 2: ACTIVITY LEVEL */}
       {step === 2 && (
         <section className="soft-card p-8 animate-in fade-in">
-          <h2 className="text-3xl text-[#4a3f44] mb-8">How active are you?</h2>
+          <h2 className="text-3xl text-[#2d5a52] mb-8">How active are you?</h2>
           <div className="grid gap-4">
             {activityOptions.map((opt) => (
-              <button
-                key={opt.id}
-                onClick={() => setForm({ ...form, activity: opt.id })}
-                className={`p-6 rounded-3xl border text-left transition-all ${
-                  form.activity === opt.id ? "bg-[#fdf2f5] border-[#d6a7b1] shadow-sm" : "bg-white border-[#f0e3e8]"
-                }`}
-              >
-                <div className="font-semibold text-[#4a3f44]">{opt.label}</div>
-                <div className="text-sm text-[#7b6870]">{opt.desc}</div>
+              <button key={opt.id} onClick={() => setForm({ ...form, activity: opt.id })}
+                className={`p-6 rounded-3xl border text-left transition-all ${form.activity === opt.id ? "bg-[#f0faf8] border-[#5ba89d] shadow-sm" : "bg-white border-[#c2ddd8]"}`}>
+                <div className="font-semibold text-[#2d5a52]">{opt.label}</div>
+                <div className="text-sm text-[#5a7570]">{opt.desc}</div>
               </button>
             ))}
           </div>
@@ -207,16 +159,11 @@ function QuizContent() {
       {/* STEP 3: GOALS */}
       {step === 3 && (
         <section className="soft-card p-8 animate-in fade-in">
-          <h2 className="text-3xl text-[#4a3f44] mb-8">Your primary goal?</h2>
+          <h2 className="text-3xl text-[#2d5a52] mb-8">Your primary goal?</h2>
           <div className="grid gap-4">
             {goals.map((g) => (
-              <button
-                key={g.id}
-                onClick={() => setForm({ ...form, goal: g.id })}
-                className={`p-6 rounded-3xl border text-left transition-all ${
-                  form.goal === g.id ? "bg-[#fdf2f5] border-[#d6a7b1]" : "bg-white border-[#f0e3e8]"
-                }`}
-              >
+              <button key={g.id} onClick={() => setForm({ ...form, goal: g.id })}
+                className={`p-6 rounded-3xl border text-left transition-all ${form.goal === g.id ? "bg-[#f0faf8] border-[#5ba89d]" : "bg-white border-[#c2ddd8]"}`}>
                 {g.label}
               </button>
             ))}
@@ -224,20 +171,15 @@ function QuizContent() {
         </section>
       )}
 
-      {/* STEP 4: SYMPTOMS (Multi-select) */}
+      {/* STEP 4: SYMPTOMS */}
       {step === 4 && (
         <section className="soft-card p-8 animate-in fade-in">
-          <h2 className="text-3xl text-[#4a3f44] mb-8">What are you feeling?</h2>
+          <h2 className="text-3xl text-[#2d5a52] mb-8">What concerns do you have?</h2>
           <div className="grid md:grid-cols-2 gap-3">
             {symptomOptions.map((s) => (
-              <button
-                key={s}
-                onClick={() => toggleSymptom(s)}
-                className={`p-5 rounded-2xl border text-left transition-all ${
-                  form.symptoms.includes(s) ? "bg-[#fdf2f5] border-[#d6a7b1]" : "bg-white border-[#f0e3e8]"
-                }`}
-              >
-                {form.symptoms.includes(s) ? "✨ " : ""}{s}
+              <button key={s} onClick={() => toggleSymptom(s)}
+                className={`p-5 rounded-2xl border text-left transition-all ${form.symptoms.includes(s) ? "bg-[#f0faf8] border-[#5ba89d]" : "bg-white border-[#c2ddd8]"}`}>
+                {form.symptoms.includes(s) ? "🌸 " : ""}{s}
               </button>
             ))}
           </div>
@@ -247,69 +189,80 @@ function QuizContent() {
       {/* STEP 5: INTENSITY */}
       {step === 5 && (
         <section className="soft-card p-8 animate-in fade-in">
-          <h2 className="text-3xl text-[#4a3f44] mb-8">Symptom Intensity</h2>
+          <h2 className="text-3xl text-[#2d5a52] mb-8">How severe are these concerns?</h2>
           <div className="space-y-8">
             {form.symptoms.map((s) => (
               <div key={s}>
-                <div className="flex justify-between text-sm mb-2 font-bold text-[#4a3f44] uppercase tracking-widest">
-                  <span>{s}</span>
-                  <span>{form.severity[s]}/5</span>
+                <div className="flex justify-between text-sm mb-2 font-bold text-[#2d5a52] uppercase tracking-widest">
+                  <span>{s}</span><span>{form.severity[s]}/5</span>
                 </div>
-                <input
-                  type="range" min="1" max="5"
-                  value={form.severity[s] || 3}
-                  onChange={(e) => setForm({
-                    ...form,
-                    severity: { ...form.severity, [s]: Number(e.target.value) }
-                  })}
-                  className="w-full accent-[#d6a7b1]"
-                />
+                <input type="range" min="1" max="5" value={form.severity[s] || 3}
+                  onChange={(e) => setForm({ ...form, severity: { ...form.severity, [s]: Number(e.target.value) } })}
+                  className="w-full accent-[#5ba89d]" />
               </div>
             ))}
           </div>
         </section>
       )}
 
-      {/* STEP 6: TIME & LIFESTYLE */}
+      {/* STEP 6: CYCLE & LIFESTYLE */}
       {step === 6 && (
         <section className="soft-card p-8 animate-in fade-in">
-          <h2 className="text-3xl text-[#4a3f44] mb-8">Lifestyle Snapshot</h2>
+          <h2 className="text-3xl text-[#2d5a52] mb-8">Cycle & Lifestyle</h2>
           <div className="space-y-8">
             <div>
-              <p className="mb-4 text-[#5a4550]">Training time available per day?</p>
-              <div className="flex gap-4">
-                {["10 min", "20 min", "30 min"].map(t => (
-                  <button key={t} onClick={() => setForm({...form, time: t})}
-                    className={`flex-1 py-3 rounded-xl border ${form.time === t ? "bg-[#a8687a] text-white border-[#a8687a]" : "bg-white text-[#5a4550] border-[#f0e3e8]"}`}
-                  >
-                    {t}
+              <p className="mb-4 text-[#3a5550]">How regular is your cycle?</p>
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { id: "regular", label: "Regular (25-35 days)" },
+                  { id: "somewhat", label: "Somewhat irregular" },
+                  { id: "irregular", label: "Very irregular / absent" },
+                ].map(opt => (
+                  <button key={opt.id} onClick={() => setForm({...form, cycleRegularity: opt.id})}
+                    className={`py-3 px-2 rounded-xl border text-xs ${form.cycleRegularity === opt.id ? "bg-[#5ba89d] text-white border-[#5ba89d]" : "bg-white text-[#3a5550] border-[#c2ddd8]"}`}>
+                    {opt.label}
                   </button>
                 ))}
               </div>
             </div>
             <div>
-              <p className="mb-2 text-[#5a4550]">Sleep Quality ({form.sleep}/10)</p>
-              <input type="range" min="1" max="10" value={form.sleep} onChange={(e) => setForm({...form, sleep: Number(e.target.value)})} className="w-full accent-[#a8687a]" />
+              <p className="mb-4 text-[#3a5550]">How long have you been trying to conceive?</p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { id: "not_yet", label: "Not yet / planning" },
+                  { id: "less_6", label: "Less than 6 months" },
+                  { id: "6_12", label: "6-12 months" },
+                  { id: "over_12", label: "Over 12 months" },
+                ].map(opt => (
+                  <button key={opt.id} onClick={() => setForm({...form, ttcDuration: opt.id})}
+                    className={`py-3 px-2 rounded-xl border text-xs ${form.ttcDuration === opt.id ? "bg-[#5ba89d] text-white border-[#5ba89d]" : "bg-white text-[#3a5550] border-[#c2ddd8]"}`}>
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
             </div>
             <div>
-              <p className="mb-2 text-[#5a4550]">Body Confidence ({form.confidence}/10)</p>
-              <input type="range" min="1" max="10" value={form.confidence} onChange={(e) => setForm({...form, confidence: Number(e.target.value)})} className="w-full accent-[#a8687a]" />
-              <div className="flex justify-between text-[10px] text-[#7b6870] mt-1">
-                <span>Very low</span>
-                <span>Very confident</span>
+              <p className="mb-4 text-[#3a5550]">Training time available per day?</p>
+              <div className="flex gap-4">
+                {["10 min", "20 min", "30 min"].map(t => (
+                  <button key={t} onClick={() => setForm({...form, time: t})}
+                    className={`flex-1 py-3 rounded-xl border ${form.time === t ? "bg-[#5ba89d] text-white border-[#5ba89d]" : "bg-white text-[#3a5550] border-[#c2ddd8]"}`}>
+                    {t}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* STEP 7: FINAL (Confirmation) */}
+      {/* STEP 7: FINAL */}
       {step === 7 && (
         <section className="soft-card p-10 text-center animate-in zoom-in-95">
-          <div className="text-6xl mb-6">🥗</div>
-          <h2 className="text-3xl text-[#4a3f44] mb-4">Almost there!</h2>
-          <p className="text-[#7b6870] max-w-sm mx-auto mb-8">
-            We've calculated your metabolic rate and budget-friendly hormone menu. Ready to see your dashboard?
+          <div className="text-6xl mb-6">🌸</div>
+          <h2 className="text-3xl text-[#2d5a52] mb-4">Almost there!</h2>
+          <p className="text-[#5a7570] max-w-sm mx-auto mb-8">
+            We&apos;ve calculated your personalized fertility plan based on your cycle, goals and lifestyle. Ready to see your dashboard?
           </p>
         </section>
       )}
