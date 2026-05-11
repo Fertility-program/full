@@ -76,7 +76,7 @@ async function registerPushSubscription() {
     const registration = await navigator.serviceWorker.ready;
 
     // VAPID public key za push notifikacije
-    const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "BLgjeiWczuA6CbHAejbK1FIGb1o1jhrpYnvJOAVgfuhu072cBRpe-LHJaWpqqGW1v3YGFTRt2K-ChqLITn1mLSc";
+    const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "";
     if (!vapidKey) {
       console.log("[notifications] VAPID key not configured — skipping push registration");
       return;
