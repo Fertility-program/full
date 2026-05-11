@@ -34,7 +34,7 @@ export async function createCheckout(
     cancelUrl?: string;
   }
 ) {
-  const storeId = process.env.LEMONSQUEEZY_STORE_ID || "359969";
+  const storeId = process.env.LEMONSQUEEZY_STORE_ID || "";
 
   const body = {
     data: {

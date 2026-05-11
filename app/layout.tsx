@@ -57,7 +57,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon-192.png" />
         <link rel="alternate" type="application/rss+xml" title="Veronica Bloom Blog" href="/feed.xml" />
-        <link rel="dns-prefetch" href="https://yxzttbqkamyrfabdhgau.supabase.co" />
+        <link rel="dns-prefetch" href={process.env.NEXT_PUBLIC_SUPABASE_URL || ""} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
