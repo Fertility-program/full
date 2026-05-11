@@ -150,15 +150,15 @@ export default function AffiliatePage() {
             {[
               {
                 platform: "Instagram Story",
-                text: `🌸 I found this amazing wellness app for women 40+. Personalized exercises, meal plans under €7/day, and it actually works!\n\nTry it free → ${affiliateLink}`,
+                text: `🌸 I found this amazing fertility wellness app for couples TTC. Cycle-synced exercises, meal plans under €7/day, and a partner dashboard for him too!\n\nTry it free → ${affiliateLink}`,
               },
               {
                 platform: "Facebook Post",
-                text: `Ladies, if you're dealing with menopause symptoms — hot flashes, sleep issues, joint pain — check out Veronica Method. I've been using it and the daily routines are gentle but effective. Plus the meal plans are SO budget-friendly.\n\nFree assessment here: ${affiliateLink}`,
+                text: `If you're trying to conceive, check out Veronica Bloom. It has cycle-synced exercises, fertility nutrition, supplement tracking, and even a male fertility program for your partner. The couple mode is amazing for staying motivated together.\n\nFree assessment here: ${affiliateLink}`,
               },
               {
                 platform: "WhatsApp Message",
-                text: `Hey! Have you heard of Veronica Method? It's a wellness program for women our age. Personalized exercises and meals for under €7/day. I think you'd love it: ${affiliateLink}`,
+                text: `Hey! Have you heard of Veronica Bloom? It's a fertility wellness app for couples TTC. Personalized exercises, meals under €7/day, and a 74-day program for him too. Try it free: ${affiliateLink}`,
               },
             ].map((t) => (
               <div key={t.platform} className="p-4 rounded-xl bg-white border border-[#f0e3e8]">
@@ -223,10 +223,10 @@ export default function AffiliatePage() {
           Partner Program
         </p>
         <h1 className="text-4xl mb-3 text-[#4a3f44]">
-          Become a Veronica Method Affiliate
+          Become a Veronica Bloom Affiliate
         </h1>
         <p className="text-[#7b6870] max-w-xl mx-auto">
-          Earn 25% commission for every woman you help discover Veronica Method.
+          Earn 25% commission for every person you help discover Veronica Bloom.
           Share your unique link, we handle everything else.
         </p>
       </section>
@@ -321,9 +321,9 @@ export default function AffiliatePage() {
             "Health bloggers",
             "Yoga instructors",
             "Nutritionists",
-            "Menopause advocates",
+            "Fertility advocates",
             "Wellness influencers",
-            "Personal trainers",
+            "Doulas & midwives",
             "Women's health pros",
           ].map((role) => (
             <div key={role} className="p-3 rounded-xl bg-[#fdf2f5] border border-[#f0e3e8] text-center text-xs text-[#6f5a62]">

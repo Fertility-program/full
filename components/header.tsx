@@ -50,6 +50,7 @@ export default function Header() {
     ["Blog", "/blog"],
     [t("Plans"), "/pricing"],
     ["Partner", "/partner"],
+    ["For Clinics", "/clinic-partnership"],
     ["Get App", "/download"],
   ];
 
@@ -63,6 +64,7 @@ export default function Header() {
     [t("Shopping List"), "/shopping"],
     ["Partner", "/partner"],
     ["Doctor Prep", "/doctor-prep"],
+    ["Refer & Earn", "/refer"],
     [t("Plans"), "/pricing"],
     ["Free Guide", "/free-guide"],
     ["Get App", "/download"],

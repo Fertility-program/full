@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import PrintButton from "@/components/PrintButton";
 
 type QuizData = {
@@ -226,6 +227,119 @@ export default function DoctorPrepPage() {
           💡 Tip: Print this page and bring it to your appointment. Check off questions as you ask them. Write answers in the margins.
         </p>
       </section>
+
+      {/* MALE FERTILITY DOCTOR PREP */}
+      <section className="soft-card p-6 mt-6 mb-4 border-l-4 border-l-[#5ba89d]">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-2xl">👨</span>
+          <div>
+            <h2 className="text-2xl text-[#2d5a52]">His Doctor Visit Prep</h2>
+            <p className="text-sm text-[#5a7570]">Questions for his fertility/urology appointment.</p>
+          </div>
+        </div>
+
+        <div id="male-doctor-questions" className="space-y-4">
+          <div className="soft-card p-4 bg-[#f0faf8]">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">🔬 Semen Analysis</h3>
+            <div className="space-y-2">
+              {[
+                "Can you explain my semen analysis results in detail?",
+                "Which parameters are below normal (volume, concentration, motility, morphology)?",
+                "How do my results compare to WHO 2021 reference values?",
+                "Should I repeat the test? (results can vary 30% between tests)",
+                "How many days of abstinence should I have before the next test?",
+              ].map((q) => (
+                <div key={q} className="flex items-start gap-2 p-2 rounded-lg hover:bg-white/60">
+                  <span className="text-[#5ba89d] shrink-0 mt-0.5">□</span>
+                  <p className="text-sm text-[#3a5550]">{q}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="soft-card p-4 bg-[#f0faf8]">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">🧪 Hormone Testing</h3>
+            <div className="space-y-2">
+              {[
+                "Should I get a hormone panel? (testosterone, FSH, LH, prolactin)",
+                "Is my testosterone level optimal for fertility? (not just 'normal range')",
+                "Could low testosterone be affecting sperm production?",
+                "Are there hormonal treatments that could help?",
+                "Should I check thyroid function?",
+              ].map((q) => (
+                <div key={q} className="flex items-start gap-2 p-2 rounded-lg hover:bg-white/60">
+                  <span className="text-[#5ba89d] shrink-0 mt-0.5">□</span>
+                  <p className="text-sm text-[#3a5550]">{q}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="soft-card p-4 bg-[#f0faf8]">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">🏥 Physical Examination</h3>
+            <div className="space-y-2">
+              {[
+                "Should I be checked for varicocele? (affects 40% of infertile men)",
+                "Is there any blockage or structural issue?",
+                "Should I get a scrotal ultrasound?",
+                "Could previous infections be affecting my fertility?",
+                "Are there any genetic tests I should consider (karyotype, Y-microdeletion)?",
+              ].map((q) => (
+                <div key={q} className="flex items-start gap-2 p-2 rounded-lg hover:bg-white/60">
+                  <span className="text-[#5ba89d] shrink-0 mt-0.5">□</span>
+                  <p className="text-sm text-[#3a5550]">{q}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="soft-card p-4 bg-[#f0faf8]">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">💊 Treatment & Lifestyle</h3>
+            <div className="space-y-2">
+              {[
+                "What supplements do you recommend? (Zinc, CoQ10, L-Carnitine, etc.)",
+                "Are any of my current medications affecting sperm? (SSRIs, finasteride, etc.)",
+                "How long until lifestyle changes show in sperm quality? (74 days minimum)",
+                "Should I avoid heat exposure? (hot baths, saunas, laptop on lap)",
+                "What's the optimal ejaculation frequency for conception?",
+                "At what point should we consider IUI or IVF?",
+                "Is sperm DNA fragmentation testing worth doing?",
+              ].map((q) => (
+                <div key={q} className="flex items-start gap-2 p-2 rounded-lg hover:bg-white/60">
+                  <span className="text-[#5ba89d] shrink-0 mt-0.5">□</span>
+                  <p className="text-sm text-[#3a5550]">{q}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="soft-card p-4 bg-amber-50/50 border border-amber-100">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">💑 Questions for Both (Couple Visit)</h3>
+            <div className="space-y-2">
+              {[
+                "Based on both our results, what's our combined fertility plan?",
+                "How long should we try naturally before considering assisted reproduction?",
+                "What's the best timing strategy for us? (frequency, fertile window)",
+                "Are there any combined factors reducing our chances?",
+                "Should we both be tested at the same time for efficiency?",
+                "What are realistic expectations and timelines for our situation?",
+                "What are the success rates for IUI vs IVF for our specific case?",
+              ].map((q) => (
+                <div key={q} className="flex items-start gap-2 p-2 rounded-lg hover:bg-white/60">
+                  <span className="text-amber-600 shrink-0 mt-0.5">□</span>
+                  <p className="text-sm text-[#3a5550]">{q}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="flex flex-wrap gap-3 justify-center mt-6">
+        <Link href="/partner" className="btn-outline text-xs px-4 py-2">His Dashboard</Link>
+        <Link href="/dashboard" className="btn-outline text-xs px-4 py-2">Her Dashboard</Link>
+        <Link href="/cycle" className="btn-outline text-xs px-4 py-2">Cycle Tracker</Link>
+      </div>
     </main>
   );
 }

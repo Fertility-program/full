@@ -64,18 +64,21 @@ export default function FreeGuidePage() {
           <p className="uppercase tracking-[0.2em] text-[10px] text-[#5ba89d] font-bold mb-3">Free Download</p>
           <h1 className="text-3xl text-[#2d5a52] mb-4">The Complete Fertility Wellness Guide</h1>
           <p className="text-sm text-[#3a5550] mb-6">
-            A 30-page evidence-based guide covering cycle-synced exercises, fertility nutrition, supplements and daily routines for women trying to conceive.
+            A 30+ page evidence-based guide for couples trying to conceive. Covers cycle-synced exercises, fertility nutrition, supplements for both partners, male optimization, and conception timing strategies.
           </p>
 
           <div className="space-y-3 mb-6">
             {[
-              "10 best exercises for cycle regulation & ovulation",
-              "7-day fertility meal plan under €7/day with recipes",
-              "Complete supplement guide with doses & timing",
-              "Cycle-synced movement protocols",
-              "Daily routine templates (10, 20, 30 min)",
-              "Cycle tracker printable worksheet",
-              "Budget shopping list template",
+              "The science of conception — egg, sperm & timing explained",
+              "Cycle-synced exercise protocol (what to do each phase)",
+              "Male fertility: the 74-day sperm cycle & optimization",
+              "7-day fertility meal plan under €7/day (both partners)",
+              "Complete supplement guide — Her protocol & His protocol",
+              "WHO 2021 semen analysis reference values explained",
+              "When to see a doctor — red flags & testing guide",
+              "Couple optimization: timing, myths debunked, 3-month plan",
+              "Daily routine templates (morning & evening for both)",
+              "Printable trackers: cycle, daily checklist, shopping list",
             ].map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm text-[#2d5a52]">
                 <span className="text-[#5ba89d]">✓</span>

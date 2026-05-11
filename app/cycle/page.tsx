@@ -380,9 +380,43 @@ export default function CycleTrackerPage() {
         </section>
       )}
 
+      {/* PARTNER SYNC */}
+      <section className="soft-card p-5 mb-4 border-l-4 border-l-[#5ba89d]">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <span className="text-xl">💑</span>
+            <h3 className="text-sm font-bold text-[#2d5a52]">Share with Partner</h3>
+          </div>
+          <Link href="/partner" className="text-[10px] px-3 py-1.5 rounded-full bg-[#f0faf8] text-[#5ba89d] font-medium border border-[#c2ddd8]">
+            His Dashboard →
+          </Link>
+        </div>
+        {fertileWindow && (
+          <div className="space-y-2">
+            <div className={`p-3 rounded-xl border ${
+              fertileWindow.daysUntilOvulation >= -1 && fertileWindow.daysUntilOvulation <= 5
+                ? "bg-amber-50 border-amber-200"
+                : "bg-white/60 border-[#c2ddd8]"
+            }`}>
+              <p className="text-xs text-[#2d5a52]">
+                {fertileWindow.daysUntilOvulation >= -1 && fertileWindow.daysUntilOvulation <= 5
+                  ? "🎯 Fertile window is active — your partner can see this on his dashboard."
+                  : fertileWindow.daysUntilOvulation > 5
+                  ? `📅 Fertile window starts in ${fertileWindow.daysUntilOvulation - 5} days. He should optimize habits now.`
+                  : "⏳ Waiting for next cycle. Both focus on building healthy habits."}
+              </p>
+            </div>
+            <p className="text-[9px] text-[#6aab9f] italic">
+              💡 Your cycle data is automatically synced to his Partner Dashboard when you&apos;re linked in Couple Mode.
+            </p>
+          </div>
+        )}
+      </section>
+
       {/* NAV */}
       <div className="flex flex-wrap gap-3 justify-center mt-6">
         <Link href="/dashboard" className="btn-outline text-xs px-4 py-2">Dashboard</Link>
+        <Link href="/partner" className="btn-outline text-xs px-4 py-2">Partner</Link>
         <Link href="/supplements" className="btn-outline text-xs px-4 py-2">Supplements</Link>
         <Link href="/checkin" className="btn-outline text-xs px-4 py-2">Daily Check-In</Link>
       </div>

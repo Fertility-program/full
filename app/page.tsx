@@ -4,6 +4,8 @@ import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
 import ExitIntent from "@/components/ExitIntent";
 import FaqJsonLd from "@/components/FaqJsonLd";
+import SuccessStories from "@/components/SuccessStories";
+import CoupleFAQ from "@/components/CoupleFAQ";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import { buildPlan } from "@/lib/programs";
 import { useMemo } from "react";
@@ -494,6 +496,17 @@ export default function HomePage() {
       </section>
 
       <EmailCapture />
+
+      {/* SUCCESS STORIES */}
+      <section className="max-w-5xl mx-auto py-6">
+        <SuccessStories />
+      </section>
+
+      {/* COUPLE FAQ */}
+      <section className="max-w-5xl mx-auto py-6">
+        <CoupleFAQ />
+      </section>
+
       <ExitIntent />
     </main>
   );
