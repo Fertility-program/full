@@ -31,6 +31,18 @@
       "short_name": "Meals",
       "url": "/nutrition",
       "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "His Dashboard",
+      "short_name": "Partner",
+      "url": "/partner",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Cycle Tracker",
+      "short_name": "Cycle",
+      "url": "/cycle",
+      "icons": [{ "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ],
   "icons": [

@@ -447,6 +447,9 @@ export default function ProgressPage() {
         )}
       </section>
 
+      {/* COUPLE PROGRESS */}
+      <CoupleProgressSection />
+
       {/* CTA */}
       <section className="flex flex-wrap gap-4 justify-center">
         <Link href="/checkin" className="btn-primary">
@@ -454,6 +457,9 @@ export default function ProgressPage() {
         </Link>
         <Link href="/dashboard" className="btn-outline">
           Dashboard
+        </Link>
+        <Link href="/partner" className="btn-outline">
+          Partner
         </Link>
         <Link href="/session" className="btn-outline">
           Start Session
@@ -469,5 +475,116 @@ export default function ProgressPage() {
         />
       </section>
     </main>
+  );
+}
+
+function CoupleProgressSection() {
+  const [hasPartner, setHasPartner] = useState(false);
+  const [partnerStats, setPartnerStats] = useState({
+    daysActive: 0,
+    programDay: 0,
+    totalHabits: 0,
+    avgHabitsPerDay: 0,
+  });
+
+  useEffect(() => {
+    try {
+      const startDate = localStorage.getItem("partnerStartDate");
+      if (!startDate) return;
+
+      const now = new Date();
+      let daysActive = 0;
+      let totalHabits = 0;
+
+      for (let i = 0; i < 30; i++) {
+        const d = new Date(now);
+        d.setDate(d.getDate() - i);
+        const dateStr = d.toISOString().split("T")[0];
+        const habits = localStorage.getItem(`partner_habits_${dateStr}`);
+        const supps = localStorage.getItem(`partner_supps_${dateStr}`);
+
+        if (habits || supps) {
+          daysActive++;
+          try {
+            const h = habits ? Object.values(JSON.parse(habits)).filter(Boolean).length : 0;
+            const s = supps ? Object.values(JSON.parse(supps)).filter(Boolean).length : 0;
+            totalHabits += h + s;
+          } catch {}
+        }
+      }
+
+      if (daysActive > 0) {
+        const programDay = Math.min(
+          Math.floor((now.getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1,
+          74
+        );
+
+        setHasPartner(true);
+        setPartnerStats({
+          daysActive,
+          programDay,
+          totalHabits,
+          avgHabitsPerDay: Math.round(totalHabits / daysActive),
+        });
+      }
+    } catch {}
+  }, []);
+
+  if (!hasPartner) return null;
+
+  return (
+    <section className="soft-card p-6 mb-6 border-l-4 border-l-[#5ba89d]">
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-xl">💑</span>
+        <h2 className="text-xl text-[#4a3f44]">Couple Progress (30 Days)</h2>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+        <div className="text-center p-3 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+          <div className="text-2xl font-bold text-[#2d5a52]">{partnerStats.programDay}</div>
+          <div className="text-[9px] text-[#6aab9f] uppercase font-bold">His Day / 74</div>
+        </div>
+        <div className="text-center p-3 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+          <div className="text-2xl font-bold text-[#2d5a52]">{partnerStats.daysActive}</div>
+          <div className="text-[9px] text-[#6aab9f] uppercase font-bold">Days Active</div>
+        </div>
+        <div className="text-center p-3 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+          <div className="text-2xl font-bold text-[#2d5a52]">{partnerStats.totalHabits}</div>
+          <div className="text-[9px] text-[#6aab9f] uppercase font-bold">Total Habits</div>
+        </div>
+        <div className="text-center p-3 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+          <div className="text-2xl font-bold text-[#2d5a52]">{partnerStats.avgHabitsPerDay}</div>
+          <div className="text-[9px] text-[#6aab9f] uppercase font-bold">Avg/Day</div>
+        </div>
+      </div>
+
+      {/* 74-day progress bar */}
+      <div className="mb-3">
+        <div className="flex justify-between text-xs mb-1">
+          <span className="text-[#5a7570]">His 74-Day Sperm Program</span>
+          <span className="text-[#5ba89d] font-bold">{Math.round((partnerStats.programDay / 74) * 100)}%</span>
+        </div>
+        <div className="h-3 bg-[#f0faf8] rounded-full overflow-hidden">
+          <div
+            className="h-full bg-gradient-to-r from-[#5ba89d] to-[#3d8a7d] rounded-full transition-all"
+            style={{ width: `${(partnerStats.programDay / 74) * 100}%` }}
+          />
+        </div>
+      </div>
+
+      <p className="text-xs text-[#5a7570] italic text-center">
+        {partnerStats.daysActive >= 20
+          ? "🌟 Incredible consistency! His sperm quality is improving."
+          : partnerStats.daysActive >= 10
+          ? "💪 Good progress. Encourage him to keep going!"
+          : "🌱 Just getting started. Every day counts."}
+      </p>
+
+      <div className="mt-3 text-center">
+        <Link href="/partner" className="text-xs text-[#5ba89d] font-medium hover:underline">
+          View His Full Dashboard →
+        </Link>
+      </div>
+    </section>
   );
 }

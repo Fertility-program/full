@@ -14,6 +14,8 @@ import SwapMealButton from "@/components/SwapMealButton";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import { playComplete } from "@/lib/sounds";
 import SectionErrorBoundary from "@/components/SectionErrorBoundary";
+import PartnerProgressWidget from "@/components/PartnerProgressWidget";
+import ClinicBadge from "@/components/ClinicBadge";
 
 type QuizData = {
   name?: string;
@@ -590,6 +592,7 @@ export default function DashboardPage() {
                     <span className="animate-pulse">🔥</span> {day} day streak
                   </span>
                 )}
+                <ClinicBadge />
               </div>
             </div>
           </div>
@@ -618,6 +621,9 @@ export default function DashboardPage() {
 
       {/* STREAK FREEZE */}
       <StreakFreeze />
+
+      {/* PARTNER PROGRESS */}
+      <PartnerProgressWidget />
 
       {/* UPSELL */}
       <UpsellBanner />

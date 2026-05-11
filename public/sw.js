@@ -35,6 +35,9 @@ const APP_PAGES = [
   "/shopping",
   "/weekly-summary",
   "/favorites",
+  "/partner",
+  "/cycle",
+  "/doctor-prep",
 ];
 
 // Background sync queue for offline writes

@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "male-fertility-myths",
+    title: "10 Male Fertility Myths vs Facts — What Science Actually Says",
+    excerpt:
+      "Male factor contributes to 50% of infertility cases. Debunking common myths about sperm quality, supplements, and lifestyle with peer-reviewed evidence.",
+    category: "Male Fertility",
+    readTime: "8 min",
+    date: "2026-05-10",
+  },
+  {
     slug: "exercises-for-hot-flashes",
     title: "5 Cycle-Synced Exercises That Support Ovulation",
     excerpt:

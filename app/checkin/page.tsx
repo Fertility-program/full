@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { pushSingle } from "@/lib/sync";
 
 export default function CheckinPage() {
@@ -12,6 +13,7 @@ export default function CheckinPage() {
   const [stress, setStress] = useState(5);
   const [time, setTime] = useState("20 min");
   const [symptoms, setSymptoms] = useState<string[]>([]);
+  const [partnerCheckedIn, setPartnerCheckedIn] = useState(false);
 
   const options = [
     "Irregular cycles",
@@ -23,6 +25,13 @@ export default function CheckinPage() {
     "Hormonal acne",
     "Bloating",
   ];
+
+  useEffect(() => {
+    // Check if partner has checked in today
+    const today = new Date().toISOString().split("T")[0];
+    const partnerCheckin = localStorage.getItem(`partner_checkin_${today}`);
+    setPartnerCheckedIn(!!partnerCheckin);
+  }, []);
 
   function toggle(item: string) {
     setSymptoms((prev) =>
@@ -218,6 +227,29 @@ export default function CheckinPage() {
         >
           {saving ? "Saving..." : "Save & Update My Plan"}
         </button>
+
+        {/* PARTNER CHECK-IN REMINDER */}
+        <div className="mt-6 p-4 rounded-2xl border border-[#c2ddd8] bg-[#f0faf8]/50">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">👨</span>
+              <div>
+                <p className="text-sm text-[#2d5a52] font-medium">Partner Check-In</p>
+                <p className="text-[10px] text-[#5a7570]">
+                  {partnerCheckedIn
+                    ? "✅ He checked in today"
+                    : "He hasn't checked in yet today"}
+                </p>
+              </div>
+            </div>
+            <Link
+              href="/partner"
+              className="text-[10px] px-3 py-1.5 rounded-full bg-[#2d5a52] text-white font-medium"
+            >
+              {partnerCheckedIn ? "View" : "Remind Him"}
+            </Link>
+          </div>
+        </div>
       </section>
     </main>
   );

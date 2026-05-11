@@ -9,6 +9,8 @@ import { signIn, signUp } from "@/lib/auth";
 function LoginContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [clinicCode, setClinicCode] = useState("");
+  const [showClinicCode, setShowClinicCode] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -32,6 +34,16 @@ function LoginContent() {
     const signInResult = await signIn(email, password);
 
     if (signInResult.success) {
+      // If clinic code provided, activate it
+      if (clinicCode.trim()) {
+        try {
+          const { activateClinicCode } = await import("@/lib/clinic-codes");
+          const user = signInResult.user;
+          if (user) {
+            await activateClinicCode(clinicCode.trim(), user.id);
+          }
+        } catch {}
+      }
       router.push(redirect);
       router.refresh();
       return;
@@ -44,6 +56,13 @@ function LoginContent() {
       // Try signing in immediately after signup
       const retrySignIn = await signIn(email, password);
       if (retrySignIn.success) {
+        // If clinic code provided, activate it
+        if (clinicCode.trim() && signUpResult.user) {
+          try {
+            const { activateClinicCode } = await import("@/lib/clinic-codes");
+            await activateClinicCode(clinicCode.trim(), signUpResult.user.id);
+          } catch {}
+        }
         router.push(redirect);
         router.refresh();
         return;
@@ -143,6 +162,38 @@ function LoginContent() {
               )}
             </button>
           </form>
+
+          {/* CLINIC CODE */}
+          <div className="mt-4 pt-4 border-t border-[#f0e3e8]">
+            {!showClinicCode ? (
+              <button
+                onClick={() => setShowClinicCode(true)}
+                className="w-full text-center text-xs text-[#5ba89d] hover:text-[#2d5a52] transition-colors"
+              >
+                🏥 Have a clinic access code?
+              </button>
+            ) : (
+              <div>
+                <label
+                  htmlFor="clinic-code"
+                  className="text-[10px] uppercase font-bold text-[#5ba89d] tracking-widest ml-1"
+                >
+                  Clinic Access Code
+                </label>
+                <input
+                  id="clinic-code"
+                  type="text"
+                  placeholder="e.g. CLINIC2025"
+                  value={clinicCode}
+                  onChange={(e) => setClinicCode(e.target.value.toUpperCase())}
+                  className="w-full mt-1 p-3 rounded-2xl border border-[#c2ddd8] outline-none focus:border-[#5ba89d] transition-colors text-center font-mono tracking-widest uppercase"
+                />
+                <p className="text-[9px] text-[#5a7570] mt-1 text-center">
+                  Enter the code from your fertility clinic to activate premium access
+                </p>
+              </div>
+            )}
+          </div>
 
           <p className="mt-6 text-center text-xs text-[#b98fa1]">
             New here? Just enter your email and password — we&apos;ll create

@@ -136,12 +136,96 @@ export default function WeeklySummaryPage() {
         </p>
       </section>
 
+      {/* COUPLE WEEKLY SUMMARY */}
+      <CoupleWeeklySummary />
+
       <div className="flex flex-wrap gap-3 justify-center">
         <Link href="/dashboard" className="btn-primary">Dashboard</Link>
         <Link href="/progress" className="btn-outline">Full Progress</Link>
+        <Link href="/partner" className="btn-outline">Partner</Link>
         <Link href="/journal" className="btn-outline">Journal</Link>
         <ShareButton text={`Week ${week} done! ${data.sessionsCompleted} sessions completed 🧘‍♀️ #VeronicaMethod`} />
       </div>
     </main>
+  );
+}
+
+function CoupleWeeklySummary() {
+  const [partnerData, setPartnerData] = useState<{
+    habitsCompleted: number;
+    daysActive: number;
+    programDay: number;
+  } | null>(null);
+
+  useEffect(() => {
+    // Load partner's weekly data from localStorage
+    try {
+      const now = new Date();
+      const weekAgo = new Date(now);
+      weekAgo.setDate(weekAgo.getDate() - 7);
+
+      let totalHabits = 0;
+      let daysActive = 0;
+
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(now);
+        d.setDate(d.getDate() - i);
+        const dateStr = d.toISOString().split("T")[0];
+        const habits = localStorage.getItem(`partner_habits_${dateStr}`);
+        const supps = localStorage.getItem(`partner_supps_${dateStr}`);
+
+        if (habits || supps) {
+          daysActive++;
+          try {
+            const h = habits ? Object.values(JSON.parse(habits)).filter(Boolean).length : 0;
+            const s = supps ? Object.values(JSON.parse(supps)).filter(Boolean).length : 0;
+            totalHabits += h + s;
+          } catch {}
+        }
+      }
+
+      if (daysActive > 0) {
+        const startDate = localStorage.getItem("partnerStartDate") || "";
+        const programDay = startDate
+          ? Math.min(Math.floor((now.getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1, 74)
+          : 0;
+
+        setPartnerData({ habitsCompleted: totalHabits, daysActive, programDay });
+      }
+    } catch {}
+  }, []);
+
+  if (!partnerData) return null;
+
+  return (
+    <section className="soft-card p-6 mb-6 border-l-4 border-l-[#5ba89d]">
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-xl">💑</span>
+        <h2 className="text-xl text-[#4a3f44]">Couple Progress This Week</h2>
+      </div>
+
+      <div className="grid grid-cols-3 gap-3 mb-4">
+        <div className="text-center p-3 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+          <div className="text-xl font-bold text-[#2d5a52]">{partnerData.daysActive}/7</div>
+          <div className="text-[9px] text-[#6aab9f] uppercase font-bold">His Days Active</div>
+        </div>
+        <div className="text-center p-3 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+          <div className="text-xl font-bold text-[#2d5a52]">{partnerData.habitsCompleted}</div>
+          <div className="text-[9px] text-[#6aab9f] uppercase font-bold">Habits Done</div>
+        </div>
+        <div className="text-center p-3 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+          <div className="text-xl font-bold text-[#2d5a52]">{partnerData.programDay}/74</div>
+          <div className="text-[9px] text-[#6aab9f] uppercase font-bold">Program Day</div>
+        </div>
+      </div>
+
+      <p className="text-xs text-[#5a7570] italic text-center">
+        {partnerData.daysActive >= 5
+          ? "🌟 You're both showing up consistently. Amazing teamwork!"
+          : partnerData.daysActive >= 3
+          ? "💪 Good effort from both of you. Keep motivating each other!"
+          : "🌱 Encourage each other to stay consistent next week."}
+      </p>
+    </section>
   );
 }

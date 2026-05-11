@@ -25,6 +25,9 @@ export default function PrivacyPage() {
               <li><strong>Account data:</strong> Email address and encrypted password for authentication.</li>
               <li><strong>Assessment data:</strong> Age, height, weight, activity level, symptoms, and goals from your wellness quiz.</li>
               <li><strong>Usage data:</strong> Daily check-ins (sleep, energy, stress scores), completed sessions, journal entries, and favorites.</li>
+              <li><strong>Cycle data:</strong> Menstrual cycle dates, BBT readings, OPK results (for female users).</li>
+              <li><strong>Partner data:</strong> Daily habits, supplement tracking, spermiogram results (for male users in Couple Mode).</li>
+              <li><strong>Couple data:</strong> Partner linking codes and shared progress metrics (only when both partners consent).</li>
               <li><strong>Payment data:</strong> Processed securely by LemonSqueezy. We never store your card details.</li>
               <li><strong>Device data:</strong> Browser type and push notification subscription (if enabled).</li>
             </ul>
@@ -98,8 +101,8 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-xl text-[#4a3f44] mb-3">8. Children</h2>
             <p>
-              Veronica Method is designed for women aged 40+. We do not knowingly collect data from
-              anyone under 18 years of age.
+              Veronica Bloom is designed for adults trying to conceive or improve reproductive health.
+              We do not knowingly collect data from anyone under 18 years of age.
             </p>
           </div>
 

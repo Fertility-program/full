@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Partner Dashboard",
-  description: "Daily habits, supplements and lifestyle guide for men to optimize sperm quality and support conception.",
+  title: "His Fertility Dashboard — 74-Day Sperm Optimization Program",
+  description: "Complete male fertility program: daily habits, supplements, exercise, spermiogram tracking, nutrition guide, and couple mode with fertile window sync.",
 };
 
 export default function PartnerLayout({ children }: { children: React.ReactNode }) {
