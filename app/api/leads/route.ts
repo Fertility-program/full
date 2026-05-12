@@ -30,5 +30,22 @@ export async function POST(request: Request) {
     // Table might not exist yet — that's ok
   }
 
+  // Send first email from nurture sequence if source is free_guide
+  if (body.source === "free_guide" && process.env.RESEND_API_KEY) {
+    try {
+      const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app";
+      await fetch(`${appUrl}/api/email/send-sequence`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.CRON_SECRET || "internal"}`,
+        },
+        body: JSON.stringify({ email: body.email, day: 0 }),
+      });
+    } catch {
+      // Non-critical — guide still works without email
+    }
+  }
+
   return NextResponse.json({ success: true });
 }
