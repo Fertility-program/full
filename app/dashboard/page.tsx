@@ -17,6 +17,7 @@ import SectionErrorBoundary from "@/components/SectionErrorBoundary";
 import PartnerProgressWidget from "@/components/PartnerProgressWidget";
 import ClinicBadge from "@/components/ClinicBadge";
 import TrialEndingModal from "@/components/TrialEndingModal";
+import MedicationTracker from "@/components/MedicationTracker";
 
 type QuizData = {
   name?: string;
@@ -625,6 +626,9 @@ export default function DashboardPage() {
 
       {/* PARTNER PROGRESS */}
       <PartnerProgressWidget />
+
+      {/* MEDICATION TRACKER */}
+      <MedicationTracker />
 
       {/* UPSELL */}
       <UpsellBanner />

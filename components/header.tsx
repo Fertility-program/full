@@ -65,6 +65,7 @@ export default function Header() {
     [t("Shopping List"), "/shopping"],
     ["Partner", "/partner"],
     ["Doctor Prep", "/doctor-prep"],
+    ["Community", "/community"],
     ["Refer & Earn", "/refer"],
     [t("Plans"), "/pricing"],
     ["Free Guide", "/free-guide"],
