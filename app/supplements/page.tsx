@@ -135,12 +135,32 @@ const ALL_SUPPLEMENTS: Supplement[] = [
   {
     name: "Selenium",
     icon: "🥜",
-    dose: "55–100mcg daily",
+    dose: "200mcg daily",
     timing: "With any meal",
-    why: "Protects eggs from oxidative damage, supports thyroid function and healthy follicle development.",
-    food_sources: ["Brazil nuts (1-2 daily)", "Tuna", "Eggs", "Sunflower seeds"],
-    priority: "optional",
+    why: "Protects eggs from oxidative damage, supports thyroid function and healthy follicle development. Essential for glutathione production — the body's master antioxidant.",
+    food_sources: ["Brazil nuts (2-3 daily)", "Tuna", "Eggs", "Sunflower seeds"],
+    priority: "recommended",
     symptoms: ["Thyroid issues", "Inflammation"],
+  },
+  {
+    name: "L-Carnitine",
+    icon: "🔥",
+    dose: "500–1500mg daily",
+    timing: "Morning, with or without food",
+    why: "Transports fatty acids into mitochondria for energy production. Directly improves egg quality by fueling mitochondrial function. Also improves sperm motility in men.",
+    food_sources: ["Red meat", "Chicken", "Fish", "Dairy"],
+    priority: "recommended",
+    symptoms: ["Low energy", "Irregular cycles"],
+  },
+  {
+    name: "L-Arginine",
+    icon: "💓",
+    dose: "1000–2000mg daily",
+    timing: "Morning or before exercise",
+    why: "Amino acid that produces nitric oxide — improves blood flow to uterus and ovaries. Supports endometrial thickness and follicle development. May improve IVF outcomes.",
+    food_sources: ["Turkey", "Pumpkin seeds", "Soybeans", "Peanuts"],
+    priority: "recommended",
+    symptoms: ["Irregular cycles", "Inflammation"],
   },
 ];
 
@@ -461,8 +481,61 @@ export default function SupplementsPage() {
         </section>
       </div>
 
+      {/* RECOMMENDED BRANDS */}
+      <section className="soft-card p-6 mt-6">
+        <h2 className="text-xl text-[#2d5a52] mb-2">Recommended Brands</h2>
+        <p className="text-xs text-[#5a7570] mb-4">
+          Quality matters with supplements. These brands are third-party tested and widely available:
+        </p>
+
+        <div className="space-y-3">
+          <div className="p-4 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">🧡 NOW Foods — Egg Quality Stack</h3>
+            <p className="text-xs text-[#5a7570] mb-2">Affordable, GMP-certified, widely available. Our recommended stack:</p>
+            <div className="grid grid-cols-2 gap-2 text-[10px] text-[#3a5550]">
+              <span>• NOW B-50 (B Complex)</span>
+              <span>• NOW Selenium 200mcg</span>
+              <span>• NOW L-Carnitine 500mg</span>
+              <span>• NOW L-Arginine 1000mg</span>
+              <span>• NOW Liposomal Vitamin C</span>
+              <span>• NOW Zinc Picolinate 50mg</span>
+              <span>• NOW Vitamin D-3 5000 IU</span>
+              <span>• NOW CoQ10 200mg</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">🖤 Puori — Premium Quality</h3>
+            <p className="text-xs text-[#5a7570] mb-2">Clean label, third-party tested, Scandinavian quality:</p>
+            <div className="grid grid-cols-2 gap-2 text-[10px] text-[#3a5550]">
+              <span>• Puori M3 (Magnesium)</span>
+              <span>• Puori O3 (Omega-3)</span>
+              <span>• Puori D3 (Vitamin D)</span>
+              <span>• Puori C3 (Vitamin C + Zinc)</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-[#f0faf8] border border-[#c2ddd8]">
+            <h3 className="text-sm font-bold text-[#2d5a52] mb-2">🌿 Other Trusted Brands</h3>
+            <div className="grid grid-cols-2 gap-2 text-[10px] text-[#3a5550]">
+              <span>• Thorne (premium, practitioner-grade)</span>
+              <span>• Nordic Naturals (Omega-3)</span>
+              <span>• Garden of Life (whole food based)</span>
+              <span>• Life Extension (research-focused)</span>
+              <span>• Jarrow Formulas (ubiquinol CoQ10)</span>
+              <span>• Ovasitol (myo-inositol for PCOS)</span>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-[9px] text-[#5a7570] mt-4 italic">
+          💡 Tip: Buy Zinc Picolinate (best absorbed form), Ubiquinol (not ubiquinone) for CoQ10, and Methylfolate (not folic acid). These forms are more bioavailable.
+        </p>
+      </section>
+
       <div className="flex flex-wrap gap-3 justify-center mt-6">
         <Link href="/dashboard" className="btn-primary">Dashboard</Link>
+        <Link href="/partner" className="btn-outline">His Supplements</Link>
         <Link href="/nutrition" className="btn-outline">Meal Plans</Link>
         <Link href="/shopping" className="btn-outline">Shopping List</Link>
       </div>
