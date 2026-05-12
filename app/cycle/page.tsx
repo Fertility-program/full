@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import FertilityCalendar from "@/components/FertilityCalendar";
 import {
   loadCycleData,
   saveCycleData,
@@ -380,6 +381,9 @@ export default function CycleTrackerPage() {
         </section>
       )}
 
+      {/* FERTILITY CALENDAR */}
+      <FertilityCalendar />
+
       {/* PARTNER SYNC */}
       <section className="soft-card p-5 mb-4 border-l-4 border-l-[#5ba89d]">
         <div className="flex items-center justify-between mb-3">
@@ -417,6 +421,7 @@ export default function CycleTrackerPage() {
       <div className="flex flex-wrap gap-3 justify-center mt-6">
         <Link href="/dashboard" className="btn-outline text-xs px-4 py-2">Dashboard</Link>
         <Link href="/partner" className="btn-outline text-xs px-4 py-2">Partner</Link>
+        <Link href="/doctor-report" className="btn-outline text-xs px-4 py-2">Doctor Report</Link>
         <Link href="/supplements" className="btn-outline text-xs px-4 py-2">Supplements</Link>
         <Link href="/checkin" className="btn-outline text-xs px-4 py-2">Daily Check-In</Link>
       </div>
