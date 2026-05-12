@@ -20,6 +20,8 @@ import TrialEndingModal from "@/components/TrialEndingModal";
 import MedicationTracker from "@/components/MedicationTracker";
 import IntimacyTracker from "@/components/IntimacyTracker";
 import FertileWindowCountdown from "@/components/FertileWindowCountdown";
+import JourneyTimeline from "@/components/JourneyTimeline";
+import DailyTip from "@/components/DailyTip";
 
 type QuizData = {
   name?: string;
@@ -685,6 +687,9 @@ export default function DashboardPage() {
 
         {/* Smart Insights */}
         <SmartInsights day={day} plan={plan} symptoms={data.symptoms || []} />
+
+        {/* Daily Tip */}
+        <DailyTip />
       </div>
 
       {/* STREAK FREEZE */}
@@ -1089,12 +1094,18 @@ export default function DashboardPage() {
           <Link href="/measurements" className="text-xs text-[#a8687a] hover:underline font-medium">
             Track Measurements →
           </Link>
+          <Link href="/community" className="text-xs text-[#a8687a] hover:underline font-medium">
+            Community →
+          </Link>
           <Link href="/buddy" className="text-xs text-[#a8687a] hover:underline font-medium">
             Invite a Buddy →
           </Link>
         </div>
       </section>
       </SectionErrorBoundary>
+
+      {/* JOURNEY TIMELINE */}
+      <JourneyTimeline day={day} />
 
       <MilestoneCelebration />
       <OnboardingTutorial />
