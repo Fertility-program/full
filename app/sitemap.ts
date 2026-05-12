@@ -17,12 +17,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blog
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${base}/blog/exercises-for-hot-flashes`, lastModified: new Date("2025-01-15"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog/menopause-meal-plan-budget`, lastModified: new Date("2025-01-20"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog/sleep-better-after-40`, lastModified: new Date("2025-02-01"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog/pelvic-floor-beginners`, lastModified: new Date("2025-02-10"), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/blog/joint-pain-menopause`, lastModified: new Date("2025-02-20"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/how-to-increase-chances-of-conception`, lastModified: new Date("2025-05-12"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/fertility-supplements-guide`, lastModified: new Date("2025-05-11"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/male-fertility-myths`, lastModified: new Date("2025-05-10"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/pcos-and-pregnancy`, lastModified: new Date("2025-05-08"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/spermiogram-normal-values`, lastModified: new Date("2025-05-05"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog/exercises-for-hot-flashes`, lastModified: new Date("2025-04-15"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/menopause-meal-plan-budget`, lastModified: new Date("2025-04-10"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/sleep-better-after-40`, lastModified: new Date("2025-04-05"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/pelvic-floor-beginners`, lastModified: new Date("2025-03-28"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/blog/joint-pain-menopause`, lastModified: new Date("2025-03-20"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/blog/confidence-posture-midlife`, lastModified: new Date("2025-03-01"), changeFrequency: "monthly", priority: 0.7 },
+
+    // Symptom landing pages (SEO)
+    { url: `${base}/pcos`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/endometriosis`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/unexplained-infertility`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+
+    // Partner & Couple
+    { url: `${base}/partner`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/free-guide`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/download`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/community`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/clinic-partnership`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/refer`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
 
     // Utility pages
     { url: `${base}/login`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
