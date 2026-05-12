@@ -1107,9 +1107,18 @@ export default function DashboardPage() {
           <Link href="/community" className="text-xs text-[#a8687a] hover:underline font-medium">
             Community →
           </Link>
+          <Link href="/features" className="text-xs text-[#a8687a] hover:underline font-medium">
+            All Features →
+          </Link>
           <Link href="/buddy" className="text-xs text-[#a8687a] hover:underline font-medium">
             Invite a Buddy →
           </Link>
+          <button
+            onClick={() => { localStorage.removeItem("tutorialDone"); window.location.reload(); }}
+            className="text-xs text-[#5ba89d] hover:underline font-medium"
+          >
+            Replay Tour →
+          </button>
         </div>
       </section>
       </SectionErrorBoundary>

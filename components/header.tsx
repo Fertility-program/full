@@ -60,6 +60,7 @@ export default function Header() {
     ["Cycle Tracker", "/cycle"],
     [t("Assessment"), "/quiz"],
     [t("Progress"), "/progress"],
+    ["All Features", "/features"],
     ["Supplements", "/supplements"],
     [t("Journal"), "/journal"],
     [t("Shopping List"), "/shopping"],
