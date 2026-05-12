@@ -9,6 +9,24 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: "how-to-increase-chances-of-conception",
+    title: "12 Evidence-Based Ways to Increase Your Chances of Conception",
+    excerpt:
+      "Proven strategies to boost fertility naturally: timing, nutrition, supplements, lifestyle changes for both partners based on clinical research.",
+    category: "Conception",
+    readTime: "10 min",
+    date: "2026-05-12",
+  },
+  {
+    slug: "fertility-supplements-guide",
+    title: "Best Fertility Supplements 2025 — Complete Guide for Her & Him",
+    excerpt:
+      "Which supplements actually work? Clinical evidence for CoQ10, Folate, Zinc, Vitamin D, Omega-3 and more. Exact doses and timing for both partners.",
+    category: "Supplements",
+    readTime: "12 min",
+    date: "2026-05-11",
+  },
+  {
     slug: "male-fertility-myths",
     title: "10 Male Fertility Myths vs Facts — What Science Actually Says",
     excerpt:
@@ -16,6 +34,24 @@ const articles = [
     category: "Male Fertility",
     readTime: "8 min",
     date: "2026-05-10",
+  },
+  {
+    slug: "pcos-and-pregnancy",
+    title: "PCOS and Pregnancy — How to Conceive Naturally",
+    excerpt:
+      "Complete guide to getting pregnant with PCOS: myo-inositol, diet changes, exercise, ovulation tracking, and when to seek medical help.",
+    category: "PCOS",
+    readTime: "9 min",
+    date: "2026-05-08",
+  },
+  {
+    slug: "spermiogram-normal-values",
+    title: "How to Read Your Semen Analysis: WHO 2021 Normal Values",
+    excerpt:
+      "Got your SA results but confused? What each parameter means, what's normal, what's low, and exactly how to improve each one in 74 days.",
+    category: "Male Fertility",
+    readTime: "7 min",
+    date: "2026-05-05",
   },
   {
     slug: "exercises-for-hot-flashes",

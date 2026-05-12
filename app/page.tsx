@@ -6,6 +6,7 @@ import ExitIntent from "@/components/ExitIntent";
 import FaqJsonLd from "@/components/FaqJsonLd";
 import SuccessStories from "@/components/SuccessStories";
 import CoupleFAQ from "@/components/CoupleFAQ";
+import SocialProofCounter from "@/components/SocialProofCounter";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import { buildPlan } from "@/lib/programs";
 import { useMemo } from "react";
@@ -87,14 +88,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex items-center gap-2 pt-1 opacity-80">
-            <div className="flex -space-x-2">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-[#5ba89d]/30" />
-              ))}
-            </div>
-            <p className="text-[11px] italic text-[#5a7570]">
-              {t("Trusted by women on their fertility journey.")}
-            </p>
+            <SocialProofCounter />
           </div>
         </div>
 

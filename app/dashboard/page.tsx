@@ -16,6 +16,7 @@ import { playComplete } from "@/lib/sounds";
 import SectionErrorBoundary from "@/components/SectionErrorBoundary";
 import PartnerProgressWidget from "@/components/PartnerProgressWidget";
 import ClinicBadge from "@/components/ClinicBadge";
+import TrialEndingModal from "@/components/TrialEndingModal";
 
 type QuizData = {
   name?: string;
@@ -1021,6 +1022,7 @@ export default function DashboardPage() {
 
       <MilestoneCelebration />
       <OnboardingTutorial />
+      <TrialEndingModal />
     </main>
   );
 }
