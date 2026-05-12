@@ -14,6 +14,8 @@ const SyncProvider = dynamic(() => import("@/components/SyncProvider"), { ssr: f
 const OfflineIndicator = dynamic(() => import("@/components/OfflineIndicator"), { ssr: false });
 const WaterReminder = dynamic(() => import("@/components/WaterReminder"), { ssr: false });
 const ExerciseReminder = dynamic(() => import("@/components/ExerciseReminder"), { ssr: false });
+const QuickCheckinFAB = dynamic(() => import("@/components/QuickCheckinFAB"), { ssr: false });
+const StreakToast = dynamic(() => import("@/components/StreakToast"), { ssr: false });
 
 /**
  * Wrapper za sve client-only komponente koje se lazy loaduju.
@@ -23,6 +25,8 @@ export default function ClientShell() {
   return (
     <>
       <BottomNav />
+      <QuickCheckinFAB />
+      <StreakToast />
       <InstallPrompt />
       <ServiceWorkerRegister />
       <CookieConsent />
