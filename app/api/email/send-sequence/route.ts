@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No email for this day" }, { status: 404 });
   }
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://fertility-program.vercel.app";
 
   const rendered = renderEmail(sequenceEmail, {
     guideUrl: `${appUrl}/guide`,

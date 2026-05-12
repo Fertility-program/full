@@ -455,7 +455,7 @@ export default function HomePage() {
             <div className="hidden md:block shrink-0 text-center">
               <div className="inline-block p-2 bg-white rounded-xl border border-[#c2ddd8]">
                 <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://veronica-bloom.vercel.app/download&color=2d5a52&bgcolor=ffffff"
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://fertility-program.vercel.app/download&color=2d5a52&bgcolor=ffffff"
                   alt="Scan to download"
                   width={120}
                   height={120}

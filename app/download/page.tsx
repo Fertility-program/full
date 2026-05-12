@@ -235,7 +235,7 @@ export default function DownloadPage() {
         <div className="inline-block p-3 bg-white rounded-2xl border border-[#c2ddd8] shadow-sm">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://veronica-bloom.vercel.app/download&color=2d5a52&bgcolor=ffffff"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://fertility-program.vercel.app/download&color=2d5a52&bgcolor=ffffff"
             alt="QR code to download Veronica Bloom app"
             width={200}
             height={200}

@@ -89,7 +89,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span className="text-[9px] text-[#4a7a70]">Scan to get the app:</span>
             <img
-              src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=https://veronica-bloom.vercel.app/download&color=2d5a52&bgcolor=ffffff"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=60x60&data=https://fertility-program.vercel.app/download&color=2d5a52&bgcolor=ffffff"
               alt="QR code"
               width={60}
               height={60}

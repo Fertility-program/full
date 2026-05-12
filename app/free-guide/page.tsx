@@ -129,7 +129,7 @@ export default function FreeGuidePage() {
             <p className="text-[10px] text-[#4a7a70] text-center mb-3">Share with a friend who needs this:</p>
             <div className="flex gap-2 justify-center flex-wrap">
               <a
-                href="https://wa.me/?text=Free%20fertility%20wellness%20guide%20%E2%80%94%20exercises%2C%20meal%20plans%20%26%20supplements%20for%20women%20TTC%20%F0%9F%8C%B8%20https%3A%2F%2Fveronica-bloom.vercel.app%2Ffree-guide"
+                href="https://wa.me/?text=Free%20fertility%20wellness%20guide%20%E2%80%94%20exercises%2C%20meal%20plans%20%26%20supplements%20for%20women%20TTC%20%F0%9F%8C%B8%20https%3A%2F%2Ffertility-program.vercel.app%2Ffree-guide"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-2 rounded-xl bg-green-50 border border-green-200 text-xs text-green-700 hover:bg-green-100 transition-colors"
@@ -137,7 +137,7 @@ export default function FreeGuidePage() {
                 💬 WhatsApp
               </a>
               <a
-                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fveronica-bloom.vercel.app%2Ffree-guide"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffertility-program.vercel.app%2Ffree-guide"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-2 rounded-xl bg-blue-50 border border-blue-200 text-xs text-blue-700 hover:bg-blue-100 transition-colors"
@@ -145,7 +145,7 @@ export default function FreeGuidePage() {
                 📘 Facebook
               </a>
               <a
-                href="mailto:?subject=Free%20Fertility%20Wellness%20Guide&body=I%20found%20this%20free%20guide%20for%20fertility%20wellness%20%E2%80%94%20exercises%2C%20meal%20plans%20and%20supplements.%20Check%20it%20out%3A%20https%3A%2F%2Fveronica-bloom.vercel.app%2Ffree-guide"
+                href="mailto:?subject=Free%20Fertility%20Wellness%20Guide&body=I%20found%20this%20free%20guide%20for%20fertility%20wellness%20%E2%80%94%20exercises%2C%20meal%20plans%20and%20supplements.%20Check%20it%20out%3A%20https%3A%2F%2Ffertility-program.vercel.app%2Ffree-guide"
                 className="px-3 py-2 rounded-xl bg-gray-50 border border-gray-200 text-xs text-gray-700 hover:bg-gray-100 transition-colors"
               >
                 ✉️ Email

@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   // Send first email from nurture sequence if source is free_guide
   if (body.source === "free_guide" && process.env.RESEND_API_KEY) {
     try {
-      const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app";
+      const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://fertility-program.vercel.app";
       await fetch(`${appUrl}/api/email/send-sequence`, {
         method: "POST",
         headers: {

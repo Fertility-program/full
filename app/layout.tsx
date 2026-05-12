@@ -83,7 +83,7 @@ export default function RootLayout({
               name: "Veronica Bloom",
               description:
                 "The complete fertility wellness program: cycle-synced exercises, fertility nutrition and supplement guidance for women trying to conceive.",
-              url: "https://veronica-bloom.vercel.app",
+              url: "https://fertility-program.vercel.app",
               applicationCategory: "HealthApplication",
               offers: [
                 {
