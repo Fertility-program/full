@@ -18,6 +18,8 @@ import PartnerProgressWidget from "@/components/PartnerProgressWidget";
 import ClinicBadge from "@/components/ClinicBadge";
 import TrialEndingModal from "@/components/TrialEndingModal";
 import MedicationTracker from "@/components/MedicationTracker";
+import IntimacyTracker from "@/components/IntimacyTracker";
+import FertileWindowCountdown from "@/components/FertileWindowCountdown";
 
 type QuizData = {
   name?: string;
@@ -267,33 +269,97 @@ function SmartInsights({ day, plan, symptoms }: { day: number; plan: string; sym
       if (recent.length > 0) {
         const avgSleep = recent.reduce((s: number, e: { sleep: number }) => s + (e.sleep || 0), 0) / recent.length;
         const avgEnergy = recent.reduce((s: number, e: { energy: number }) => s + (e.energy || 0), 0) / recent.length;
+        const avgStress = recent.reduce((s: number, e: { stress: number }) => s + (e.stress || 0), 0) / recent.length;
 
-        if (avgSleep < 5) insights.push("💡 Your sleep has been low — try the 4-7-8 breathing technique tonight and chamomile tea 30 min before bed.");
-        if (avgEnergy < 5) insights.push("💡 Energy dipping? Green tea in the morning and a 10-min walk can boost it by 20%.");
-        if (avgSleep >= 7) insights.push("✨ Your sleep is improving! Keep up the evening routine — it's working.");
+        if (avgSleep < 5) insights.push("💡 Your sleep has been low — try the 4-7-8 breathing technique tonight and chamomile tea 30 min before bed. Poor sleep raises cortisol which can delay ovulation.");
+        if (avgEnergy < 5) insights.push("💡 Energy dipping? Green tea in the morning and a 10-min walk can boost it by 20%. Also check your iron levels — low iron is common in TTC women.");
+        if (avgStress > 7) insights.push("🧘 Your stress has been high for 3 days. Cortisol directly suppresses GnRH (fertility hormone). Try 5 min box breathing now — inhale 4s, hold 4s, exhale 4s, hold 4s.");
+        if (avgSleep >= 7) insights.push("✨ Your sleep is improving! Keep up the evening routine — it's working. Good sleep = better hormone production.");
         if (avgEnergy >= 7) insights.push("✨ Great energy levels! Your body is responding well to the program.");
+        if (avgSleep >= 7 && avgEnergy >= 7 && avgStress < 4) insights.push("🌟 Sleep, energy AND stress all looking great! Your body is in an optimal state for conception.");
+      }
+    } catch {}
+
+    // Cycle-aware insights
+    try {
+      const cycleData = JSON.parse(localStorage.getItem("cycleData") || "{}");
+      if (cycleData.lastPeriodStart) {
+        const start = new Date(cycleData.lastPeriodStart);
+        const today = new Date();
+        const cycleDay = Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+        const ovDay = (cycleData.cycleLength || 28) - 14;
+
+        if (cycleDay >= ovDay - 5 && cycleDay <= ovDay - 3) {
+          insights.push("🎯 Fertile window approaching in 2-3 days! Start every-other-day intimacy. Stay hydrated for cervical mucus production.");
+        }
+        if (cycleDay >= ovDay - 2 && cycleDay <= ovDay) {
+          insights.push("🥚 You're in your PEAK fertile window right now! Today and tomorrow are your best days for conception. Relax and enjoy.");
+        }
+        if (cycleDay >= ovDay + 1 && cycleDay <= ovDay + 3) {
+          insights.push("🌙 Two-week wait begins. Gentle movement only, avoid alcohol, keep stress low. Implantation may be happening in the next few days.");
+        }
+        if (cycleDay >= ovDay + 6 && cycleDay <= ovDay + 9) {
+          insights.push("🤞 Implantation window (6-9 DPO). Some women feel light cramping or spotting — this can be a good sign. Stay calm and patient.");
+        }
+      }
+    } catch {}
+
+    // Partner-aware insights
+    try {
+      const today = new Date().toISOString().split("T")[0];
+      const partnerHabits = localStorage.getItem(`partner_habits_${today}`);
+      const partnerSupps = localStorage.getItem(`partner_supps_${today}`);
+      if (partnerHabits || partnerSupps) {
+        const h = partnerHabits ? Object.values(JSON.parse(partnerHabits)).filter(Boolean).length : 0;
+        const s = partnerSupps ? Object.values(JSON.parse(partnerSupps)).filter(Boolean).length : 0;
+        if (h + s >= 12) insights.push("💑 Your partner is crushing it today — " + (h + s) + " habits completed! You're both showing up. Teamwork makes the dream work.");
+      }
+      const startDate = localStorage.getItem("partnerStartDate");
+      if (startDate) {
+        const pDay = Math.floor((Date.now() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24)) + 1;
+        if (pDay === 37) insights.push("👨 His sperm program is at the halfway mark (Day 37/74)! The first batch of optimized sperm is forming now.");
+        if (pDay === 74) insights.push("🎉 His 74-day sperm cycle is COMPLETE! New, optimized sperm are now ready. This is the best time to conceive.");
       }
     } catch {}
 
     // Symptom based
-    if (symptoms.includes("Irregular cycles")) insights.push("📅 For cycle regularity: consistent sleep schedule + myo-inositol + stress reduction. Most women see improvement by cycle 2-3.");
-    if (symptoms.includes("PCOS symptoms")) insights.push("🌿 PCOS tip: spearmint tea twice daily + low-GI meals can help reduce androgens naturally.");
+    if (symptoms.includes("Irregular cycles")) insights.push("📅 For cycle regularity: consistent sleep schedule + myo-inositol 4000mg/day + stress reduction. Most women see improvement by cycle 2-3.");
+    if (symptoms.includes("PCOS symptoms")) insights.push("🌿 PCOS tip: spearmint tea twice daily + low-GI meals can help reduce androgens naturally. Track with OPK from Day 10.");
     if (symptoms.includes("Stress & anxiety")) insights.push("🧘 Cortisol directly impacts fertility. Try 5 min of box breathing before bed tonight.");
+    if (symptoms.includes("Inflammation")) insights.push("🐟 Anti-inflammatory tip: add turmeric + black pepper to your meals today. Omega-3 fish oil reduces inflammatory markers within 2 weeks.");
+    if (symptoms.includes("Low energy")) insights.push("⚡ Low energy can signal iron deficiency — common in TTC women. Eat spinach + vitamin C together for 67% better iron absorption.");
 
     // Day-based milestones
     if (day === 7) insights.push("🎉 One week complete! Your body is already adapting. Foundation phase is building your base.");
     if (day === 14) insights.push("🎉 Two weeks! Most women report better sleep and more energy by now.");
     if (day === 21) insights.push("🎉 Three weeks — habits are forming! You're in the Strengthen phase now.");
     if (day === 30) insights.push("👑 30 days! You've completed a full cycle of the program. Incredible dedication.");
+    if (day === 60) insights.push("🏆 60 days! You're in the top 5% of users for consistency. Your body has transformed.");
+    if (day === 90) insights.push("💎 90 days — a full quarter of dedication! Three complete cycles of optimization. You're a fertility warrior.");
 
     // Plan countdown
     if (plan === "glow" && day > 23) insights.push(`⏰ ${30 - day} days left in your Glow plan. Make every session count!`);
     if (plan === "elite" && day > 80) insights.push(`⏰ ${90 - day} days left in your Elite plan. You're in the final stretch!`);
 
-    // Pick one random insight for today
+    // Supplement reminder
+    try {
+      const today = new Date().toISOString().slice(0, 10);
+      const suppsTaken = localStorage.getItem(`supps_${today}`);
+      if (!suppsTaken && new Date().getHours() >= 10) {
+        insights.push("💊 Don't forget your supplements today! Consistency is key — CoQ10 and folate need daily intake to build up in your system.");
+      }
+    } catch {}
+
+    // Pick one random insight for today (but cycle-aware ones get priority)
     if (insights.length > 0) {
-      const todaySeed = new Date().getDate() + day;
-      setInsight(insights[todaySeed % insights.length]);
+      // Prioritize cycle and partner insights
+      const priorityInsights = insights.filter(i => i.includes("🎯") || i.includes("🥚") || i.includes("🌙") || i.includes("🤞") || i.includes("💑"));
+      if (priorityInsights.length > 0) {
+        setInsight(priorityInsights[0]);
+      } else {
+        const todaySeed = new Date().getDate() + day;
+        setInsight(insights[todaySeed % insights.length]);
+      }
     }
   }, [day, plan, symptoms]);
 
@@ -624,8 +690,14 @@ export default function DashboardPage() {
       {/* STREAK FREEZE */}
       <StreakFreeze />
 
+      {/* FERTILE WINDOW STATUS */}
+      <FertileWindowCountdown />
+
       {/* PARTNER PROGRESS */}
       <PartnerProgressWidget />
+
+      {/* INTIMACY TRACKER (shows only during fertile window) */}
+      <IntimacyTracker />
 
       {/* MEDICATION TRACKER */}
       <MedicationTracker />
