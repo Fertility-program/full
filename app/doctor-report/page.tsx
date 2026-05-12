@@ -214,6 +214,6 @@ export default function DoctorReportPage() {
         <Link href="/dashboard" className="btn-outline px-6 py-2 text-sm">Dashboard</Link>
         <Link href="/progress" className="btn-outline px-6 py-2 text-sm">Full Progress</Link>
       </div>
-    </section>
+    </main>
   );
 }
