@@ -22,6 +22,8 @@ import IntimacyTracker from "@/components/IntimacyTracker";
 import FertileWindowCountdown from "@/components/FertileWindowCountdown";
 import JourneyTimeline from "@/components/JourneyTimeline";
 import DailyTip from "@/components/DailyTip";
+import WhatsNew from "@/components/WhatsNew";
+import ConceptionCalculator from "@/components/ConceptionCalculator";
 
 type QuizData = {
   name?: string;
@@ -1107,9 +1109,13 @@ export default function DashboardPage() {
       {/* JOURNEY TIMELINE */}
       <JourneyTimeline day={day} />
 
+      {/* CONCEPTION CALCULATOR */}
+      <ConceptionCalculator />
+
       <MilestoneCelebration />
       <OnboardingTutorial />
       <TrialEndingModal />
+      <WhatsNew />
     </main>
   );
 }

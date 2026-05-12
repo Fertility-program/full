@@ -63,6 +63,7 @@ export default function SessionPage() {
   const [index, setIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(120);
   const [voiceGuide, setVoiceGuide] = useState(false);
+  const [locked, setLocked] = useState(false);
 
   const [paused, setPaused] = useState(false);
 
@@ -72,6 +73,16 @@ export default function SessionPage() {
     const savedVoice = localStorage.getItem("voiceGuide");
     if (savedVoice === "true") setVoiceGuide(true);
     try { const qd = JSON.parse(localStorage.getItem("quizData") || "{}"); if (qd.name) setUserName(qd.name); } catch {}
+
+    // Premium check — free users locked after day 7
+    const currentDay = Number(savedDay || "1");
+    const plan = localStorage.getItem("plan") || "free";
+    const premium = localStorage.getItem("premium") === "true";
+    const expiryDate = localStorage.getItem("expiryDate");
+    const isActive = premium && (!expiryDate || new Date(expiryDate) > new Date());
+    if (currentDay > 7 && !(isActive && (plan === "glow" || plan === "elite"))) {
+      setLocked(true);
+    }
   }, []);
 
   const program = useMemo(() => {
@@ -325,6 +336,36 @@ export default function SessionPage() {
               Daily Check-In
             </Link>
           </div>
+        </section>
+      </main>
+    );
+  }
+
+  // PREMIUM LOCK — free users past day 7
+  if (locked) {
+    return (
+      <main className="max-w-3xl mx-auto px-6 py-20">
+        <section className="soft-card p-10 text-center">
+          <div className="text-5xl mb-4">🔒</div>
+          <h1 className="text-3xl text-[#4a3f44] mb-3">Premium Sessions</h1>
+          <p className="text-[#7b6870] mb-6">
+            You&apos;ve completed your 7-day free trial! Upgrade to continue with Build, Strengthen, and Master phase exercises.
+          </p>
+          <div className="p-4 rounded-xl bg-[#fdf2f5] border border-[#f0e3e8] mb-6 text-left max-w-sm mx-auto">
+            <p className="text-xs font-bold text-[#4a3f44] mb-2">With premium you get:</p>
+            <ul className="text-xs text-[#7b6870] space-y-1">
+              <li>✓ 90 days of progressive exercises</li>
+              <li>✓ Full meal plans with rotating recipes</li>
+              <li>✓ Advanced cycle-synced programming</li>
+              <li>✓ Spermiogram tracking & couple mode</li>
+              <li>✓ Weekly progress analytics</li>
+            </ul>
+          </div>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link href="/pricing" className="btn-primary px-8 py-3">View Plans — From €29</Link>
+            <Link href="/dashboard" className="btn-outline px-6 py-3">Back to Dashboard</Link>
+          </div>
+          <p className="text-[9px] text-[#b98fa1] mt-4">One-time payment. No subscription. No hidden fees.</p>
         </section>
       </main>
     );
