@@ -8,6 +8,7 @@ import CircularTimer from "@/components/CircularTimer";
 import { useSwipe } from "@/lib/hooks/useSwipe";
 import { haptic } from "@/lib/haptic";
 import { pushSession, pushSingle } from "@/lib/sync";
+import CyclePhaseExerciseGuide from "@/components/CyclePhaseExerciseGuide";
 
 const CATEGORY_LABELS: Record<string, string> = {
   warmup: "Warm-Up",
@@ -395,6 +396,7 @@ export default function SessionPage() {
 
           {!started ? (
             <div className="flex flex-col items-center gap-4">
+              <CyclePhaseExerciseGuide />
               <button
                 onClick={handleStart}
                 className="w-40 h-40 rounded-full bg-[#d9a8b8] text-white text-5xl mx-auto shadow-xl hover:scale-105 transition flex items-center justify-center"

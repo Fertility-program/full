@@ -24,6 +24,8 @@ import JourneyTimeline from "@/components/JourneyTimeline";
 import DailyTip from "@/components/DailyTip";
 import WhatsNew from "@/components/WhatsNew";
 import ConceptionCalculator from "@/components/ConceptionCalculator";
+import ShareWithPartner from "@/components/ShareWithPartner";
+import BBTMiniChart from "@/components/BBTMiniChart";
 
 type QuizData = {
   name?: string;
@@ -700,11 +702,17 @@ export default function DashboardPage() {
       {/* FERTILE WINDOW STATUS */}
       <FertileWindowCountdown />
 
+      {/* BBT MINI CHART */}
+      <BBTMiniChart />
+
       {/* PARTNER PROGRESS */}
       <PartnerProgressWidget />
 
       {/* INTIMACY TRACKER (shows only during fertile window) */}
       <IntimacyTracker />
+
+      {/* SHARE WITH PARTNER */}
+      <ShareWithPartner />
 
       {/* MEDICATION TRACKER */}
       <MedicationTracker />
