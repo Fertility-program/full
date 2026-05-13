@@ -26,6 +26,7 @@ import WhatsNew from "@/components/WhatsNew";
 import ConceptionCalculator from "@/components/ConceptionCalculator";
 import ShareWithPartner from "@/components/ShareWithPartner";
 import BBTMiniChart from "@/components/BBTMiniChart";
+import StreakRewards from "@/components/StreakRewards";
 
 type QuizData = {
   name?: string;
@@ -1146,6 +1147,9 @@ export default function DashboardPage() {
 
       {/* JOURNEY TIMELINE */}
       <JourneyTimeline day={day} />
+
+      {/* STREAK REWARDS */}
+      <StreakRewards />
 
       {/* CONCEPTION CALCULATOR */}
       <ConceptionCalculator />

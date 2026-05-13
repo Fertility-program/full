@@ -98,6 +98,41 @@ export const ACHIEVEMENTS: Achievement[] = [
     icon: "🏆",
     condition: (s) => s.sessionsCompleted >= 25,
   },
+  {
+    id: "streak_60",
+    title: "Diamond Consistency",
+    description: "60-day streak — top 1% of users",
+    icon: "💠",
+    condition: (s) => s.streak >= 60,
+  },
+  {
+    id: "streak_74",
+    title: "Full Sperm Cycle",
+    description: "74 days — one complete spermatogenesis cycle",
+    icon: "🧬",
+    condition: (s) => s.streak >= 74,
+  },
+  {
+    id: "streak_90",
+    title: "Fertility Legend",
+    description: "90-day streak — full program complete",
+    icon: "🏅",
+    condition: (s) => s.streak >= 90,
+  },
+  {
+    id: "day_60",
+    title: "Two Months Strong",
+    description: "Reach Day 60",
+    icon: "🌟",
+    condition: (s) => s.currentDay >= 60,
+  },
+  {
+    id: "day_90",
+    title: "Program Graduate",
+    description: "Complete the full 90-day program",
+    icon: "🎓",
+    condition: (s) => s.currentDay >= 90,
+  },
 ];
 
 export function getUnlockedAchievements(stats: AchievementStats): Achievement[] {

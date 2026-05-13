@@ -330,6 +330,72 @@ export default function AccountPage() {
           </Link>
         </section>
       )}
+
+      {/* DATA EXPORT */}
+      <section className="soft-card p-6 mt-6">
+        <h2 className="text-xl text-[#4a3f44] mb-3">📦 Your Data</h2>
+        <p className="text-xs text-[#7b6870] mb-4">Download all your tracked data or delete your account permanently.</p>
+
+        <div className="flex flex-wrap gap-3">
+          <button
+            onClick={() => {
+              const exportData: Record<string, unknown> = {};
+              const keys = ["quizData", "checkinHistory", "cycleData", "journalEntries", "measurements", "favorites", "spermiogramData", "partnerName", "day", "plan"];
+              keys.forEach((key) => {
+                const val = localStorage.getItem(key);
+                if (val) { try { exportData[key] = JSON.parse(val); } catch { exportData[key] = val; } }
+              });
+              const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = `veronica-bloom-data-${new Date().toISOString().split("T")[0]}.json`;
+              a.click();
+              URL.revokeObjectURL(url);
+            }}
+            className="btn-outline px-5 py-2.5 text-sm"
+          >
+            📥 Download My Data (JSON)
+          </button>
+
+          <button
+            onClick={async () => {
+              if (!confirm("Are you sure you want to delete your account? This cannot be undone. All your data will be permanently removed.")) return;
+              if (!confirm("This is your last chance. Type 'DELETE' in the next prompt to confirm.")) return;
+              const confirmation = prompt("Type DELETE to confirm account deletion:");
+              if (confirmation !== "DELETE") { alert("Deletion cancelled."); return; }
+
+              // Clear all local data
+              localStorage.clear();
+
+              // Try to delete from Supabase
+              try {
+                const supabase = createClient();
+                const { data: { user } } = await supabase.auth.getUser();
+                if (user) {
+                  await supabase.from("profiles").delete().eq("id", user.id);
+                  await supabase.from("checkins").delete().eq("user_id", user.id);
+                  await supabase.from("journal_entries").delete().eq("user_id", user.id);
+                  await supabase.from("favorites").delete().eq("user_id", user.id);
+                  await supabase.from("sessions").delete().eq("user_id", user.id);
+                  await supabase.from("achievements").delete().eq("user_id", user.id);
+                  await supabase.auth.signOut();
+                }
+              } catch {}
+
+              alert("Account deleted. Redirecting to home page.");
+              window.location.href = "/";
+            }}
+            className="px-5 py-2.5 text-sm rounded-2xl border border-red-200 text-red-600 hover:bg-red-50 transition-colors"
+          >
+            🗑️ Delete Account
+          </button>
+        </div>
+
+        <p className="text-[9px] text-[#b98fa1] mt-3">
+          Data export includes: quiz answers, check-in history, cycle data, journal, measurements, and favorites. Per GDPR, you have the right to access and delete your data at any time.
+        </p>
+      </section>
     </main>
   );
 }
