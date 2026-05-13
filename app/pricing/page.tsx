@@ -202,6 +202,20 @@ function PricingContent() {
           </div>
         ))}
       </section>
+
+      {/* CLINIC CODE */}
+      <section className="soft-card p-6 text-center mt-6">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <span className="text-xl">🏥</span>
+          <h3 className="text-lg text-[#2d5a52]">Have a Clinic Access Code?</h3>
+        </div>
+        <p className="text-xs text-[#5a7570] mb-4">
+          If your fertility clinic gave you an access code, activate it for free premium access.
+        </p>
+        <Link href="/activate" className="btn-outline px-6 py-2.5 text-sm inline-block">
+          Enter Clinic Code →
+        </Link>
+      </section>
     </main>
   );
 }
