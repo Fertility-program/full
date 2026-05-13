@@ -34,11 +34,13 @@ function LoginContent() {
     const signInResult = await signIn(email, password);
 
     if (signInResult.success) {
-      // If clinic code provided, save it for activation after redirect
+      // If clinic code provided, save it and redirect to activate page
       if (clinicCode.trim()) {
         localStorage.setItem("pendingClinicCode", clinicCode.trim());
+        router.push("/activate");
+      } else {
+        router.push(redirect);
       }
-      router.push(redirect);
       router.refresh();
       return;
     }
@@ -50,11 +52,13 @@ function LoginContent() {
       // Try signing in immediately after signup
       const retrySignIn = await signIn(email, password);
       if (retrySignIn.success) {
-        // If clinic code provided, save it for activation after redirect
+        // If clinic code provided, save it and redirect to activate page
         if (clinicCode.trim()) {
           localStorage.setItem("pendingClinicCode", clinicCode.trim());
+          router.push("/activate");
+        } else {
+          router.push(redirect);
         }
-        router.push(redirect);
         router.refresh();
         return;
       }
@@ -67,6 +71,8 @@ function LoginContent() {
       const err = signUpResult.error || "";
       if (err.toLowerCase().includes("already")) {
         setError("Incorrect password. Please try again.");
+      } else if (err.toLowerCase().includes("not authorized") || err.toLowerCase().includes("signups not allowed")) {
+        setError("Sign ups are currently disabled. Please contact support.");
       } else {
         setError(err || "Something went wrong. Please try again.");
       }

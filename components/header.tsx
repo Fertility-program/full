@@ -72,6 +72,7 @@ export default function Header() {
     ["Refer & Earn", "/refer"],
     [t("Plans"), "/pricing"],
     ["Free Guide", "/free-guide"],
+    ["Activate Code", "/activate"],
     ["Get App", "/download"],
     [t("Account"), "/account"],
   ];
