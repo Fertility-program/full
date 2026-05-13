@@ -577,6 +577,27 @@ export default function DashboardPage() {
         console.error("Error parsing quiz data", e);
       }
     }
+
+    // Activate pending clinic code (saved during login)
+    const pendingCode = localStorage.getItem("pendingClinicCode");
+    if (pendingCode) {
+      localStorage.removeItem("pendingClinicCode");
+      import("@/lib/clinic-codes").then(({ activateClinicCode }) => {
+        import("@/lib/supabase/client").then(({ createClient }) => {
+          const supabase = createClient();
+          supabase.auth.getUser().then(({ data: { user } }) => {
+            if (user) {
+              activateClinicCode(pendingCode, user.id).then((result) => {
+                if (result.success) {
+                  // Refresh to show premium status
+                  window.location.reload();
+                }
+              });
+            }
+          });
+        });
+      }).catch(() => {});
+    }
   }, []);
 
   const program = useMemo(() => {

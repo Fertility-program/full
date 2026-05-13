@@ -34,15 +34,9 @@ function LoginContent() {
     const signInResult = await signIn(email, password);
 
     if (signInResult.success) {
-      // If clinic code provided, activate it
+      // If clinic code provided, save it for activation after redirect
       if (clinicCode.trim()) {
-        try {
-          const { activateClinicCode } = await import("@/lib/clinic-codes");
-          const user = signInResult.user;
-          if (user) {
-            await activateClinicCode(clinicCode.trim(), user.id);
-          }
-        } catch {}
+        localStorage.setItem("pendingClinicCode", clinicCode.trim());
       }
       router.push(redirect);
       router.refresh();
@@ -56,12 +50,9 @@ function LoginContent() {
       // Try signing in immediately after signup
       const retrySignIn = await signIn(email, password);
       if (retrySignIn.success) {
-        // If clinic code provided, activate it
-        if (clinicCode.trim() && signUpResult.user) {
-          try {
-            const { activateClinicCode } = await import("@/lib/clinic-codes");
-            await activateClinicCode(clinicCode.trim(), signUpResult.user.id);
-          } catch {}
+        // If clinic code provided, save it for activation after redirect
+        if (clinicCode.trim()) {
+          localStorage.setItem("pendingClinicCode", clinicCode.trim());
         }
         router.push(redirect);
         router.refresh();
