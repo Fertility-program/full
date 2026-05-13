@@ -13,11 +13,11 @@ export default function NutritionPage() {
 
   const [form, setForm] =
     useState({
-      age: "48",
+      age: "31",
       height: "168",
-      weight: "72",
+      weight: "65",
       activity: "light",
-      goal: "tone",
+      goal: "conception",
     });
 
   const data = useMemo(() => {

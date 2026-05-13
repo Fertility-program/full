@@ -36,8 +36,8 @@ export default function BuddyPage() {
   }
 
   const shareText = userName
-    ? `Hey! I'm using Veronica Method for menopause wellness and it's really helping. Want to be my workout buddy? We can track progress together! Join free: ${link}`
-    : `I found this amazing menopause wellness app. Want to be my workout buddy? Join free: ${link}`;
+    ? `Hey! I'm using Veronica Bloom for fertility wellness and it's really helping. Want to be my workout buddy? We can track progress together! Join free: ${link}`
+    : `I found this amazing fertility wellness app. Want to be my workout buddy? Join free: ${link}`;
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-10">

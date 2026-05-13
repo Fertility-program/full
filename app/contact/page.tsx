@@ -123,8 +123,8 @@ export default function ContactPage() {
         <div className="soft-card p-5 text-center">
           <div className="text-2xl mb-2">📱</div>
           <p className="text-sm font-medium text-[#4a3f44]">Instagram</p>
-          <a href="https://instagram.com/veronica_menopause_program" target="_blank" rel="noopener noreferrer" className="text-xs text-[#b98fa1] hover:underline">
-            @veronica_menopause_program
+          <a href="https://instagram.com/veronicabloom.fertility" target="_blank" rel="noopener noreferrer" className="text-xs text-[#b98fa1] hover:underline">
+            @veronicabloom.fertility
           </a>
         </div>
       </section>

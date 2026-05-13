@@ -28,11 +28,11 @@ export default function ResultsPage() {
   const [data, setData] = useState<QuizData>({
     symptoms: [],
     time: "20 min",
-    age: "48",
+    age: "31",
     height: "168",
-    weight: "72",
+    weight: "65",
     activity: "light",
-    goal: "tone",
+    goal: "conception",
   });
 
   useEffect(() => {
@@ -315,11 +315,11 @@ function SupplementPreview({ symptoms }: { symptoms: string[] }) {
   const SUPPS = [
     { name: "Vitamin D3", dose: "2,000–4,000 IU", icon: "☀️", forAll: true, symptoms: [] as string[] },
     { name: "Magnesium", dose: "300–400mg", icon: "🌙", forAll: true, symptoms: ["Poor sleep", "Joint pain"] },
-    { name: "Omega-3", dose: "1,000–2,000mg", icon: "🐟", forAll: true, symptoms: ["Joint pain", "Hot flashes"] },
-    { name: "Vitamin C", dose: "500–1,000mg", icon: "🍊", forAll: false, symptoms: ["Pelvic prolapse", "Incontinence", "Joint pain"] },
-    { name: "Collagen", dose: "10–15g", icon: "✨", forAll: false, symptoms: ["Pelvic prolapse", "Incontinence", "Joint pain"] },
-    { name: "Zinc", dose: "15–25mg", icon: "🛡️", forAll: false, symptoms: ["Incontinence", "Pelvic prolapse", "Low energy"] },
-    { name: "Ashwagandha", dose: "300–600mg", icon: "🌿", forAll: false, symptoms: ["Poor sleep", "Mood swings", "Hot flashes"] },
+    { name: "Omega-3", dose: "1,000–2,000mg", icon: "🐟", forAll: true, symptoms: ["Inflammation", "Endometriosis"] },
+    { name: "Vitamin C", dose: "500–1,000mg", icon: "🍊", forAll: false, symptoms: ["Low energy", "Inflammation"] },
+    { name: "Collagen", dose: "10–15g", icon: "✨", forAll: false, symptoms: ["Low energy", "Inflammation"] },
+    { name: "Zinc", dose: "15–25mg", icon: "🛡️", forAll: false, symptoms: ["Irregular cycles", "PCOS symptoms", "Low energy"] },
+    { name: "Myo-Inositol", dose: "2,000–4,000mg", icon: "🌸", forAll: false, symptoms: ["PCOS symptoms", "Irregular cycles"] },
     { name: "Probiotics", dose: "10–30B CFU", icon: "🦠", forAll: false, symptoms: ["Bloating", "Mood swings"] },
   ];
 

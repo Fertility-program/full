@@ -31,7 +31,7 @@ export default function WaterReminder() {
 
       // Različite poruke za raznolikost
       const messages = [
-        "Time for a glass of water! 💧 Hydration helps reduce hot flashes.",
+        "Time for a glass of water! 💧 Hydration supports cervical mucus production.",
         "Water break! 💧 Your joints and skin will thank you.",
         "Don't forget to drink water! 💧 Stay hydrated, stay energized.",
         "Quick reminder: have you had water recently? 💧",
