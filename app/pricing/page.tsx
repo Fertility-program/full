@@ -192,15 +192,74 @@ function PricingContent() {
       <section className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
         {[
           { icon: "🔒", text: "Secure Payment" },
+          { icon: "💸", text: "30-Day Money Back" },
           { icon: "📱", text: "Works on Any Device" },
-          { icon: "🌸", text: "Designed by Specialists" },
-          { icon: "💬", text: "Email Support" },
+          { icon: "🚫", text: "No Subscription" },
         ].map((item) => (
           <div key={item.text} className="soft-card p-4 text-center">
             <div className="text-xl mb-1">{item.icon}</div>
             <p className="text-[10px] text-[#2d5a52] font-medium">{item.text}</p>
           </div>
         ))}
+      </section>
+
+      {/* COMPARISON TABLE */}
+      <section className="soft-card p-6 mb-8 overflow-x-auto">
+        <h2 className="text-xl text-[#2d5a52] mb-4 text-center">What&apos;s Included</h2>
+        <table className="w-full text-xs">
+          <thead>
+            <tr className="border-b border-[#c2ddd8]">
+              <th className="text-left p-2 text-[#5a7570]">Feature</th>
+              <th className="text-center p-2 text-[#5a7570]">Free (7 days)</th>
+              <th className="text-center p-2 text-[#2d5a52] font-bold">Bloom €29</th>
+              <th className="text-center p-2 text-[#2d5a52] font-bold">Elite €79</th>
+            </tr>
+          </thead>
+          <tbody className="text-[#3a5550]">
+            {[
+              { feature: "Daily exercises", free: "7 days", bloom: "30 days", elite: "90 days" },
+              { feature: "Meal plans & recipes", free: "Day 1 only", bloom: "30 days rotating", elite: "90 days rotating" },
+              { feature: "Supplement tracking", free: "Preview", bloom: "✓ Full", elite: "✓ Full" },
+              { feature: "Cycle tracker (BBT, OPK)", free: "✓", bloom: "✓", elite: "✓" },
+              { feature: "Partner Dashboard (his)", free: "✓", bloom: "✓", elite: "✓" },
+              { feature: "Couple Mode", free: "—", bloom: "✓", elite: "✓" },
+              { feature: "Spermiogram tracker", free: "—", bloom: "✓", elite: "✓" },
+              { feature: "Medication tracker", free: "—", bloom: "✓", elite: "✓" },
+              { feature: "Weekly summaries", free: "—", bloom: "✓", elite: "✓" },
+              { feature: "Shopping lists (14-day)", free: "—", bloom: "✓", elite: "✓" },
+              { feature: "Progress analytics", free: "Basic", bloom: "✓ Full", elite: "✓ Full" },
+              { feature: "Doctor report", free: "—", bloom: "—", elite: "✓" },
+              { feature: "Custom workouts", free: "—", bloom: "—", elite: "✓" },
+              { feature: "Priority support", free: "—", bloom: "—", elite: "✓" },
+            ].map((row) => (
+              <tr key={row.feature} className="border-b border-[#f0faf8]">
+                <td className="p-2 font-medium">{row.feature}</td>
+                <td className="p-2 text-center text-[#5a7570]">{row.free}</td>
+                <td className="p-2 text-center">{row.bloom}</td>
+                <td className="p-2 text-center">{row.elite}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {/* MONEY BACK GUARANTEE */}
+      <section className="soft-card p-6 mb-8 text-center border-l-4 border-l-green-400">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <span className="text-2xl">💸</span>
+          <h3 className="text-lg text-[#2d5a52]">30-Day Money-Back Guarantee</h3>
+        </div>
+        <p className="text-xs text-[#5a7570] max-w-md mx-auto">
+          Try the full program risk-free. If you&apos;re not satisfied within 30 days, we&apos;ll refund you — no questions asked. We&apos;re confident you&apos;ll love it.
+        </p>
+      </section>
+
+      {/* TESTIMONIAL */}
+      <section className="soft-card p-5 mb-8 border-l-4 border-l-[#5ba89d]">
+        <p className="text-sm text-[#3a5550] italic mb-2">
+          &ldquo;We conceived after 4 months of using the program. The cycle tracking and his supplement protocol made all the difference. Best €29 we ever spent.&rdquo;
+        </p>
+        <p className="text-xs text-[#5a7570]">— Ana & Marko, ages 32 & 34</p>
       </section>
 
       {/* CLINIC CODE */}
