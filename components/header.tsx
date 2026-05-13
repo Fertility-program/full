@@ -47,6 +47,7 @@ export default function Header() {
     [t("Dashboard"), "/dashboard"],
     ["Cycle", "/cycle"],
     [t("Assessment"), "/quiz"],
+    ["Sample Day", "/sample-day"],
     ["Features", "/features"],
     ["Free Guide", "/free-guide"],
     ["Blog", "/blog"],
