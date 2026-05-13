@@ -207,8 +207,10 @@ export default function PartnerPage() {
 
     // Load name
     try {
-      const qd = JSON.parse(localStorage.getItem("partnerQuizData") || localStorage.getItem("quizData") || "{}");
-      if (qd.name) setUserName(qd.name);
+      const partnerName = localStorage.getItem("partnerName");
+      if (partnerName) {
+        setUserName(partnerName);
+      }
     } catch {}
 
     // Check auth
@@ -292,6 +294,36 @@ export default function PartnerPage() {
           Optimize sperm quality in 74 days. Track, improve, conceive together.
         </p>
       </section>
+
+      {/* NAME INPUT (shows if no name saved) */}
+      {!userName && (
+        <section className="soft-card p-4 mb-4 border-l-4 border-l-[#5ba89d]">
+          <p className="text-xs text-[#2d5a52] mb-2 font-medium">👋 What&apos;s your name?</p>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="flex-1 p-2.5 rounded-xl border border-[#c2ddd8] text-sm outline-none focus:border-[#5ba89d]"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  const val = (e.target as HTMLInputElement).value.trim();
+                  if (val) { localStorage.setItem("partnerName", val); setUserName(val); }
+                }
+              }}
+            />
+            <button
+              onClick={(e) => {
+                const input = (e.currentTarget.previousElementSibling as HTMLInputElement);
+                const val = input?.value?.trim();
+                if (val) { localStorage.setItem("partnerName", val); setUserName(val); }
+              }}
+              className="px-4 py-2 rounded-xl bg-[#2d5a52] text-white text-xs font-medium"
+            >
+              Save
+            </button>
+          </div>
+        </section>
+      )}
 
       {/* 74-DAY COUNTDOWN */}
       <section className="soft-card p-5 mb-4 border-l-4 border-l-[#5ba89d]">
