@@ -15,6 +15,8 @@ export type Profile = {
   expiry_date: string | null;
 };
 
+import { isPromoActive, PROMO_PLAN } from "@/lib/promo";
+
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
@@ -63,8 +65,8 @@ export function useAuth() {
     user,
     profile,
     loading,
-    isPremium: profile?.premium ?? false,
-    plan: profile?.plan ?? "free",
+    isPremium: isPromoActive() ? true : (profile?.premium ?? false),
+    plan: isPromoActive() ? PROMO_PLAN : (profile?.plan ?? "free"),
     refreshProfile: fetchProfile,
   };
 }

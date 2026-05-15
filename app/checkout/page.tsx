@@ -6,6 +6,7 @@ import Link from "next/link";
 import { getPlan, activatePlan } from "@/lib/checkout";
 import { activateSubscription } from "@/lib/subscription";
 import { createClient } from "@/lib/supabase/client";
+import { isPromoActive, PROMO_CHECKOUT_MESSAGE, PROMO_BANNER_TEXT } from "@/lib/promo";
 import type { User } from "@supabase/supabase-js";
 
 function CheckoutContent() {
@@ -17,6 +18,30 @@ function CheckoutContent() {
 
   const rawPlan = params.get("plan");
   const data = useMemo(() => getPlan(rawPlan), [rawPlan]);
+
+  // PROMO MODE: redirect to quiz with message
+  if (isPromoActive()) {
+    return (
+      <main className="max-w-2xl mx-auto px-6 py-14 text-center">
+        <section className="soft-card p-10">
+          <div className="text-5xl mb-6">🎉</div>
+          <div className="inline-block px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-bold mb-6 border border-green-200">
+            {PROMO_BANNER_TEXT}
+          </div>
+          <h1 className="text-4xl text-[#4a3f44] mb-4">No Payment Needed!</h1>
+          <p className="text-[#7b6870] text-lg mb-8 max-w-md mx-auto">
+            {PROMO_CHECKOUT_MESSAGE}
+          </p>
+          <Link href="/quiz" className="btn-primary px-10 py-4 text-lg inline-block">
+            Start Your Free Journey →
+          </Link>
+          <p className="text-[11px] text-[#b98fa1] mt-6">
+            Full Elite access included. No credit card required.
+          </p>
+        </section>
+      </main>
+    );
+  }
 
   useEffect(() => {
     const supabase = createClient();

@@ -9,6 +9,8 @@ export type MembershipData = {
   daysRemaining: number;
 };
 
+import { isPromoActive, PROMO_PLAN } from "@/lib/promo";
+
 const PLAN_DAYS = {
   glow: 30,
   elite: 90,
@@ -87,6 +89,17 @@ export function startMembership(plan: MembershipPlan) {
 }
 
 export function getMembership(): MembershipData {
+  // PROMO MODE: everyone gets Elite access for free
+  if (isPromoActive()) {
+    return {
+      plan: PROMO_PLAN,
+      status: "active",
+      purchaseDate: null,
+      expiryDate: null,
+      daysRemaining: 999,
+    };
+  }
+
   if (typeof window === "undefined") {
     return {
       plan: "free",

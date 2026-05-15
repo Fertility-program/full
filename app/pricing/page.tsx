@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { isPromoActive, PROMO_BANNER_TEXT } from "@/lib/promo";
 
 function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
@@ -98,6 +99,11 @@ function PricingContent() {
       )}
 
       <section className="text-center mb-14">
+        {isPromoActive() && (
+          <div className="mb-8 inline-block px-6 py-3 rounded-full bg-green-50 text-green-700 font-bold border border-green-200 text-lg">
+            {PROMO_BANNER_TEXT}
+          </div>
+        )}
         <p className="uppercase tracking-[0.25em] text-sm text-[#6aab9f] mb-4">
           Choose Your Membership
         </p>
@@ -107,7 +113,7 @@ function PricingContent() {
         <p className="max-w-3xl mx-auto text-[#5a7570] text-xl leading-relaxed mb-6">
           Compare your options, explore benefits and choose the path that supports your conception goals.
         </p>
-        <CountdownTimer />
+        {!isPromoActive() && <CountdownTimer />}
       </section>
 
       <section className="grid lg:grid-cols-2 gap-8 mb-14">
@@ -126,12 +132,18 @@ function PricingContent() {
                 </div>
               ))}
             </div>
-            <Link
-              href={plan.href}
-              className={plan.name === "Elite" ? "btn-primary w-full text-center block" : "btn-outline w-full text-center block"}
-            >
-              {plan.cta}
-            </Link>
+            {isPromoActive() ? (
+              <span className="w-full text-center block py-4 rounded-2xl bg-gray-100 text-gray-400 font-medium cursor-not-allowed border border-gray-200">
+                Coming Soon — Currently Free!
+              </span>
+            ) : (
+              <Link
+                href={plan.href}
+                className={plan.name === "Elite" ? "btn-primary w-full text-center block" : "btn-outline w-full text-center block"}
+              >
+                {plan.cta}
+              </Link>
+            )}
           </div>
         ))}
       </section>
@@ -181,11 +193,21 @@ function PricingContent() {
       <section className="soft-card p-10 text-center">
         <h2 className="text-5xl mb-5">Start Your Fertility Journey Today</h2>
         <p className="text-[#5a7570] text-lg mb-8">
-          Explore every feature before checkout and choose the plan that supports your goals.
+          {isPromoActive()
+            ? "Everything is free during our launch promo. Start now — no payment required!"
+            : "Explore every feature before checkout and choose the plan that supports your goals."}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Link href="/plans/glow" className="btn-outline">View Bloom</Link>
-          <Link href="/plans/elite" className="btn-primary">View Elite</Link>
+          {isPromoActive() ? (
+            <Link href="/quiz" className="btn-primary px-10 py-4 text-lg">
+              Start Free — Full Access →
+            </Link>
+          ) : (
+            <>
+              <Link href="/plans/glow" className="btn-outline">View Bloom</Link>
+              <Link href="/plans/elite" className="btn-primary">View Elite</Link>
+            </>
+          )}
         </div>
       </section>
 
