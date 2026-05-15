@@ -436,7 +436,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Deep Squat Pelvic Floor Release",
-    image: img("squat.jpg"),
+    image: img("deepsquat-release.jpg"),
     start: "Stand with feet wider than hips, toes turned out. Hold onto chair for support.",
     end: "Lower into deep squat, let pelvic floor relax and lengthen. Breathe deeply for 30 sec. Rise slowly.",
     why: "Pelvic floor needs both strength AND flexibility. Tight pelvic floor can worsen prolapse symptoms. This teaches full relaxation.",
@@ -445,7 +445,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Transverse Abdominis Activation",
-    image: img("deadbug.jpg"),
+    image: img("transverse-abs.jpg"),
     start: "Lie on back, knees bent. Place fingers just inside hip bones.",
     end: "Gently draw lower belly inward (as if zipping up tight jeans). Hold 10 sec while breathing normally. You should feel a gentle tension under your fingers.",
     why: "The transverse abdominis works synergistically with the pelvic floor. Activating it provides internal support for pelvic organs and reduces intra-abdominal pressure.",
@@ -492,7 +492,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Chin Tuck (Deep Neck Flexor)",
-    image: img("neck.jpg"),
+    image: img("chintuck.jpg"),
     start: "Sit tall or stand against wall. Look straight ahead.",
     end: "Draw chin straight back (making a double chin). Hold 5 sec. Release. Don't tilt head up or down.",
     why: "Strengthens deep cervical flexors that counteract forward head posture. Reduces neck pain and tension headaches by up to 70% per research.",
@@ -501,7 +501,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Thoracic Extension Over Roller",
-    image: img("catcow.jpg"),
+    image: img("thoracic-roller.jpg"),
     start: "Sit on floor, foam roller (or rolled towel) behind upper back. Knees bent, hands behind head.",
     end: "Gently arch upper back over roller. Hold 3 sec. Move roller slightly up/down spine. Repeat at 3-4 positions.",
     why: "Reverses thoracic kyphosis (hunched upper back) that worsens with age. Improves breathing capacity and reduces shoulder impingement.",
@@ -510,7 +510,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Prone Y-T-W Raises",
-    image: img("birddog.jpg"),
+    image: img("ytw-raises.jpg"),
     start: "Lie face down, forehead on small towel. Arms extended overhead (Y position).",
     end: "Lift arms 2 inches off floor in Y shape, hold 3 sec. Lower. Repeat in T shape (arms to sides) and W shape (elbows bent).",
     why: "Activates lower trapezius and serratus anterior — critical postural muscles that weaken with desk work and aging. Prevents rotator cuff issues.",
@@ -519,7 +519,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Standing Posture Flow",
-    image: img("power.jpg"),
+    image: img("postureflow.jpg"),
     start: "Stand tall, feet hip-width. Arms by sides.",
     end: "Inhale: roll shoulders up and back, open chest, slight backbend. Exhale: return to tall neutral. Repeat with awareness of alignment.",
     why: "Integrates all postural muscles in a flowing movement. Builds the habit of self-correcting posture throughout the day.",
@@ -595,7 +595,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Side Plank (Modified)",
-    image: img("core.jpg"),
+    image: img("sideplank-mod.jpg"),
     start: "Lie on side, bottom knee bent (on floor for support). Top leg straight. Bottom elbow under shoulder.",
     end: "Lift hips off floor, creating straight line from top foot to head. Hold 20 sec. Lower. Switch sides.",
     why: "Strengthens obliques and quadratus lumborum — critical for spinal stability and preventing lower back pain. Modified version is joint-friendly.",
@@ -604,7 +604,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Full Side Plank",
-    image: img("core.jpg"),
+    image: img("sideplank-full.jpg"),
     start: "Lie on side, legs stacked. Bottom elbow under shoulder.",
     end: "Lift hips, creating straight line from feet to head. Hold 30 sec. Lower with control.",
     why: "Advanced oblique and hip stabilizer strengthening. Builds lateral core endurance essential for balance and fall prevention.",
@@ -642,7 +642,7 @@ const EXERCISES: Exercise[] = [
   // --- ADDITIONAL LOWER BODY (expanded, progressive) ---
   {
     name: "Glute Kickback (All Fours)",
-    image: img("birddog.jpg"),
+    image: img("glutekickback.jpg"),
     start: "All fours position, hands under shoulders, knees under hips.",
     end: "Keeping knee bent 90°, lift one leg until thigh is parallel to floor. Squeeze glute at top. Lower with control.",
     why: "Isolates gluteus maximus without loading the spine. Essential for pelvic stability and reducing lower back compensation.",
@@ -651,7 +651,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Step-Up (Low Step)",
-    image: img("calfraise.jpg"),
+    image: img("stepup.jpg"),
     start: "Stand facing a low step or sturdy platform (15-20cm). Hands on hips.",
     end: "Step up with right foot, drive through heel to stand on top. Step down with control. Alternate legs.",
     why: "Functional unilateral exercise that builds leg strength for stairs and daily activities. Improves bone density in hips and femur.",
@@ -660,7 +660,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Romanian Deadlift (Bodyweight)",
-    image: img("fold.jpg"),
+    image: img("rdl.jpg"),
     start: "Stand tall, feet hip-width, slight bend in knees. Hands on thighs.",
     end: "Hinge at hips, sliding hands down legs. Keep back flat, push hips back. Go until you feel hamstring stretch. Return to standing.",
     why: "Strengthens posterior chain (hamstrings, glutes, erectors) — the muscles that prevent falls and support posture. Builds hip hinge pattern.",
@@ -678,7 +678,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Wall Sit Hold",
-    image: img("wallposture.jpg"),
+    image: img("wallsit.jpg"),
     start: "Stand with back against wall. Walk feet out and slide down until thighs are parallel to floor.",
     end: "Hold position — back flat against wall, knees at 90°. Breathe steadily. Hold as long as possible (aim 30-60 sec).",
     why: "Isometric quad and glute strengthening. Builds muscular endurance without joint impact. Excellent for knee rehabilitation.",
@@ -687,7 +687,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Lateral Band Walk (or Side Steps)",
-    image: img("singleleg.jpg"),
+    image: img("lateralwalk.jpg"),
     start: "Stand with slight squat, feet hip-width. (Use resistance band above knees if available, or just bodyweight).",
     end: "Take 10 steps to the right, maintaining squat position. Then 10 steps left. Keep tension in glutes.",
     why: "Activates gluteus medius — the key hip stabilizer that prevents knee collapse and pelvic drop. Critical for balance and joint health.",
@@ -707,7 +707,7 @@ const EXERCISES: Exercise[] = [
   // --- ADDITIONAL UPPER BODY (expanded, progressive) ---
   {
     name: "Seated Row (Resistance Band or Towel)",
-    image: img("scapula.jpg"),
+    image: img("seatedrow.jpg"),
     start: "Sit on floor, legs extended. Loop band around feet (or hold towel around feet for isometric).",
     end: "Pull elbows back, squeezing shoulder blades together. Hold 2 sec. Slowly release forward.",
     why: "Strengthens rhomboids, rear deltoids and biceps. Counteracts forward shoulder posture from daily activities.",
@@ -716,7 +716,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Tricep Dip (Chair)",
-    image: img("chairsquat.jpg"),
+    image: img("tricepdip.jpg"),
     start: "Sit on edge of sturdy chair, hands gripping edge beside hips. Walk feet forward.",
     end: "Lower body by bending elbows to 90°. Push back up. Keep back close to chair.",
     why: "Strengthens triceps and anterior deltoids. Builds arm strength for pushing movements and getting up from chairs.",
@@ -725,7 +725,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Overhead Press (Water Bottles)",
-    image: img("power.jpg"),
+    image: img("overheadpress.jpg"),
     start: "Stand or sit tall. Hold water bottles (or light weights) at shoulder height, palms forward.",
     end: "Press both arms overhead until straight. Lower with control back to shoulders.",
     why: "Builds shoulder strength and bone density in upper arms. Functional for reaching overhead — a movement that weakens with age.",
@@ -734,7 +734,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Bicep Curl (Water Bottles)",
-    image: img("power.jpg"),
+    image: img("bicepcurl.jpg"),
     start: "Stand tall, arms by sides holding water bottles (or light weights). Palms forward.",
     end: "Curl both arms up, squeezing biceps at top. Lower slowly (3 sec down).",
     why: "Builds arm strength for carrying groceries, lifting grandchildren. Slow eccentric phase builds more muscle with less joint stress.",
@@ -752,7 +752,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Reverse Fly (Bent Over)",
-    image: img("scapula.jpg"),
+    image: img("reversefly.jpg"),
     start: "Stand with slight forward lean (45°), arms hanging down with water bottles or fists.",
     end: "Raise arms out to sides, squeezing shoulder blades together. Hold 2 sec at top. Lower slowly.",
     why: "Targets posterior deltoids and rhomboids — muscles that prevent rounded shoulders. Essential for posture correction.",
@@ -763,7 +763,7 @@ const EXERCISES: Exercise[] = [
   // --- ADDITIONAL MOBILITY (expanded) ---
   {
     name: "Thread the Needle",
-    image: img("catcow.jpg"),
+    image: img("threadneedle.jpg"),
     start: "All fours position. Right arm extended to ceiling (open twist).",
     end: "Thread right arm under body, sliding it along floor to left. Rest right shoulder and temple on floor. Hold 20 sec. Switch.",
     why: "Deep thoracic rotation stretch. Releases tension between shoulder blades and improves spinal rotation for daily activities.",
@@ -790,7 +790,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Doorway Chest Stretch",
-    image: img("shoulder.jpg"),
+    image: img("doorwaychest.jpg"),
     start: "Stand in doorway. Place forearms on door frame, elbows at shoulder height.",
     end: "Step one foot forward through doorway until you feel stretch across chest and front of shoulders. Hold 30 sec.",
     why: "Opens pectoralis major and minor — muscles that shorten from desk work and cause rounded posture. Improves breathing capacity.",
@@ -799,7 +799,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Seated Hamstring Stretch",
-    image: img("fold.jpg"),
+    image: img("hamstring-stretch.jpg"),
     start: "Sit on floor, one leg extended, other foot against inner thigh.",
     end: "Hinge forward from hips toward extended foot. Keep back flat (don't round). Hold 30 sec. Switch legs.",
     why: "Tight hamstrings contribute to lower back pain and pelvic tilt issues. Gentle sustained stretch improves flexibility without risk.",
@@ -810,7 +810,7 @@ const EXERCISES: Exercise[] = [
   // --- ADDITIONAL BALANCE (expanded, progressive) ---
   {
     name: "Tandem Stand",
-    image: img("heeltoe.jpg"),
+    image: img("tandemstand.jpg"),
     start: "Stand with one foot directly in front of the other (heel to toe). Arms out for balance.",
     end: "Hold position 30 seconds. Switch which foot is in front. Progress: close eyes.",
     why: "Challenges balance in narrow base of support. Directly trains the vestibular system to prevent falls.",
@@ -819,7 +819,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Single-Leg Stand Eyes Closed",
-    image: img("singleleg.jpg"),
+    image: img("singleleg-eyes.jpg"),
     start: "Stand on one foot near wall (for safety). Close eyes.",
     end: "Hold balance with eyes closed for 10-20 seconds. Switch feet. Wall is there if you wobble.",
     why: "Removes visual input, forcing proprioceptive system to work harder. Research shows this is the strongest predictor of fall risk reduction.",
@@ -828,7 +828,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Clock Reach",
-    image: img("singleleg.jpg"),
+    image: img("clockreach.jpg"),
     start: "Stand on right foot. Imagine standing in center of a clock.",
     end: "Reach left foot to 12 o'clock (forward), tap floor. Return. Reach to 3 (side). Return. Reach to 6 (behind). Return. Switch legs.",
     why: "Multi-directional balance challenge that trains reactive stability. Mimics real-world balance demands like reaching and stepping.",
@@ -837,7 +837,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Heel Raises with Balance",
-    image: img("calfraise.jpg"),
+    image: img("heelraise-balance.jpg"),
     start: "Stand on one foot (hold wall lightly if needed).",
     end: "Rise onto toes of standing foot. Hold 3 sec at top. Lower slowly. Repeat 8 times. Switch feet.",
     why: "Combines calf strengthening with single-leg balance. Builds ankle stability critical for uneven surfaces and stair safety.",
