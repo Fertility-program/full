@@ -6,7 +6,7 @@
 // ============================================================
 
 export type Activity = "sedentary" | "light" | "moderate" | "active";
-export type Goal = "fat_loss" | "maintain" | "tone" | "energy" | "conception" | "cycle_regulation" | "hormone_balance" | "overall_wellness";
+export type Goal = "fat_loss" | "maintain" | "tone" | "energy" | "conception" | "donor_egg" | "cycle_regulation" | "hormone_balance" | "menopause_wellness" | "overall_wellness";
 
 export type UserData = {
   age: number;
@@ -47,7 +47,8 @@ export type MealTag =
   | "quick"
   | "collagen-support"
   | "pelvic-health"
-  | "iron-rich";
+  | "iron-rich"
+  | "menopause-support";
 
 export type MealSlot = "breakfast" | "lunch" | "dinner" | "snack";
 
@@ -123,12 +124,19 @@ const SYMPTOM_TAGS: Record<string, MealTag[]> = {
   "Hormonal acne":     ["anti-inflammatory", "gut-health", "hormone-balance"],
   "Endometriosis":     ["anti-inflammatory", "hormone-balance", "iron-rich", "gut-health"],
   "Thyroid issues":    ["energy-boost", "anti-inflammatory", "iron-rich", "hormone-balance"],
+  "Hot flashes":       ["anti-inflammatory", "hormone-balance", "cooling", "mood-lift"],
+  "Joint pain":        ["anti-inflammatory", "joint-support", "collagen-support", "bone-strength"],
+  "Mood swings":       ["mood-lift", "hormone-balance", "gut-health", "anti-inflammatory"],
+  "Vaginal dryness":   ["hormone-balance", "anti-inflammatory", "collagen-support", "high-protein"],
+  "Bone density concerns": ["bone-strength", "high-protein", "anti-inflammatory", "collagen-support"],
 };
 
 const GOAL_TAGS: Record<string, MealTag[]> = {
   conception:         ["hormone-balance", "iron-rich", "anti-inflammatory", "high-protein"],
+  donor_egg:          ["anti-inflammatory", "hormone-balance", "high-protein", "mood-lift"],
   cycle_regulation:   ["hormone-balance", "anti-inflammatory", "gut-health"],
   hormone_balance:    ["hormone-balance", "anti-inflammatory", "gut-health", "mood-lift"],
+  menopause_wellness: ["bone-strength", "anti-inflammatory", "collagen-support", "mood-lift"],
   overall_wellness:   ["anti-inflammatory", "energy-boost", "high-protein"],
   fat_loss:           ["low-cal", "high-protein", "metabolism"],
   tone:               ["high-protein", "metabolism", "energy-boost"],

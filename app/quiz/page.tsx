@@ -64,15 +64,18 @@ function QuizContent() {
 
   const goals = [
     { id: "conception", label: "Prepare for conception" },
+    { id: "donor_egg", label: "Donor egg / IVF preparation" },
     { id: "cycle_regulation", label: "Regulate my cycle" },
     { id: "hormone_balance", label: "Balance hormones (PCOS/endo)" },
+    { id: "menopause_wellness", label: "Menopause / no menstruation support" },
     { id: "overall_wellness", label: "Overall reproductive wellness" },
   ];
 
   const symptomOptions = [
     "Irregular cycles", "PCOS symptoms", "Stress & anxiety", "Low energy",
     "Poor sleep", "Inflammation", "Weight concerns", "Hormonal acne",
-    "Endometriosis", "Thyroid issues"
+    "Endometriosis", "Thyroid issues", "Hot flashes", "Joint pain",
+    "Mood swings", "Vaginal dryness", "Bone density concerns"
   ];
 
   function next() {
@@ -212,11 +215,12 @@ function QuizContent() {
           <div className="space-y-8">
             <div>
               <p className="mb-4 text-[#3a5550]">How regular is your cycle?</p>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 {[
                   { id: "regular", label: "Regular (25-35 days)" },
                   { id: "somewhat", label: "Somewhat irregular" },
                   { id: "irregular", label: "Very irregular / absent" },
+                  { id: "no_period", label: "No menstruation (menopause / medical)" },
                 ].map(opt => (
                   <button key={opt.id} onClick={() => setForm({...form, cycleRegularity: opt.id})}
                     className={`py-3 px-2 rounded-xl border text-xs ${form.cycleRegularity === opt.id ? "bg-[#5ba89d] text-white border-[#5ba89d]" : "bg-white text-[#3a5550] border-[#c2ddd8]"}`}>
@@ -226,14 +230,30 @@ function QuizContent() {
               </div>
             </div>
             <div>
-              <p className="mb-4 text-[#3a5550]">How long have you been trying to conceive?</p>
+              <p className="mb-4 text-[#3a5550]">
+                {form.goal === "menopause_wellness"
+                  ? "How long have you been in menopause / without a period?"
+                  : form.goal === "donor_egg"
+                  ? "Where are you in your IVF / donor egg journey?"
+                  : "How long have you been trying to conceive?"}
+              </p>
               <div className="grid grid-cols-2 gap-3">
-                {[
+                {(form.goal === "menopause_wellness" ? [
+                  { id: "early", label: "Perimenopause (still some periods)" },
+                  { id: "less_2y", label: "Less than 2 years" },
+                  { id: "2_5y", label: "2-5 years" },
+                  { id: "over_5y", label: "Over 5 years" },
+                ] : form.goal === "donor_egg" ? [
+                  { id: "researching", label: "Researching options" },
+                  { id: "preparing", label: "Preparing for transfer" },
+                  { id: "in_cycle", label: "Currently in IVF cycle" },
+                  { id: "post_transfer", label: "Post-transfer (TWW)" },
+                ] : [
                   { id: "not_yet", label: "Not yet / planning" },
                   { id: "less_6", label: "Less than 6 months" },
                   { id: "6_12", label: "6-12 months" },
                   { id: "over_12", label: "Over 12 months" },
-                ].map(opt => (
+                ]).map(opt => (
                   <button key={opt.id} onClick={() => setForm({...form, ttcDuration: opt.id})}
                     className={`py-3 px-2 rounded-xl border text-xs ${form.ttcDuration === opt.id ? "bg-[#5ba89d] text-white border-[#5ba89d]" : "bg-white text-[#3a5550] border-[#c2ddd8]"}`}>
                     {opt.label}
@@ -262,7 +282,11 @@ function QuizContent() {
           <div className="text-6xl mb-6">🌸</div>
           <h2 className="text-3xl text-[#2d5a52] mb-4">Almost there!</h2>
           <p className="text-[#5a7570] max-w-sm mx-auto mb-8">
-            We&apos;ve calculated your personalized fertility plan based on your cycle, goals and lifestyle. Ready to see your dashboard?
+            {form.goal === "menopause_wellness"
+              ? "We've designed a personalized wellness plan focused on bone health, joint mobility, mood balance, and vitality — tailored for your stage of life."
+              : form.goal === "donor_egg"
+              ? "We've created a plan to prepare your body for embryo transfer — focusing on uterine blood flow, stress reduction, and optimal implantation support."
+              : "We've calculated your personalized fertility plan based on your cycle, goals and lifestyle. Ready to see your dashboard?"}
           </p>
         </section>
       )}

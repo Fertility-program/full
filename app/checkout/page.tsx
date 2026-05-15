@@ -44,7 +44,7 @@ function CheckoutContent() {
       const result = await res.json();
 
       if (result.url) {
-        // Redirect to Lemon Squeezy Checkout
+        // Redirect to Gumroad Checkout
         window.location.href = result.url;
       } else {
         setError(result.error || "Something went wrong");

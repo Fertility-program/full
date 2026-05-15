@@ -125,7 +125,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Inchworm Walk-Out",
-    image: img("inclinepushup.jpg"),
+    image: img("inchworm.jpg"),
     start: "Stand tall. Fold forward, hands to floor (bend knees if needed).",
     end: "Walk hands out to plank position. Hold 2 sec. Walk hands back to feet. Stand up. Repeat.",
     why: "Full-body dynamic warm-up that activates core, shoulders, hamstrings and wrists simultaneously. Excellent preparation for any workout.",
@@ -163,7 +163,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "4-7-8 Sleep Breath",
-    image: img("winddown.jpg"),
+    image: img("478-breath.jpg"),
     start: "Lie in bed or sit comfortably. Tongue tip behind upper front teeth.",
     end: "Inhale through nose 4 counts. Hold breath 7 counts. Exhale through mouth with whoosh sound 8 counts. Repeat 4 cycles.",
     why: "Developed by Dr. Andrew Weil. Acts as natural tranquilizer for the nervous system. Particularly effective for menopausal insomnia.",
@@ -172,7 +172,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Alternate Nostril Breathing (Nadi Shodhana)",
-    image: img("breathing.jpg"),
+    image: img("alternate-nostril.jpg"),
     start: "Sit tall. Right thumb closes right nostril, ring finger will close left.",
     end: "Inhale left nostril 4 counts. Close both, hold 4. Exhale right 4. Inhale right 4. Close both, hold 4. Exhale left 4. That's one cycle.",
     why: "Balances left and right brain hemispheres. Research shows it reduces blood pressure, heart rate and perceived stress. Excellent for mood swings.",
@@ -181,7 +181,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Cooling Breath (Sitali Pranayama)",
-    image: img("breathing.jpg"),
+    image: img("cooling-breath.jpg"),
     start: "Sit comfortably. Curl tongue into a tube (or purse lips if you can't curl tongue).",
     end: "Inhale slowly through curled tongue — feel cool air. Close mouth, exhale through nose. Repeat 10 times.",
     why: "Physically cools the body by 1-2°C. Specifically recommended for hot flash relief in integrative medicine. Immediate symptom reduction.",
@@ -190,7 +190,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Resonance Breathing (Coherent Breathing)",
-    image: img("breathing.jpg"),
+    image: img("resonance-breath.jpg"),
     start: "Sit or lie comfortably. Set a timer or count internally.",
     end: "Breathe at exactly 5 breaths per minute: inhale 6 seconds, exhale 6 seconds. No pauses. Smooth and continuous.",
     why: "5 breaths/min creates 'coherence' — optimal heart rate variability. Clinically shown to reduce anxiety, improve sleep and balance hormones over 4 weeks of practice.",
@@ -199,7 +199,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Lion's Breath (Simhasana)",
-    image: img("breathing.jpg"),
+    image: img("lions-breath.jpg"),
     start: "Kneel or sit. Inhale deeply through nose.",
     end: "Open mouth wide, stick tongue out toward chin, exhale forcefully with 'HAAA' sound. Eyes wide. Repeat 5 times.",
     why: "Releases jaw tension (common in menopause), stretches facial muscles, and provides emotional release. Activates throat chakra and reduces tension headaches.",
@@ -324,7 +324,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Hip Opener Stretch",
-    image: img("hip.jpg"),
+    image: img("hip-opener.jpg"),
     start: "Stand or kneel with one foot forward in a lunge position.",
     end: "Gently press hips forward, feeling stretch in hip flexor. Hold each side.",
     why: "Releases tight hip flexors from sitting, reduces lower back pain.",
@@ -333,7 +333,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Standing Twist",
-    image: img("twist.jpg"),
+    image: img("standing-twist.jpg"),
     start: "Stand with feet hip-width, arms at shoulder height.",
     end: "Rotate torso left and right with control, keeping hips stable.",
     why: "Gentle twists and deep breathing may help ease abdominal tension and promote comfort.",
@@ -400,7 +400,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Slow Kegel Hold (Endurance)",
-    image: img("pelvicfloor.jpg"),
+    image: img("kegel-slow.jpg"),
     start: "Sit on firm chair, feet flat. Imagine lifting a marble with your pelvic floor.",
     end: "Contract pelvic floor gently, hold 10 seconds, release fully for 10 seconds. Repeat 10 times.",
     why: "Builds slow-twitch muscle endurance critical for organ support. Research shows 10-second holds are more effective than quick contractions for prolapse management.",
@@ -409,7 +409,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Quick Flick Kegels (Power)",
-    image: img("pelvicfloor.jpg"),
+    image: img("kegel-quick.jpg"),
     start: "Sit or stand comfortably with neutral spine.",
     end: "Contract pelvic floor quickly and firmly for 1 second, release fully. Repeat rapidly 10 times, rest 10 sec, do 3 sets.",
     why: "Trains fast-twitch fibers that prevent leakage during coughing, sneezing, or laughing. Essential for stress urinary incontinence.",
@@ -418,7 +418,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Hypopressive Breathing",
-    image: img("breathing.jpg"),
+    image: img("hypopressive.jpg"),
     start: "Stand with slight forward lean, hands on thighs. Exhale completely.",
     end: "After full exhale, close mouth and nose, expand ribcage as if inhaling (but don't). Hold 5-10 sec. Release and breathe normally.",
     why: "Creates negative pressure that lifts pelvic organs. Clinically proven to reduce prolapse symptoms and improve pelvic floor activation by up to 40%.",
@@ -427,7 +427,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Knack Technique (Brace Before Cough)",
-    image: img("pelvicfloor.jpg"),
+    image: img("knack.jpg"),
     start: "Stand or sit. Practice contracting pelvic floor just before a cough or sneeze.",
     end: "Squeeze pelvic floor firmly, then cough. Release after. Practice 5 times with voluntary cough.",
     why: "The 'Knack' is the #1 evidence-based technique for preventing stress incontinence leaks. Trains automatic bracing reflex.",
@@ -454,7 +454,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Elevated Legs Pelvic Rest",
-    image: img("childpose.jpg"),
+    image: img("legsup.jpg"),
     start: "Lie on back, place legs up on a chair or wall (90° angle at hips).",
     end: "Rest here for 3-5 minutes. Breathe deeply. Gravity assists pelvic organ repositioning.",
     why: "Gravity reversal reduces pressure on prolapsed tissues. Recommended by pelvic physiotherapists as daily relief position, especially after prolonged standing.",
@@ -463,7 +463,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Clamshell with Pelvic Floor",
-    image: img("bridge.jpg"),
+    image: img("clamshell.jpg"),
     start: "Lie on side, knees bent 90°, feet together. Engage pelvic floor first.",
     end: "Keeping feet together, lift top knee like a clamshell opening. Hold 3 sec. Lower slowly. Keep pelvic floor engaged throughout.",
     why: "Strengthens hip external rotators while maintaining pelvic floor engagement. Supports pelvic stability and reduces prolapse symptoms during movement.",
@@ -548,7 +548,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Supine Spinal Twist",
-    image: img("twist.jpg"),
+    image: img("supinetwist.jpg"),
     start: "Lie on back, arms in T position. Knees bent, feet flat.",
     end: "Drop both knees to right, look left. Hold 30 sec. Switch sides. Keep both shoulders on floor.",
     why: "Releases lower back and hip tension, stretches obliques and IT band. Promotes spinal decompression after exercise.",
@@ -557,7 +557,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Figure-4 Hip Stretch",
-    image: img("hip.jpg"),
+    image: img("figure4.jpg"),
     start: "Lie on back. Cross right ankle over left knee (figure-4 shape).",
     end: "Pull left thigh toward chest until you feel deep stretch in right hip. Hold 30 sec. Switch sides.",
     why: "Releases piriformis and deep hip rotators. Reduces sciatic-type pain and hip tightness common in perimenopause.",
@@ -566,7 +566,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Legs Up the Wall",
-    image: img("childpose.jpg"),
+    image: img("legsonwall.jpg"),
     start: "Sit sideways next to wall. Swing legs up wall as you lie back.",
     end: "Rest with legs straight up wall, arms relaxed by sides. Close eyes. Breathe naturally for 3 min.",
     why: "Reverses blood pooling in legs, reduces swelling, calms nervous system. Recommended by physiotherapists for pelvic floor recovery and sleep preparation.",
@@ -575,7 +575,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Body Scan Relaxation",
-    image: img("winddown.jpg"),
+    image: img("bodyscan.jpg"),
     start: "Lie on back in comfortable position. Close eyes.",
     end: "Mentally scan from toes to head, consciously releasing tension in each body part. Spend 5 breaths on each area.",
     why: "Progressive muscle relaxation reduces cortisol, improves sleep onset and teaches body awareness. Clinically effective for chronic pain and anxiety.",
@@ -613,7 +613,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Plank Hold (Modified)",
-    image: img("inclinepushup.jpg"),
+    image: img("plank-modified.jpg"),
     start: "Forearms on floor, knees on floor (modified). Elbows under shoulders.",
     end: "Lift hips to create straight line from knees to head. Hold position, breathing normally. Don't let hips sag or pike.",
     why: "Isometric core strengthening that builds endurance without spinal flexion. Safer than sit-ups for osteoporosis risk.",
@@ -622,7 +622,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Full Plank Hold",
-    image: img("inclinepushup.jpg"),
+    image: img("plank-full.jpg"),
     start: "Forearms on floor, toes on floor. Body in straight line.",
     end: "Hold plank position 30-45 sec. Engage core, squeeze glutes, breathe steadily.",
     why: "Full-body isometric that strengthens entire anterior chain. Builds bone density in wrists and spine through loading.",
@@ -631,7 +631,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Pelvic Tilt (Imprint)",
-    image: img("bridge.jpg"),
+    image: img("pelvictilt.jpg"),
     start: "Lie on back, knees bent, feet flat. Neutral spine (small gap under lower back).",
     end: "Gently flatten lower back to floor by tilting pelvis (belly button toward spine). Hold 5 sec. Release to neutral.",
     why: "Teaches pelvic awareness and activates deep core stabilizers. Foundation exercise for all core work. Reduces lower back pain.",
@@ -669,7 +669,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Split Squat (Static Lunge)",
-    image: img("hip.jpg"),
+    image: img("splitsquat.jpg"),
     start: "Stand in split stance — one foot forward, one back. Back heel lifted.",
     end: "Lower back knee toward floor (don't touch). Front knee stays over ankle. Push up through front heel.",
     why: "Unilateral leg strengthening that corrects imbalances. Builds stability and strength for walking, stairs and fall prevention.",
@@ -696,7 +696,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Bulgarian Split Squat",
-    image: img("hip.jpg"),
+    image: img("bulgariansquat.jpg"),
     start: "Stand 2 feet in front of chair. Place top of back foot on chair seat.",
     end: "Lower back knee toward floor, keeping front knee over ankle. Push up through front heel. Keep torso upright.",
     why: "Advanced unilateral exercise that maximally loads quads and glutes. Builds significant lower body strength and balance.",
@@ -743,7 +743,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "Push-Up (Full or Knee)",
-    image: img("inclinepushup.jpg"),
+    image: img("pushup-full.jpg"),
     start: "Plank position (full or from knees). Hands slightly wider than shoulders.",
     end: "Lower chest toward floor, elbows at 45°. Push back up. Keep core tight throughout.",
     why: "Gold standard upper body exercise. Builds chest, shoulders, triceps and core simultaneously. Improves bone density in wrists and spine.",
@@ -772,7 +772,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "90/90 Hip Switch",
-    image: img("hip.jpg"),
+    image: img("9090hip.jpg"),
     start: "Sit on floor, both legs bent at 90°. Right leg in front (external rotation), left leg behind (internal rotation).",
     end: "Lift knees and switch to opposite position. Move slowly with control. Keep torso tall.",
     why: "Improves hip internal and external rotation — movements that stiffen significantly during menopause. Reduces hip and knee pain.",
@@ -781,7 +781,7 @@ const EXERCISES: Exercise[] = [
   },
   {
     name: "World's Greatest Stretch",
-    image: img("hip.jpg"),
+    image: img("worldstretch.jpg"),
     start: "Start in lunge position, right foot forward. Place left hand on floor inside right foot.",
     end: "Rotate torso right, reaching right arm to ceiling. Hold 3 sec. Return hand to floor. Repeat 5 times. Switch sides.",
     why: "Combines hip flexor stretch, thoracic rotation, and hamstring lengthening in one movement. Used by physiotherapists as comprehensive mobility assessment.",
@@ -862,12 +862,19 @@ const SYMPTOM_FOCUS: Record<string, ExerciseCategory[]> = {
   "Hormonal acne":     ["breathing", "mobility", "core", "balance"],
   "Endometriosis":     ["breathing", "mobility", "pelvic", "cooldown"],
   "Thyroid issues":    ["breathing", "mobility", "lower", "balance"],
+  "Hot flashes":       ["breathing", "cooldown", "mobility", "balance"],
+  "Joint pain":        ["mobility", "warmup", "balance", "cooldown"],
+  "Mood swings":       ["breathing", "mobility", "balance", "cooldown"],
+  "Vaginal dryness":   ["pelvic", "breathing", "mobility", "core"],
+  "Bone density concerns": ["lower", "upper", "balance", "core"],
 };
 
 const GOAL_FOCUS: Record<string, ExerciseCategory[]> = {
   conception:         ["pelvic", "breathing", "mobility", "core"],
+  donor_egg:          ["pelvic", "breathing", "mobility", "cooldown"],
   cycle_regulation:   ["breathing", "mobility", "balance", "pelvic"],
   hormone_balance:    ["breathing", "lower", "core", "mobility"],
+  menopause_wellness: ["mobility", "balance", "lower", "breathing"],
   overall_wellness:   ["lower", "core", "upper", "balance"],
   fat_loss:           ["lower", "core", "upper", "balance"],
   tone:               ["lower", "core", "upper", "pelvic"],
@@ -990,6 +997,11 @@ function buildTitle(
     "Hormonal acne":     "Hormone Harmony",
     "Endometriosis":     "Endo Relief",
     "Thyroid issues":    "Thyroid Support",
+    "Hot flashes":       "Cool & Calm",
+    "Joint pain":        "Joint Mobility",
+    "Mood swings":       "Emotional Balance",
+    "Vaginal dryness":   "Pelvic Vitality",
+    "Bone density concerns": "Bone Strength",
   };
 
   const symptomDescs: Record<string, string> = {
@@ -1003,6 +1015,11 @@ function buildTitle(
     "Hormonal acne":     "Hormone-balancing movement and stress reduction for clearer skin.",
     "Endometriosis":     "Pain-reducing gentle movement and anti-inflammatory breathwork.",
     "Thyroid issues":    "Gentle movement and breathing to support thyroid and metabolic function.",
+    "Hot flashes":       "Cooling breathwork and gentle movement to regulate body temperature and reduce flashes.",
+    "Joint pain":        "Low-impact mobility and gentle strengthening to ease joint stiffness and pain.",
+    "Mood swings":       "Calming breathwork and rhythmic movement to stabilize mood and emotional wellbeing.",
+    "Vaginal dryness":   "Pelvic floor exercises and circulation-boosting movement to support tissue health.",
+    "Bone density concerns": "Weight-bearing exercises and balance training to maintain and build bone strength.",
   };
 
   const base = primarySymptom && symptomTitles[primarySymptom]

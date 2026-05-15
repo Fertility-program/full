@@ -28,7 +28,7 @@ export default function PrivacyPage() {
               <li><strong>Cycle data:</strong> Menstrual cycle dates, BBT readings, OPK results (for female users).</li>
               <li><strong>Partner data:</strong> Daily habits, supplement tracking, spermiogram results (for male users in Couple Mode).</li>
               <li><strong>Couple data:</strong> Partner linking codes and shared progress metrics (only when both partners consent).</li>
-              <li><strong>Payment data:</strong> Processed securely by LemonSqueezy. We never store your card details.</li>
+              <li><strong>Payment data:</strong> Processed securely by Gumroad. We never store your card details.</li>
               <li><strong>Device data:</strong> Browser type and push notification subscription (if enabled).</li>
             </ul>
           </div>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl text-[#4a3f44] mb-3">6. Third-Party Services</h2>
             <ul className="space-y-2 ml-4">
               <li><strong>Supabase:</strong> Authentication and database (EU servers).</li>
-              <li><strong>LemonSqueezy:</strong> Payment processing (PCI compliant).</li>
+              <li><strong>Gumroad:</strong> Payment processing (PCI compliant).</li>
               <li><strong>Vercel:</strong> Hosting and content delivery.</li>
               <li><strong>Resend:</strong> Transactional emails (if enabled).</li>
             </ul>

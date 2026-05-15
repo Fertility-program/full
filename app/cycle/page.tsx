@@ -48,6 +48,20 @@ export default function CycleTrackerPage() {
     }
   }, []);
 
+  // Check if user has no menstruation (from quiz data)
+  const [noPeriod, setNoPeriod] = useState(false);
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("quizData");
+      if (raw) {
+        const quiz = JSON.parse(raw);
+        if (quiz.cycleRegularity === "no_period" || quiz.goal === "menopause_wellness") {
+          setNoPeriod(true);
+        }
+      }
+    } catch {}
+  }, []);
+
   function saveSetup() {
     if (!lastPeriod) return;
     const updated: CycleData = {
@@ -113,6 +127,67 @@ export default function CycleTrackerPage() {
   const phaseInfo = PHASE_INFO[phase];
 
   if (!data || setupMode) {
+    // If user has no period, show alternative wellness view
+    if (noPeriod) {
+      return (
+        <main className="max-w-2xl mx-auto px-6 py-10">
+          <section className="soft-card p-8">
+            <div className="text-center mb-6">
+              <div className="text-4xl mb-3">🌿</div>
+              <h1 className="text-3xl text-[#2d5a52]">Wellness Tracker</h1>
+              <p className="text-sm text-[#5a7570] mt-2">
+                Your personalized wellness journey — no cycle tracking needed.
+              </p>
+            </div>
+
+            <div className="space-y-4 mb-8">
+              <div className="p-5 rounded-2xl bg-[#f0faf8] border border-[#c2ddd8]">
+                <h3 className="font-bold text-[#2d5a52] mb-2">🧘 Your Program Focus</h3>
+                <p className="text-sm text-[#5a7570]">
+                  Your exercise and nutrition plan is optimized for bone health, joint mobility,
+                  stress management, and overall vitality — without relying on cycle phases.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#f0faf8] border border-[#c2ddd8]">
+                <h3 className="font-bold text-[#2d5a52] mb-2">💪 Daily Priorities</h3>
+                <ul className="text-sm text-[#5a7570] space-y-1">
+                  <li>• Weight-bearing exercises for bone density</li>
+                  <li>• Balance training for fall prevention</li>
+                  <li>• Breathing exercises for hot flash management</li>
+                  <li>• Pelvic floor maintenance</li>
+                  <li>• Joint mobility and flexibility</li>
+                </ul>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-[#f0faf8] border border-[#c2ddd8]">
+                <h3 className="font-bold text-[#2d5a52] mb-2">🥗 Nutrition Focus</h3>
+                <ul className="text-sm text-[#5a7570] space-y-1">
+                  <li>• Calcium & Vitamin D for bones</li>
+                  <li>• Omega-3 for inflammation & joints</li>
+                  <li>• Phytoestrogens (flax, soy) for hormone support</li>
+                  <li>• Collagen-supporting foods</li>
+                  <li>• Anti-inflammatory whole foods</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <Link href="/dashboard" className="btn-primary flex-1 text-center py-4">
+                Go to Dashboard
+              </Link>
+              <button
+                onClick={() => setNoPeriod(false)}
+                className="btn-outline flex-1 py-4 text-xs"
+              >
+                Set up cycle tracking anyway
+              </button>
+            </div>
+          </section>
+        </main>
+      );
+    }
+
     return (
       <main className="max-w-2xl mx-auto px-6 py-10">
         <section className="soft-card p-8">

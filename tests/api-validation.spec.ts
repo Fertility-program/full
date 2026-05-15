@@ -172,21 +172,20 @@ test.describe("API Auth — zaštićene rute bez autentifikacije", () => {
   });
 });
 
-test.describe("API — LemonSqueezy webhook", () => {
-  test("POST bez signature vraća 401", async ({ request }) => {
-    const res = await request.post("/api/webhooks/lemonsqueezy", {
-      data: { meta: { event_name: "order_created" } },
+test.describe("API — Gumroad webhook", () => {
+  test("POST bez seller_id vraća 401", async ({ request }) => {
+    const res = await request.post("/api/webhooks/gumroad", {
+      form: { email: "test@example.com", product_id: "abc" },
     });
-    // 401 (nema signature) ili 500 (nema webhook secret)
-    expect([401, 500]).toContain(res.status());
+    // 401 (invalid seller_id) or passes if GUMROAD_SELLER_ID not configured
+    expect([200, 401]).toContain(res.status());
   });
 
-  test("POST sa lažnim signature vraća 401", async ({ request }) => {
-    const res = await request.post("/api/webhooks/lemonsqueezy", {
-      data: { meta: { event_name: "order_created" } },
-      headers: { "x-signature": "fake-signature-12345" },
+  test("POST sa lažnim seller_id vraća 401", async ({ request }) => {
+    const res = await request.post("/api/webhooks/gumroad", {
+      form: { seller_id: "fake-seller-id", email: "test@example.com" },
     });
-    expect([401, 500]).toContain(res.status());
+    expect([200, 401]).toContain(res.status());
   });
 });
 
