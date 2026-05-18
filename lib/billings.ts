@@ -1,4 +1,4 @@
-// Billing utilities — Gumroad integration
+// Billing utilities — LemonSqueezy integration
 
 export async function startCheckout(plan: "glow" | "elite") {
   return {

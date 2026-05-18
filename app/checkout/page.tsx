@@ -69,7 +69,7 @@ function CheckoutContent() {
       const result = await res.json();
 
       if (result.url) {
-        // Redirect to Gumroad Checkout
+        // Redirect to LemonSqueezy Checkout
         window.location.href = result.url;
       } else {
         setError(result.error || "Something went wrong");
