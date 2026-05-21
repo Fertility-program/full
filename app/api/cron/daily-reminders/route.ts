@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
       .select("*");
 
     if (subscriptions && subscriptions.length > 0) {
-      const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://veronica-program.vercel.app";
+      const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app";
 
       // Daily motivation messages (rotate by day of year)
       const messages = [
@@ -108,7 +108,7 @@ export async function GET(req: NextRequest) {
         .eq("source", "free_guide");
 
       if (leads) {
-        const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://veronica-program.vercel.app";
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app";
         const sequenceDays = [1, 3, 5, 7]; // Days to send emails
 
         for (const lead of leads) {
