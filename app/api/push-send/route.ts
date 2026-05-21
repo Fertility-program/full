@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
   }
 
   webpush.setVapidDetails(
-    "mailto:support@veronicabloom.com",
+    "mailto:majavujovicns021@gmail.com",
     vapidPublicKey,
     vapidPrivateKey
   );

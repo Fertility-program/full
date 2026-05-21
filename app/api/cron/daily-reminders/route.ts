@@ -64,7 +64,7 @@ export async function GET(req: NextRequest) {
         try {
           const webpush = require("web-push");
           webpush.setVapidDetails(
-            "mailto:support@veronicabloom.com",
+            "mailto:majavujovicns021@gmail.com",
             vapidPublicKey,
             vapidPrivateKey
           );

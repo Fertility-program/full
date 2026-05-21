@@ -64,7 +64,7 @@ export default function CommunityPage() {
         </a>
 
         <a
-          href="mailto:support@veronicabloom.com"
+          href="mailto:majavujovicns021@gmail.com"
           className="soft-card p-5 flex items-center gap-4 hover:border-[#5ba89d] transition-colors border border-transparent"
         >
           <div className="w-14 h-14 rounded-2xl bg-green-50 border border-green-200 flex items-center justify-center shrink-0">

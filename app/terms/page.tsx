@@ -71,7 +71,7 @@ export default function TermsPage() {
               <li>You will receive a receipt via email after purchase.</li>
               <li><strong>30-Day Money-Back Guarantee:</strong> If you are not satisfied within 30 days of purchase, contact us for a full refund — no questions asked.</li>
               <li>Refund requests after 30 days will be reviewed on a case-by-case basis.</li>
-              <li>To request a refund, email <a href="mailto:support@veronicabloom.com" className="text-[#a8687a] underline">support@veronicabloom.com</a> with your account email.</li>
+              <li>To request a refund, email <a href="mailto:majavujovicns021@gmail.com" className="text-[#a8687a] underline">majavujovicns021@gmail.com</a> with your account email.</li>
             </ul>
           </div>
 
@@ -125,7 +125,7 @@ export default function TermsPage() {
               <li><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</li>
               <li><strong>Operator:</strong> Maja Vujovic</li>
               <li><strong>Location:</strong> Novi Sad, Serbia</li>
-              <li><strong>Email:</strong> <a href="mailto:support@veronicabloom.com" className="text-[#a8687a] underline">support@veronicabloom.com</a></li>
+              <li><strong>Email:</strong> <a href="mailto:majavujovicns021@gmail.com" className="text-[#a8687a] underline">majavujovicns021@gmail.com</a></li>
               <li><strong>Payment processor:</strong> Paddle.com Market Limited (Merchant of Record)</li>
             </ul>
           </div>

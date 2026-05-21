@@ -119,13 +119,13 @@ export default function PrivacyPage() {
             <p className="mb-3">
               For privacy-related questions, contact us at{" "}
               <Link href="/contact" className="text-[#a8687a] underline">our contact page</Link> or email{" "}
-              <a href="mailto:support@veronicabloom.com" className="text-[#a8687a] underline">support@veronicabloom.com</a>.
+              <a href="mailto:majavujovicns021@gmail.com" className="text-[#a8687a] underline">majavujovicns021@gmail.com</a>.
             </p>
             <ul className="space-y-1 ml-4 text-[#7b6870]">
               <li><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</li>
               <li><strong>Operator:</strong> Maja Vujovic</li>
               <li><strong>Location:</strong> Novi Sad, Serbia</li>
-              <li><strong>Email:</strong> support@veronicabloom.com</li>
+              <li><strong>Email:</strong> majavujovicns021@gmail.com</li>
             </ul>
           </div>
         </div>

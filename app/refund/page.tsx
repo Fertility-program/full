@@ -18,8 +18,8 @@ export default function RefundPage() {
           <h2 className="text-xl text-[#2d5a52] mb-3">How to Request a Refund</h2>
           <p>
             Email us at{" "}
-            <a href="mailto:support@veronicabloom.com" className="text-[#5ba89d] underline">
-              support@veronicabloom.com
+            <a href="mailto:majavujovicns021@gmail.com" className="text-[#5ba89d] underline">
+              majavujovicns021@gmail.com
             </a>{" "}
             with your account email and we&apos;ll process your refund within 3-5 business days.
           </p>
@@ -41,8 +41,8 @@ export default function RefundPage() {
           <h2 className="text-xl text-[#2d5a52] mb-3">Contact</h2>
           <p>
             For any questions about refunds, reach out to{" "}
-            <a href="mailto:support@veronicabloom.com" className="text-[#5ba89d] underline">
-              support@veronicabloom.com
+            <a href="mailto:majavujovicns021@gmail.com" className="text-[#5ba89d] underline">
+              majavujovicns021@gmail.com
             </a>
             .
           </p>
