@@ -12,7 +12,7 @@ export default function ShareWithPartner() {
 
   const partnerLink = typeof window !== "undefined"
     ? `${window.location.origin}/partner`
-    : "https://fertility-program.vercel.app/partner";
+    : "https://veronica-program.vercel.app/partner";
 
   const message = `Hey! I'm using this fertility app and there's a section just for you — daily habits, supplements, and a 74-day sperm optimization program. It's free. Check it out: ${partnerLink}`;
 

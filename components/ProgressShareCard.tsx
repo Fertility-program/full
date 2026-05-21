@@ -121,7 +121,7 @@ export default function ProgressShareCard({
     ctx.textAlign = "center";
     ctx.fillStyle = "#b98fa1";
     ctx.font = "14px -apple-system, sans-serif";
-    ctx.fillText("fertility-program.vercel.app", 540, 950);
+    ctx.fillText("veronica-program.vercel.app", 540, 950);
 
     // Download
     const link = document.createElement("a");
