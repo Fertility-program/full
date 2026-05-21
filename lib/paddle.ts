@@ -12,12 +12,12 @@
 
 export const PADDLE_PLANS = {
   glow: {
-    priceId: process.env.NEXT_PUBLIC_PADDLE_GLOW_PRICE_ID || "",
+    priceId: process.env.NEXT_PUBLIC_PADDLE_BLOOM_FERTILITY_PRICE_ID || "",
     name: "Veronica Bloom",
     price: 29,
   },
   elite: {
-    priceId: process.env.NEXT_PUBLIC_PADDLE_ELITE_PRICE_ID || "",
+    priceId: process.env.NEXT_PUBLIC_PADDLE_ELITE_FERTILITY_PRICE_ID || "",
     name: "Veronica Elite",
     price: 79,
   },
