@@ -33,7 +33,7 @@ export async function GET(request: Request) {
     email: user.email,
     plan: user.plan,
     day: user.current_day,
-    subject: `Week ${Math.ceil(user.current_day / 7)} — Your Veronica Method Update`,
+    subject: `Week ${Math.ceil(user.current_day / 7)} — Your Veronica Bloom Update`,
     message: getWeeklyMessage(user.current_day, user.plan),
   }));
 

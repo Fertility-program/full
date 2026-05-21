@@ -6,7 +6,7 @@
 // ============================================================
 
 const RESEND_API = "https://api.resend.com/emails";
-const FROM_EMAIL = process.env.EMAIL_FROM || "Veronica Method <onboarding@resend.dev>";
+const FROM_EMAIL = process.env.EMAIL_FROM || "Veronica Bloom <onboarding@resend.dev>";
 
 type EmailPayload = {
   to: string;
@@ -80,7 +80,7 @@ function emailWrapper(content: string): string {
   <div style="max-width:560px;margin:0 auto;padding:32px 20px;">
     <!-- Logo -->
     <div style="text-align:center;margin-bottom:24px;">
-      <span style="font-size:24px;font-weight:600;color:${BRAND_COLOR};">Veronica Method</span>
+      <span style="font-size:24px;font-weight:600;color:${BRAND_COLOR};">Veronica Bloom</span>
       <div style="font-size:10px;text-transform:uppercase;letter-spacing:2px;color:${MUTED_COLOR};margin-top:4px;">
         The Complete Menopause Program
       </div>
@@ -93,7 +93,7 @@ function emailWrapper(content: string): string {
 
     <!-- Footer -->
     <div style="text-align:center;margin-top:24px;font-size:11px;color:${MUTED_COLOR};">
-      <p>© ${new Date().getFullYear()} Veronica Method. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} Veronica Bloom. All rights reserved.</p>
       <p style="margin-top:8px;">
         <a href="https://veronica-method.vercel.app/privacy" style="color:${MUTED_COLOR};">Privacy</a> · 
         <a href="https://veronica-method.vercel.app/terms" style="color:${MUTED_COLOR};">Terms</a>
@@ -108,7 +108,7 @@ function emailWrapper(content: string): string {
 export function welcomeEmail(name?: string): { subject: string; html: string; text: string } {
   const greeting = name ? `Hi ${name}` : "Welcome";
   return {
-    subject: "Welcome to Veronica Method 🌸",
+    subject: "Welcome to Veronica Bloom 🌸",
     text: `${greeting}! Your personalized menopause wellness program is ready. Visit your dashboard to start your first session.`,
     html: emailWrapper(`
       <h1 style="font-size:24px;color:${TEXT_COLOR};margin:0 0 12px;">${greeting}! 🌸</h1>

@@ -13,7 +13,7 @@ export default function PrivacyPage() {
         <div className="space-y-8 text-[#5a4550] text-sm leading-relaxed">
           <div>
             <p>
-              At Veronica Method, we take your privacy seriously. This policy explains what data we collect,
+              At Veronica Bloom, we take your privacy seriously. This policy explains what data we collect,
               how we use it, and your rights regarding your personal information.
             </p>
           </div>

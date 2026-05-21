@@ -29,12 +29,12 @@ export default function BlogJsonLd({
     dateModified: dateModified || datePublished,
     author: {
       "@type": "Organization",
-      name: "Veronica Method",
+      name: "Veronica Bloom",
       url: "https://veronica-method.vercel.app",
     },
     publisher: {
       "@type": "Organization",
-      name: "Veronica Method",
+      name: "Veronica Bloom",
       logo: {
         "@type": "ImageObject",
         url: "https://veronica-method.vercel.app/icon-512.png",
