@@ -123,7 +123,7 @@ export default function TermsPage() {
             <h2 className="text-xl text-[#4a3f44] mb-3">11. Business Information</h2>
             <ul className="space-y-2 ml-4">
               <li><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</li>
-              <li><strong>Operator:</strong> Maja Vujovic</li>
+              <li><strong>Operated by:</strong> Veronica Bloom</li>
               <li><strong>Location:</strong> Novi Sad, Serbia</li>
               <li><strong>Email:</strong> <a href="mailto:majavujovicns021@gmail.com" className="text-[#a8687a] underline">majavujovicns021@gmail.com</a></li>
               <li><strong>Payment processor:</strong> Paddle.com Market Limited (Merchant of Record)</li>

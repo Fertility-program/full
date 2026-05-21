@@ -134,7 +134,7 @@ export default function ContactPage() {
         <h3 className="text-sm font-bold text-[#4a3f44] uppercase tracking-widest mb-3">Business Information</h3>
         <div className="text-sm text-[#7b6870] space-y-1">
           <p><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</p>
-          <p><strong>Operator:</strong> Maja Vujovic</p>
+          <p><strong>Operator:</strong> Veronica Bloom</p>
           <p><strong>Location:</strong> Novi Sad, Serbia</p>
           <p><strong>Email:</strong> majavujovicns021@gmail.com</p>
           <p><strong>Payment processing:</strong> Paddle.com Market Limited (Merchant of Record)</p>

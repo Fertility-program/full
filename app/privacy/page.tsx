@@ -123,7 +123,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="space-y-1 ml-4 text-[#7b6870]">
               <li><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</li>
-              <li><strong>Operator:</strong> Maja Vujovic</li>
+              <li><strong>Operated by:</strong> Veronica Bloom</li>
               <li><strong>Location:</strong> Novi Sad, Serbia</li>
               <li><strong>Email:</strong> majavujovicns021@gmail.com</li>
             </ul>
