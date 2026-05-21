@@ -59,6 +59,27 @@ function CheckoutContent() {
     setLoading(true);
     setError("");
 
+    // Try Paddle overlay first (if Paddle.js is loaded)
+    if (typeof window !== "undefined" && (window as any).Paddle) {
+      const { PADDLE_PLANS } = await import("@/lib/paddle");
+      const paddlePlan = PADDLE_PLANS[data.id as "glow" | "elite"];
+
+      if (paddlePlan.priceId) {
+        (window as any).Paddle.Checkout.open({
+          items: [{ priceId: paddlePlan.priceId, quantity: 1 }],
+          customer: { email: user.email || undefined },
+          customData: { user_id: user.id, plan: data.id },
+          settings: {
+            successUrl: `${window.location.origin}/checkout/success?plan=${data.id}`,
+            theme: "light",
+          },
+        });
+        setLoading(false);
+        return;
+      }
+    }
+
+    // Fallback to LemonSqueezy API checkout
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",
