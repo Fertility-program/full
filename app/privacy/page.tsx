@@ -28,7 +28,7 @@ export default function PrivacyPage() {
               <li><strong>Cycle data:</strong> Menstrual cycle dates, BBT readings, OPK results (for female users).</li>
               <li><strong>Partner data:</strong> Daily habits, supplement tracking, spermiogram results (for male users in Couple Mode).</li>
               <li><strong>Couple data:</strong> Partner linking codes and shared progress metrics (only when both partners consent).</li>
-              <li><strong>Payment data:</strong> Processed securely by Gumroad. We never store your card details.</li>
+              <li><strong>Payment data:</strong> Processed securely by Paddle (our Merchant of Record). We never store your card details.</li>
               <li><strong>Device data:</strong> Browser type and push notification subscription (if enabled).</li>
             </ul>
           </div>
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl text-[#4a3f44] mb-3">6. Third-Party Services</h2>
             <ul className="space-y-2 ml-4">
               <li><strong>Supabase:</strong> Authentication and database (EU servers).</li>
-              <li><strong>Gumroad:</strong> Payment processing (PCI compliant).</li>
+              <li><strong>Paddle:</strong> Payment processing (PCI compliant, Merchant of Record).</li>
               <li><strong>Vercel:</strong> Hosting and content delivery.</li>
               <li><strong>Resend:</strong> Transactional emails (if enabled).</li>
             </ul>
@@ -115,11 +115,18 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-xl text-[#4a3f44] mb-3">10. Contact</h2>
-            <p>
+            <h2 className="text-xl text-[#4a3f44] mb-3">10. Contact & Business Information</h2>
+            <p className="mb-3">
               For privacy-related questions, contact us at{" "}
-              <Link href="/contact" className="text-[#a8687a] underline">our contact page</Link>.
+              <Link href="/contact" className="text-[#a8687a] underline">our contact page</Link> or email{" "}
+              <a href="mailto:support@veronicabloom.com" className="text-[#a8687a] underline">support@veronicabloom.com</a>.
             </p>
+            <ul className="space-y-1 ml-4 text-[#7b6870]">
+              <li><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</li>
+              <li><strong>Operator:</strong> Maja Vujovic</li>
+              <li><strong>Location:</strong> Novi Sad, Serbia</li>
+              <li><strong>Email:</strong> support@veronicabloom.com</li>
+            </ul>
           </div>
         </div>
       </section>

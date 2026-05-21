@@ -98,6 +98,16 @@ export default function Footer() {
             />
           </div>
         </div>
+
+        {/* Health Disclaimer */}
+        <div className="mt-6 pt-4 border-t border-[#f0e3e8]/30">
+          <p className="text-[10px] text-[#7b6870] leading-relaxed text-center max-w-3xl mx-auto">
+            <strong>Disclaimer:</strong> The content and programs provided on this website are for informational
+            and educational purposes only and do not substitute for professional medical advice, diagnosis, or
+            treatment. Always consult a qualified healthcare provider before starting any exercise program,
+            nutrition plan, or supplement regimen. Veronica Bloom is not a medical service.
+          </p>
+        </div>
       </div>
     </footer>
   );

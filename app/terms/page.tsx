@@ -63,11 +63,15 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-xl text-[#4a3f44] mb-3">5. Payments</h2>
+            <h2 className="text-xl text-[#4a3f44] mb-3">5. Payments & Refunds</h2>
             <ul className="space-y-2 ml-4">
-              <li>Payments are processed securely by Gumroad.</li>
+              <li>Payments are processed securely by Paddle.com (our Merchant of Record).</li>
+              <li>Paddle handles all payment processing, invoicing, sales tax, and compliance.</li>
               <li>Prices are in EUR and include applicable taxes.</li>
               <li>You will receive a receipt via email after purchase.</li>
+              <li><strong>30-Day Money-Back Guarantee:</strong> If you are not satisfied within 30 days of purchase, contact us for a full refund — no questions asked.</li>
+              <li>Refund requests after 30 days will be reviewed on a case-by-case basis.</li>
+              <li>To request a refund, email <a href="mailto:support@veronicabloom.com" className="text-[#a8687a] underline">support@veronicabloom.com</a> with your account email.</li>
             </ul>
           </div>
 
@@ -116,7 +120,18 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-xl text-[#4a3f44] mb-3">11. Contact</h2>
+            <h2 className="text-xl text-[#4a3f44] mb-3">11. Business Information</h2>
+            <ul className="space-y-2 ml-4">
+              <li><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</li>
+              <li><strong>Operator:</strong> Maja Vujovic</li>
+              <li><strong>Location:</strong> Novi Sad, Serbia</li>
+              <li><strong>Email:</strong> <a href="mailto:support@veronicabloom.com" className="text-[#a8687a] underline">support@veronicabloom.com</a></li>
+              <li><strong>Payment processor:</strong> Paddle.com Market Limited (Merchant of Record)</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl text-[#4a3f44] mb-3">12. Contact</h2>
             <p>
               Questions about these terms? <Link href="/contact" className="text-[#a8687a] underline">Contact us</Link>.
             </p>

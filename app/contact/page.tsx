@@ -113,7 +113,7 @@ export default function ContactPage() {
         <div className="soft-card p-5 text-center">
           <div className="text-2xl mb-2">📧</div>
           <p className="text-sm font-medium text-[#4a3f44]">Email</p>
-          <p className="text-xs text-[#7b6870]">hello@veronica-method.com</p>
+          <p className="text-xs text-[#7b6870]">support@veronicabloom.com</p>
         </div>
         <div className="soft-card p-5 text-center">
           <div className="text-2xl mb-2">⏰</div>
@@ -126,6 +126,18 @@ export default function ContactPage() {
           <a href="https://instagram.com/veronicabloom.fertility" target="_blank" rel="noopener noreferrer" className="text-xs text-[#b98fa1] hover:underline">
             @veronicabloom.fertility
           </a>
+        </div>
+      </section>
+
+      {/* BUSINESS INFO */}
+      <section className="soft-card p-6 mt-6">
+        <h3 className="text-sm font-bold text-[#4a3f44] uppercase tracking-widest mb-3">Business Information</h3>
+        <div className="text-sm text-[#7b6870] space-y-1">
+          <p><strong>Service:</strong> Veronica Bloom — Digital Fertility Wellness Platform</p>
+          <p><strong>Operator:</strong> Maja Vujovic</p>
+          <p><strong>Location:</strong> Novi Sad, Serbia</p>
+          <p><strong>Email:</strong> support@veronicabloom.com</p>
+          <p><strong>Payment processing:</strong> Paddle.com Market Limited (Merchant of Record)</p>
         </div>
       </section>
     </main>
