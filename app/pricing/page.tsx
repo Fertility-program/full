@@ -110,8 +110,11 @@ function PricingContent() {
         <h1 className="text-5xl md:text-7xl mb-6">
           Premium Plans For Your Fertility Journey
         </h1>
-        <p className="max-w-3xl mx-auto text-[#5a7570] text-xl leading-relaxed mb-6">
+        <p className="max-w-3xl mx-auto text-[#5a7570] text-xl leading-relaxed mb-4">
           Compare your options, explore benefits and choose the path that supports your conception goals.
+        </p>
+        <p className="text-sm text-[#6aab9f] font-medium mb-6">
+          One-time payment • No subscription • No auto-renewal • 30-day money-back guarantee
         </p>
         {!isPromoActive() && <CountdownTimer />}
       </section>
@@ -273,6 +276,14 @@ function PricingContent() {
         </div>
         <p className="text-xs text-[#5a7570] max-w-md mx-auto">
           Try the full program risk-free. If you&apos;re not satisfied within 30 days, we&apos;ll refund you — no questions asked. We&apos;re confident you&apos;ll love it.
+        </p>
+      </section>
+
+      {/* PADDLE MOR */}
+      <section className="text-center mb-8">
+        <p className="text-[10px] text-[#7b6870]">
+          All payments are securely processed by Paddle.com, our Merchant of Record.
+          Paddle handles invoicing, sales tax, and refunds.
         </p>
       </section>
 

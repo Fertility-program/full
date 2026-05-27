@@ -64,14 +64,19 @@ export default function TermsPage() {
 
           <div>
             <h2 className="text-xl text-[#4a3f44] mb-3">5. Payments & Refunds</h2>
+            <p className="mb-3 p-4 rounded-2xl bg-[#f0faf8] border border-[#c2ddd8] text-[#3a5550]">
+              Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant
+              of Record for all our orders. Paddle provides all customer service inquiries and handles returns.
+            </p>
             <ul className="space-y-2 ml-4">
               <li>Payments are processed securely by Paddle.com (our Merchant of Record).</li>
               <li>Paddle handles all payment processing, invoicing, sales tax, and compliance.</li>
               <li>Prices are in EUR and include applicable taxes.</li>
               <li>You will receive a receipt via email after purchase.</li>
+              <li>All plans are <strong>one-time payments</strong> — there are no automatic renewals or recurring charges.</li>
               <li><strong>30-Day Money-Back Guarantee:</strong> If you are not satisfied within 30 days of purchase, contact us for a full refund — no questions asked.</li>
               <li>Refund requests after 30 days will be reviewed on a case-by-case basis.</li>
-              <li>To request a refund, email <a href="mailto:majavujovicns021@gmail.com" className="text-[#a8687a] underline">majavujovicns021@gmail.com</a> with your account email.</li>
+              <li>To request a refund, visit our <a href="/contact" className="text-[#a8687a] underline">Contact page</a> or email us with your account email.</li>
             </ul>
           </div>
 
