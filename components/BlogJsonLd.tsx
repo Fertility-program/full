@@ -17,7 +17,8 @@ export default function BlogJsonLd({
   dateModified?: string;
   image?: string;
 }) {
-  const url = `https://veronica-method.vercel.app/blog/${slug}`;
+  const base = "https://veronica-bloom.vercel.app";
+  const url = `${base}/blog/${slug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -30,21 +31,21 @@ export default function BlogJsonLd({
     author: {
       "@type": "Organization",
       name: "Veronica Bloom",
-      url: "https://veronica-method.vercel.app",
+      url: base,
     },
     publisher: {
       "@type": "Organization",
       name: "Veronica Bloom",
       logo: {
         "@type": "ImageObject",
-        url: "https://veronica-method.vercel.app/icon-512.png",
+        url: `${base}/icon-512.png`,
       },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     ...(image && {
       image: {
         "@type": "ImageObject",
-        url: image.startsWith("http") ? image : `https://veronica-method.vercel.app${image}`,
+        url: image.startsWith("http") ? image : `${base}${image}`,
       },
     }),
   };
