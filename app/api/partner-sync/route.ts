@@ -80,6 +80,7 @@ export async function POST(req: NextRequest) {
 
 // GET — Pull partner data
 export async function GET(req: NextRequest) {
+  const supabase = getSupabase();
   try {
     const userId = req.nextUrl.searchParams.get("userId");
     const type = req.nextUrl.searchParams.get("type");
