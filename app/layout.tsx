@@ -78,6 +78,21 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Veronica Bloom" />
         {/* Dark mode — sprečava flash of light mode */}
         <script dangerouslySetInnerHTML={{ __html: `try{if(localStorage.getItem("darkMode")==="true")document.documentElement.classList.add("dark")}catch(e){}` }} />
+        {/* Disable right-click, copy, inspect */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          document.addEventListener('contextmenu',function(e){e.preventDefault()});
+          document.addEventListener('keydown',function(e){
+            if(e.key==='F12')e.preventDefault();
+            if(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='J'||e.key==='C'))e.preventDefault();
+            if(e.ctrlKey&&e.key==='u')e.preventDefault();
+            if(e.ctrlKey&&e.key==='s')e.preventDefault();
+            if(e.ctrlKey&&e.key==='p')e.preventDefault();
+          });
+          document.addEventListener('copy',function(e){e.preventDefault()});
+          document.addEventListener('cut',function(e){e.preventDefault()});
+          document.addEventListener('selectstart',function(e){e.preventDefault()});
+          document.addEventListener('dragstart',function(e){e.preventDefault()});
+        `}} />
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
           <script
             defer
