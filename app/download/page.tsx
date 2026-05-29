@@ -48,19 +48,19 @@ export default function DownloadPage() {
       {/* QUICK INSTALL (if browser supports it) */}
       {installPrompt && !installed && (
         <section className="soft-card p-6 mb-4 border-l-4 border-l-green-400 bg-green-50/30">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-green-100 border border-green-200 flex items-center justify-center shrink-0">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-green-100 border border-green-200 flex items-center justify-center shrink-0">
               <span className="text-2xl">⬇️</span>
             </div>
-            <div className="flex-1">
-              <h2 className="text-xl text-[#2d5a52] mb-1">Install Now</h2>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-lg text-[#2d5a52] mb-1">Install Now</h2>
               <p className="text-xs text-[#3a5550]">
                 One tap to add to your home screen. No app store needed.
               </p>
             </div>
             <button
               onClick={handleInstall}
-              className="btn-primary px-5 py-2.5 text-sm shrink-0"
+              className="btn-primary px-5 py-2.5 text-sm shrink-0 w-full sm:w-auto"
             >
               Install App
             </button>
@@ -76,12 +76,12 @@ export default function DownloadPage() {
 
       {/* ANDROID */}
       <section className="soft-card p-6 mb-4">
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-green-50 border border-green-200 flex items-center justify-center shrink-0">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-green-50 border border-green-200 flex items-center justify-center shrink-0">
             <span className="text-2xl">🤖</span>
           </div>
-          <div className="flex-1">
-            <h2 className="text-xl text-[#2d5a52] mb-1">Android</h2>
+          <div className="flex-1 min-w-0">
+            <h2 className="text-lg text-[#2d5a52] mb-1">Android</h2>
             <p className="text-xs text-[#3a5550]">
               Samsung, Xiaomi, Huawei, Google Pixel — all Android phones.
             </p>
@@ -89,7 +89,7 @@ export default function DownloadPage() {
           <a
             href="/fertility-program.apk"
             download
-            className="btn-primary px-5 py-2.5 text-sm shrink-0"
+            className="btn-primary px-5 py-2.5 text-sm shrink-0 w-full sm:w-auto text-center"
           >
             Download APK
           </a>
@@ -125,19 +125,19 @@ export default function DownloadPage() {
 
       {/* iOS */}
       <section className="soft-card p-6 mb-4">
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0">
             <span className="text-2xl">🍎</span>
           </div>
-          <div className="flex-1">
-            <h2 className="text-xl text-[#2d5a52] mb-1">iPhone & iPad</h2>
+          <div className="flex-1 min-w-0">
+            <h2 className="text-lg text-[#2d5a52] mb-1">iPhone & iPad</h2>
             <p className="text-xs text-[#3a5550]">
               Add to Home Screen from Safari — works like a native app.
             </p>
           </div>
           <button
             onClick={() => setShowIOS(!showIOS)}
-            className="btn-outline px-5 py-2.5 text-sm shrink-0"
+            className="btn-outline px-5 py-2.5 text-sm shrink-0 w-full sm:w-auto"
           >
             {showIOS ? "Hide" : "How to Install"}
           </button>
@@ -175,12 +175,12 @@ export default function DownloadPage() {
 
       {/* DESKTOP */}
       <section className="soft-card p-6 mb-4">
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center shrink-0">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center shrink-0">
             <span className="text-2xl">💻</span>
           </div>
-          <div className="flex-1">
-            <h2 className="text-xl text-[#2d5a52] mb-1">Desktop (Windows / Mac)</h2>
+          <div className="flex-1 min-w-0">
+            <h2 className="text-lg text-[#2d5a52] mb-1">Desktop (Windows / Mac)</h2>
             <p className="text-xs text-[#3a5550]">
               Install as a desktop app from Chrome or Edge.
             </p>
