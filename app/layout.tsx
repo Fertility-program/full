@@ -7,7 +7,11 @@ import ClientShell from "@/components/ClientShell";
 import PaddleProvider from "@/components/PaddleProvider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app"),
+  metadataBase: new URL(
+    (process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app").startsWith("http")
+      ? process.env.NEXT_PUBLIC_APP_URL || "https://veronica-bloom.vercel.app"
+      : `https://${process.env.NEXT_PUBLIC_APP_URL}`
+  ),
   title: {
     default: "Veronica Bloom | The Complete Fertility Wellness Program",
     template: "%s | Veronica Bloom",
