@@ -197,6 +197,41 @@ function LoginContent() {
             your account automatically.
           </p>
 
+          {/* GUEST MODE */}
+          <div className="mt-4 pt-4 border-t border-[#f0e3e8]">
+            <button
+              onClick={() => {
+                // Set guest cookie (expires in 30 days)
+                document.cookie = "guest_mode=true; path=/; max-age=2592000; SameSite=Strict";
+                // Set default quiz data for "average" user
+                const guestQuizData = {
+                  name: "Guest",
+                  age: "35",
+                  height: "165",
+                  weight: "65",
+                  activity: "light",
+                  goal: "overall_wellness",
+                  time: "20 min",
+                  symptoms: ["Low energy", "Stress & anxiety"],
+                  severity: { "Low energy": 3, "Stress & anxiety": 3 },
+                  cycleRegularity: "somewhat",
+                  ttcDuration: "not_yet",
+                };
+                localStorage.setItem("quizData", JSON.stringify(guestQuizData));
+                localStorage.setItem("day", "1");
+                localStorage.setItem("plan", "elite");
+                localStorage.setItem("premium", "true");
+                router.push("/dashboard");
+              }}
+              className="w-full py-3 rounded-2xl border-2 border-dashed border-[#c2ddd8] text-[#5ba89d] text-sm font-medium hover:bg-[#f0faf8] transition-all"
+            >
+              👤 Continue as Guest
+            </button>
+            <p className="text-[9px] text-[#7b6870] text-center mt-2">
+              Try the full program without an account. Your progress won&apos;t sync across devices.
+            </p>
+          </div>
+
           <div className="mt-4 text-center">
             <Link
               href="/"

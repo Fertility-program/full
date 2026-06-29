@@ -57,6 +57,13 @@ export async function updateSession(request: NextRequest) {
   const isAdmin = request.nextUrl.pathname.startsWith("/admin");
 
   if ((isProtected || isAdmin) && !user) {
+    // Allow guest mode — check for guest cookie
+    const isGuest = request.cookies.get("guest_mode")?.value === "true";
+    if (isGuest && !isAdmin) {
+      // Guests can access all protected routes except admin
+      return supabaseResponse;
+    }
+
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     url.searchParams.set("redirect", request.nextUrl.pathname);
