@@ -3,6 +3,39 @@
 import { useState, useEffect } from "react";
 import { LOCALE_NAMES, LOCALE_FLAGS, type Locale } from "@/lib/i18n/translations";
 
+// Google Translate language codes
+const GT_LANG_MAP: Record<Locale, string> = {
+  en: "en",
+  sr: "sr",
+  de: "de",
+  es: "es",
+};
+
+function triggerGoogleTranslate(langCode: string) {
+  // Set the Google Translate cookie to trigger translation
+  const domain = window.location.hostname;
+  if (langCode === "en") {
+    // Remove translation — restore original
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
+    document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+    // Also try to restore via Google Translate API
+    const frame = document.querySelector<HTMLIFrameElement>(".goog-te-menu-frame");
+    if (frame?.contentWindow) {
+      const items = frame.contentWindow.document.querySelectorAll(".goog-te-menu2-item");
+      items.forEach((item) => {
+        if ((item as HTMLElement).textContent?.includes("English")) {
+          (item as HTMLElement).click();
+        }
+      });
+    }
+  } else {
+    document.cookie = `googtrans=/en/${langCode}; path=/; domain=${domain}`;
+    document.cookie = `googtrans=/en/${langCode}; path=/`;
+  }
+  // Reload to apply Google Translate
+  window.location.reload();
+}
+
 export default function LanguageSwitcher() {
   const [locale, setLocale] = useState<Locale>("en");
   const [open, setOpen] = useState(false);
@@ -18,8 +51,8 @@ export default function LanguageSwitcher() {
     setLocale(loc);
     localStorage.setItem("vm_locale", loc);
     setOpen(false);
-    // Reload to apply translations everywhere
-    window.location.reload();
+    // Trigger Google Translate for full-page translation
+    triggerGoogleTranslate(GT_LANG_MAP[loc]);
   }
 
   return (

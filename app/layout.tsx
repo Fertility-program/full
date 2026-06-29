@@ -105,6 +105,18 @@ export default function RootLayout({
             src="https://plausible.io/js/script.js"
           />
         )}
+        {/* Google Translate — hidden UI, triggered by LanguageSwitcher */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              includedLanguages: 'en,sr,de,es',
+              autoDisplay: false,
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+          }
+        `}} />
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -137,6 +149,8 @@ export default function RootLayout({
         />
       </head>
       <body className="text-[#3d2b32]">
+        {/* Google Translate element — hidden */}
+        <div id="google_translate_element" style={{ display: "none" }} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#d8a7b5] focus:text-white focus:text-sm"
